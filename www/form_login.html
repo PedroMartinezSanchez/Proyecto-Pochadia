@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="img\icon-mini.png" style="width: 32px; height: 32px;"/>
+    <title>Login</title>
+    <style>
+        .campolog {
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+    <article class="pb-5 pt-4">
+        <div class="container d-flex justify-content-center">
+            <img src="img/icon.png" alt="icon_pochadia" width="250" height="250">
+        </div>
+        <div class="container bg-white p-3" style="width: 35vh; height: 40vh; border-radius: 8px;">
+            <div class="container d-flex justify-content-center mt-5">
+                <form action="/action_page.php" class="campolog">
+                    <div class="form-group">
+                        <input type="email" class="form-control mb-4" id="email" placeholder="Introduce tu e-mail"
+                            name="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control mb-4" id="pwd" placeholder="Introduce tu contraseña"
+                            name="pswd">
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label mb-3 text-dark">
+                            <input class="form-check-input" type="checkbox" name="remember"> Recordar usuario
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-warning text-dark">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </article>
+    <footer class="container pt-5 pl-4">
+        <div class="container pt-5 mt-5 col-sm">
+            <div class="container-fluid d-flex justify-content-center ml-3">
+                <div class="mr-3">
+                    <p class="ml-2">Contacto</p>
+                    <div class="container d-flex justify-content-center">
+                        <div>
+                            <div class="row">
+                                <div class="col-sm"><a href="#">Ayuda</a></div>
+                            </div>
+                            <div class="row">
+                                <a href="#" class="col-sm">Sobre nosotros </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mr-3">
+                    <p class="col-sm d-flex justify-content-center">Siguenos</p>
+                    <div class="container col-sm">
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div class="row-sm d-flex justify-content-center">
+                                    <div class="col-sm p-1"><i><a href="#"><img src="img\facebook.png" alt="facebook"
+                                                    width="30vh"></a></i></div>
+                                    <div class="col-sm p-1"><i><a href="#"><img src="img\twitter.png" alt="twitter"
+                                                    width="30vh"></a></i></div>
+                                    <div class="col-sm p-1"><i><a href="#"><img src="img\instagram.png" alt="instagram"
+                                                    width="30vh"></a></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
