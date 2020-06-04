@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="/js/premium.js"></script>
+    <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+    <title>Recuperar contraseña</title>
+    <style>
+        .campolog {
+            width: 350px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        .gallery {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+            -webkit-column-width: 33%;
+            -moz-column-width: 33%;
+            column-width: 33%;
+        }
+
+        .gallery .pics {
+            -webkit-transition: all 350ms ease;
+            transition: all 350ms ease;
+        }
+
+        .gallery .animation {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+
+        @media (max-width: 450px) {
+            .gallery {
+                -webkit-column-count: 1;
+                -moz-column-count: 1;
+                column-count: 1;
+                -webkit-column-width: 100%;
+                -moz-column-width: 100%;
+                column-width: 100%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .btn.filter {
+                padding-left: 1.1rem;
+                padding-right: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--HEADER-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="#" class="mr-4">
+            <img src="img/icon.png" alt="logo" width="100">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link pl-3 mr-4" href="#">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pl-3" href="#">Premium</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 pl-3">
+
+                <div class="container">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0 mr-3" type="submit">Search</button>
+                    <div class="dropdown">
+                        <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img src="img/icon2.png"
+                                alt="icono_usuario" width="50"></a>
+                        <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
+                            <div class="container p-0">
+                                <div class="card container d-flex justify-content-center p-0">
+                                    <img class="card-img-top mt-4" src="img/icon2.png" alt="Card image"
+                                        style="width:40%">
+                                    <div class="card-body pb-1">
+                                        <h4 class="card-title" style="font-size: 100%;">#Usuario</h4>
+                                        <a href="#" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                                            style="width: 100%;">Ajustes</a>
+                                        <a href="#" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                                            style="width: 100%;">Ayuda</a>
+                                        <a href="#" class="btn btn-warning mt-2 col-sm container"
+                                            style="width: 100%; height: 500%;">Cerrar sesión</a>
+                                    </div>
+                                    <div class="row container pl-0 pr-0 pb-3 pt-3" style="font-size: 1vh;">
+                                        <div class="col-sm d-flex justify-content-center">
+                                            <a href="#">Politicas de privacidad</a>
+                                        </div>
+                                        <div class="col-sm d-flex justify-content-center">
+                                            <a href="#">Términos del servicio</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <!--END HEADER-->
+
+    <!--CUERPO-->
+
+    <div class="container text-center w-50 mt-3">
+        <h3>¡Ventajas de ser Premium!</h3>
+        <p>Ser miembro de Pochadia Premium significa que los suscriptores pueden
+            acceder a algunas ventajas que el suscriptor habitual no tiene.
+            Es decir, los miembros de Pochadia Premium pueden disfrutar del catalogo
+            de juegos completo ¡además de una reprodución en streaming a toda pastilla
+            y a la mayor resolución!
+        </p>
+    </div>
+
+    <div class="container text-center w-50">
+        <!--GALERIA-->
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-12 d-flex justify-content-center mb-5">
+
+
+                <button type="button" class="btn btn-primary m-1 filter" data-rel="1"><i class="fas fa-car-side"></i>
+                    Suscripcion normal</button>
+                <!--<button type="button" class="btn btn-warning m-1 filter" data-rel="all">Todos</button>-->
+                <button type="button" class="btn btn-warning m-1 filter" data-rel="2"><i class="fas fa-fighter-jet"></i>
+                    Suscripcion Premium</button>
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+        <!-- Grid row -->
+        <div class="gallery" id="gallery">
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 2">
+                <img class="img-fluid"
+                    src="https://s1.gaming-cdn.com/images/products/840/271x377/cyberpunk-2077-cover.jpg"
+                    alt="Card image cap">
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 1 2">
+                <img class="img-fluid"
+                    src="https://s2.gaming-cdn.com/images/products/709/271x377/borderlands-3-cover.jpg"
+                    alt="Card image cap">
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 1 2">
+                <img class="img-fluid"
+                    src="https://s1.gaming-cdn.com/images/products/5721/271x377/death-stranding-cover.jpg"
+                    alt="Card image cap">
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 2">
+                <img class="img-fluid"
+                    src="https://s1.gaming-cdn.com/images/products/6873/271x377/desperados-iii-digital-deluxe-cover.jpg"
+                    alt="Card image cap">
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 2">
+                <img class="img-fluid"
+                    src="https://s1.gaming-cdn.com/images/products/2250/271x377/final-fantasy-xv-windows-edition-cover.jpg"
+                    alt="Card image cap">
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 1 2">
+                <img class="img-fluid"
+                    src="https://s3.gaming-cdn.com/images/products/2648/271x377/assassins-creed-odyssey-cover.jpg"
+                    alt="Card image cap">
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+
+    </div>
+    <!--END GALERIA-->
+    </div>
+
+    <div class="container text-center w-50 mt-5">
+        <h3>¡Únete a Premium!</h3>
+        <p>Con Pochadia Premium podrás disfrutar de una gran variedad de
+            juegos a los que tendrás acceso de manera inmediata. Disfruta de
+            la acción en tiempo real y en la mejor calidad visual con planes
+            adaptados a tus necesidades.
+        </p>
+    </div>
+
+
+
+    <!--PRECIOS-->
+    <div class="container mt-5">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Gratis</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">0€ <small class="text-muted">/ mes</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Acceso a más de 50 juegos</li>
+                        <li>Resolución maxíma de 1280x720</li>
+                        <li>Soporte técnico</li>
+                        <li>1 sola sesión</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">¡Te elijo a ti!</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Premium Core</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">12€ <small class="text-muted">/ mes</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Acceso a más de 150 juegos</li>
+                        <li>Resolución maxíma de 1980x1080</li>
+                        <li>Soporte técnico</li>
+                        <li>Hasta 3 sesiónes</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">¡Te elijo a ti!</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Premium StarPlatinum</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">29€ <small class="text-muted">/ mes</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Acceso a más de 300 juegos</li>
+                        <li>Resolución maxíma de 2k</li>
+                        <li>Soporte técnico</li>
+                        <li>Sin límite de sesiónes</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">¡Te elijo a ti!</button>
+                </div>
+            </div>
+        </div>
+        <!--END PRECIOS-->
+
+        <!--END CUERPO-->
+
+        <!--FOOTER-->
+        <footer class="page-footer">
+            <div class="container pt-3 col-sm">
+                <div class="container-fluid d-flex justify-content-center ml-3">
+                    <div class="mr-3">
+                        <p class="ml-2">Contacto</p>
+                        <div class="container d-flex justify-content-center">
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm"><a href="#">Ayuda</a></div>
+                                </div>
+                                <div class="row">
+                                    <a href="#" class="col-sm">Sobre nosotros </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mr-3">
+                        <p class="col-sm d-flex justify-content-center">Siguenos</p>
+                        <div class="container col-sm">
+                            <div class="d-flex justify-content-center">
+                                <div class="d-flex justify-content-center">
+                                    <div class="row-sm d-flex justify-content-center">
+                                        <div class="col-sm p-1"><i><a href="#"><img src="img/facebook.png"
+                                                        alt="facebook" width="30vh"></a></i></div>
+                                        <div class="col-sm p-1"><i><a href="#"><img src="img/twitter.png" alt="twitter"
+                                                        width="30vh"></a></i></div>
+                                        <div class="col-sm p-1"><i><a href="#"><img src="img/instagram.png"
+                                                        alt="instagram" width="30vh"></a></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--END FOOTER-->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                <a href="#"> Pochadia.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+</body>
+
+</html>
