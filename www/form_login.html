@@ -25,13 +25,13 @@
         <div class="container d-flex justify-content-center">
             <img src="img/icon.png" alt="icon_pochadia" style="width: 20vh; height: 20vh;">
         </div>
-            <form action="/action_page.php" class="campolog bg-white p-3 container" style="width: 45vh; height: 50vh; border-radius: 8px;">
+            <form action="/action_page.php" class="campolog bg-white p-3 container was-validated" style="width: 45vh; height: 50vh; border-radius: 8px;">
                 <h3 class="text-center text-dark mb-4">Inicia Sesión</h3>
                 <div class="form-group">
                     <input type="email" class="form-control input-sm mb-4" id="email" placeholder="Introduce tu e-mail"
-                        name="email">
+                        name="email" required>
                     <input type="password" class="form-control input-sm mb-2" id="pwd" placeholder="Introduce tu contraseña"
-                        name="pswd">
+                        name="pswd" required>
                     <label class="form-check-label col-sm text-dark pl-4">
                         <input class="form-check-input input-sm" type="checkbox" name="remember"> Recordar usuario
                     </label>
