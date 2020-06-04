@@ -22,43 +22,40 @@
 </head>
 
 <body>
-    <article class="pt-2">
+
+    <article class="pt-2 container-fluid">
         <div class="container d-flex justify-content-center">
-            <img src="img/icon.png" alt="icon_pochadia" width="250" height="230">
+            <img src="img/icon.png" alt="icon_pochadia" style="width: 20vh; height: 20vh;">
         </div>
-        <div class="container bg-white p-1" style="width: 50vh; height: 40vh; border-radius: 8px;">
-            <div class="container d-flex justify-content-center mt-5">
+        <form action="#" class="campolog bg-white p-3 container was-validated"
+            style="width: 45vh; height: 40vh; border-radius: 8px;">
+            <h3 class="text-center text-dark mb-4">Recuperar contraseña</h3>
+            <div class="form-group">
+                <input type="email" class="form-control input-sm mb-4" id="email" placeholder="Introduce tu e-mail"
+                    name="email" required>
 
-                <form action="#" class="campolog">
-                    <h3 class="text-center text-dark mb-4">Recuperar contraseña</h3>
-                    <div class="form-group">
-                        <input type="email" class="form-control mb-4" id="email" placeholder="Introduce tu e-mail"
-                            name="email">
-                    </div>
-                    <button type="submit" class="btn btn-warning text-dark container" data-toggle="modal"
-                        data-target="#Recuperacion">Enviar</button>
-
-                    <div class="modal fade" id="Recuperacion">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <!-- Modal Header -->
-                                <div class="modal-header">
-                                    <h4 class="modal-title text-center">Correo enviado</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <p>Si la cuenta de correo consta en nuestra base de datos se le enviará un correo
-                                        para poder recuperar
-                                        su contraseña. Por favor revise su correo.</p>
-                                </div>
-                            </div>
+            </div>
+            <button type="submit"
+                class="btn btn-warning font-weight-bold text-dark container justify-content-center d-flex"
+                style="width: 50%;" data-toggle="modal" data-target="#Recuperacion">Enviar</button>
+            <div class="modal fade" id="Recuperacion">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title text-center">Correo enviado</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <p>Si la cuenta de correo consta en nuestra base de datos se le enviará un correo
+                                para poder recuperar
+                                su contraseña. Por favor revise su correo.</p>
                         </div>
                     </div>
-
-                </form>
+                </div>
             </div>
-        </div>
+        </form>
     </article>
 
     <footer class="page-footer fixed-bottom">
@@ -102,7 +99,7 @@
         </div>
         <!-- Copyright -->
     </footer>
-    
+
 </body>
 
 </html>

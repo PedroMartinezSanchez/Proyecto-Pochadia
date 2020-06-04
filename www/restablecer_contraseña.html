@@ -22,27 +22,28 @@
 </head>
 
 <body>
-    <article class="pt-2">
+    <article class="pt-2 container-fluid">
         <div class="container d-flex justify-content-center">
-            <img src="img/icon.png" alt="icon_pochadia" width="250" height="230">
+            <img src="img/icon.png" alt="icon_pochadia" style="width: 20vh; height: 20vh;">
         </div>
-        <div class="container bg-white p-1" style="width: 50vh; height: 40vh; border-radius: 8px;">
-            <div class="container d-flex justify-content-center mt-5">
-    
-                <form action="#" class="campolog was-validated">
-                    <h3 class="text-center text-dark mb-4">Recuperar contraseña</h3>
-                    <div class="form-group">
-                        <input type="password" class="form-control mb-4" id="password"
-                            placeholder="Introduce nueva contraseña" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control mb-4" id="password_repeat"
-                            placeholder="Repite tu contraseña" name="password_repeat" required>
-                    </div>
-                    <button type="submit" class="btn btn-warning text-dark container">Enviar</button>  
-                </form>
+        <form action="#" class="campolog bg-white p-3 container was-validated"
+            style="width: 45vh; height: 50vh; border-radius: 8px;">
+            <h3 class="text-center text-dark mb-4">Reestablecer contraseña</h3>
+            <div class="form-group">
+                <input type="password" class="form-control input-sm mb-4" id="password"
+                    placeholder="Introduce tu nueva contraseña" name="password" required>
             </div>
-        </div>
+            <div class="form-group">
+                <input type="password" class="form-control input-sm mb-4" id="repeat_password"
+                    placeholder="Repite tu contraseña" name="repeat_password" required>
+
+            </div>
+            <button type="submit"
+                class="btn btn-warning font-weight-bold text-dark container justify-content-center d-flex"
+                style="width: 50%;">Enviar</button>
+
+            </div>
+        </form>
     </article>
 
     <footer class="page-footer fixed-bottom">
@@ -86,7 +87,7 @@
         </div>
         <!-- Copyright -->
     </footer>
-    
+
 </body>
 
 </html>
