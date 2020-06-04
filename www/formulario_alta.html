@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,66 +11,117 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <title>Formulario Alta Pochadia</title>
+    <link rel="icon" type="image/png" href="img\icon-mini.png" style="width: 32px; height: 32px;" />
+    <title>Alta</title>
     <style>
-        form{padding: 20px; margin: auto;}
-        .centrado{ padding-left: 95px;}
+        form {
+            padding: 20px;
+            margin: auto;
+        }
+
+        body {
+            background-image: url("/img/background.png");
+        }
     </style>
-  </head>
-  <body>
+</head>
 
+<body>
+    <div class="container d-flex justify-content-center"><img src="img/icon.png" alt="Pochadia" width="250"
+            height="230"></div>
     <div class="container d-flex justify-content-center">
-
-        <form action="/action_page.php">
-           <img src="img/icon.png" alt="Pochadia" class="centrado">
-
-            <div class="form-group" >
-                <label for="name">Nombre:</label>
+        
+        <form action="/action_page.php" class="pt-4 pl-5 pr-5 bg-white" style="border-radius: 8px;">
+            <h3 class="text-dark pb-2 text-center">Regístrate</h3>
+            <div class="form-group">
                 <input type="text" class="form-control" placeholder="Introduce tu nombre" id="name">
             </div>
 
             <div class="form-group">
-                <label>Password:</label>
-                <input type="text" class="form-control" placeholder="Introduce tus apellidos" id="lastname" >
+
+                <input type="text" class="form-control" placeholder="Introduce tus apellidos" id="lastname">
             </div>
 
             <div class="form-group">
-                <label >Nick para la página:</label>
-                <input type="text" class="form-control" placeholder="Introduce tu nombre que verán los demás usuarios" id="nick">
+
+                <input type="text" class="form-control" placeholder="Introduce tu nombre que verán los demás usuarios"
+                    id="nick">
             </div>
 
             <div class="form-group">
-                <label >Email:</label>
+
                 <input type="email" class="form-control" placeholder="Introduce tu email" id="mail">
             </div>
 
             <div class="form-group">
-                <label >Fecha de nacimiento:</label>
+
                 <input type="date" class="form-control" id="date">
             </div>
 
             <div class="form-group">
-                <label for="pass">Contraseña:</label>
+
                 <input type="password" class="form-control" placeholder="Introduce tu contraseña" id="pass">
             </div>
 
             <div class="form-group">
-                <label for="pass2">Confirma tu contraseña:</label>
+
                 <input type="password" class="form-control" placeholder="Confirma tu contraseña" id="pass2">
             </div>
 
-            <div class="form-check-inline">
-                <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input" value="">Acepto términos y condiciones de uso de Pochadia Site:
+            <div class="form-check-inline text-dark">
+
+                <input type="checkbox" class="form-check-input" value="">Acepto términos y condiciones de uso de
+                Pochadia Site.
                 </label>
             </div><br>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-warning mt-3 mb-1 container">Enviar</button>
         </form>
     </div>
+    <footer class="container pl-4">
+        <div class="container pt-4 mt-5 col-sm">
+            <div class="container-fluid d-flex justify-content-center ml-3">
+                <div class="mr-3">
+                    <p class="ml-2">Contacto</p>
+                    <div class="container d-flex justify-content-center">
+                        <div>
+                            <div class="row">
+                                <div class="col-sm"><a href="#">Ayuda</a></div>
+                            </div>
+                            <div class="row">
+                                <a href="#" class="col-sm">Sobre nosotros </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mr-3">
+                    <p class="col-sm d-flex justify-content-center">Siguenos</p>
+                    <div class="container col-sm">
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div class="row-sm d-flex justify-content-center">
+                                    <div class="col-sm p-1"><i><a href="#"><img src="img\facebook.png" alt="facebook"
+                                                    width="30vh"></a></i></div>
+                                    <div class="col-sm p-1"><i><a href="#"><img src="img\twitter.png" alt="twitter"
+                                                    width="30vh"></a></i></div>
+                                    <div class="col-sm p-1"><i><a href="#"><img src="img\instagram.png" alt="instagram"
+                                                    width="30vh"></a></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
 </html>
