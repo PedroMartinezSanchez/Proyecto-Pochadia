@@ -8,43 +8,54 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="icon" type="image/png" href="img\icon-mini.png" style="width: 32px; height: 32px;"/>
-    <title>Login</title>
+    <link rel="icon" type="image/png" href="img\icon-mini.png" style="width: 32px; height: 32px;" />
+    <title>Recuperar contraseña</title>
     <style>
         .campolog {
             width: 350px;
         }
-        body{
+
+        body {
             background: url(img/background.png);
         }
     </style>
 </head>
+
 <body>
     <article class="pt-2">
         <div class="container d-flex justify-content-center">
             <img src="img/icon.png" alt="icon_pochadia" width="250" height="230">
         </div>
-        <div class="container bg-white p-1" style="width: 50vh; height: 55vh; border-radius: 8px;">
+        <div class="container bg-white p-1" style="width: 50vh; height: 40vh; border-radius: 8px;">
             <div class="container d-flex justify-content-center mt-5">
-                
-                <form action="/action_page.php" class="campolog">
-                    <h3 class="text-center text-dark mb-4">Inicia Sesión</h3>
+
+                <form action="#" class="campolog">
+                    <h3 class="text-center text-dark mb-4">Recuperar contraseña</h3>
                     <div class="form-group">
                         <input type="email" class="form-control mb-4" id="email" placeholder="Introduce tu e-mail"
                             name="email">
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control mb-4" id="pwd" placeholder="Introduce tu contraseña"
-                            name="pswd">
+                    <button type="submit" class="btn btn-warning text-dark container" data-toggle="modal"
+                        data-target="#Recuperacion">Enviar</button>
+
+                    <div class="modal fade" id="Recuperacion">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Correo enviado</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <p>Si la cuenta de correo consta en nuestra base de datos se le enviará un correo
+                                        para poder recuperar
+                                        su contraseña. Por favor revise su correo.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group form-check">
-                        <label class="form-check-label mb-3 text-dark">
-                            <input class="form-check-input" type="checkbox" name="remember"> Recordar usuario
-                        </label>
-                        
-                    </div>
-                    <button type="submit" class="btn btn-warning text-dark container">Enviar</button>
-                    <a href="olvido_contraseña.html" class="d-flex text-center justify-content-center">¿Has olvidado tu contraseña?</a> 
+
                 </form>
             </div>
         </div>
@@ -86,4 +97,5 @@
         </div>
     </footer>
 </body>
+
 </html>
