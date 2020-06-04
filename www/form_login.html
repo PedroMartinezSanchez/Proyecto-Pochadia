@@ -15,42 +15,33 @@
             width: 350px;
         }
         body{
-            background: url(img/background.png);
+            background-image: url("/img/background.png");
         }
+        
     </style>
 </head>
 <body>
-    <article class="pt-2">
+    <article class="pt-2 container-fluid">
         <div class="container d-flex justify-content-center">
-            <img src="img/icon.png" alt="icon_pochadia" width="250" height="230">
+            <img src="img/icon.png" alt="icon_pochadia" style="width: 20vh; height: 20vh;">
         </div>
-        <div class="container bg-white p-1" style="width: 50vh; height: 55vh; border-radius: 8px;">
-            <div class="container d-flex justify-content-center mt-5">
-                
-                <form action="/action_page.php" class="campolog">
-                    <h3 class="text-center text-dark mb-4">Inicia Sesión</h3>
-                    <div class="form-group">
-                        <input type="email" class="form-control mb-4" id="email" placeholder="Introduce tu e-mail"
-                            name="email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control mb-4" id="pwd" placeholder="Introduce tu contraseña"
-                            name="pswd">
-                    </div>
-                    <div class="form-group form-check">
-                        <label class="form-check-label mb-3 text-dark">
-                            <input class="form-check-input" type="checkbox" name="remember"> Recordar usuario
-                        </label>
-                        
-                    </div>
-                    <button type="submit" class="btn btn-warning text-dark container">Enviar</button>
-                    <a href="olvido_contraseña.html" class="d-flex text-center justify-content-center">¿Has olvidado tu contraseña?</a> 
-                </form>
-            </div>
-        </div>
+            <form action="/action_page.php" class="campolog bg-white p-3 container" style="width: 45vh; height: 50vh; border-radius: 8px;">
+                <h3 class="text-center text-dark mb-4">Inicia Sesión</h3>
+                <div class="form-group">
+                    <input type="email" class="form-control input-sm mb-4" id="email" placeholder="Introduce tu e-mail"
+                        name="email">
+                    <input type="password" class="form-control input-sm mb-2" id="pwd" placeholder="Introduce tu contraseña"
+                        name="pswd">
+                    <label class="form-check-label col-sm text-dark pl-4">
+                        <input class="form-check-input input-sm" type="checkbox" name="remember"> Recordar usuario
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-warning font-weight-bold text-dark container justify-content-center d-flex" style="width: 50%;">Enviar</button>
+                <a href="olvido_contraseña.html" class="d-flex text-center justify-content-center">¿Has olvidado tu contraseña?</a>
+            </form>       
     </article>
-    <footer class="container pl-4">
-        <div class="container pt-3 mt-5 col-sm">
+    <footer class="page-footer fixed-bottom">
+        <div class="container pr-0 pl-0">
             <div class="container-fluid d-flex justify-content-center ml-3">
                 <div class="mr-3">
                     <p class="ml-2">Contacto</p>
@@ -71,11 +62,11 @@
                         <div class="d-flex justify-content-center">
                             <div class="d-flex justify-content-center">
                                 <div class="row-sm d-flex justify-content-center">
-                                    <div class="col-sm p-1"><i><a href="#"><img src="img\facebook.png" alt="facebook"
+                                    <div class="col-sm p-1"><i><a href="#"><img src="img/facebook.png" alt="facebook"
                                                     width="30vh"></a></i></div>
-                                    <div class="col-sm p-1"><i><a href="#"><img src="img\twitter.png" alt="twitter"
+                                    <div class="col-sm p-1"><i><a href="#"><img src="img/twitter.png" alt="twitter"
                                                     width="30vh"></a></i></div>
-                                    <div class="col-sm p-1"><i><a href="#"><img src="img\instagram.png" alt="instagram"
+                                    <div class="col-sm p-1"><i><a href="#"><img src="img/instagram.png" alt="instagram"
                                                     width="30vh"></a></i></div>
                                 </div>
                             </div>
@@ -84,6 +75,11 @@
                 </div>
             </div>
         </div>
+        <!-- Copyright -->
+        <div class="footer-copyright text-center pb-2 pt-2">© 2020 Copyright:
+            <a href="#"> Pochadia.com</a>
+        </div>
+        <!-- Copyright -->
     </footer>
 </body>
 </html>
