@@ -1,1 +1,5 @@
+//Crear BBDD//
 CREATE DATABASE pochadia CHARACTER SET 'UTF8' COLLATE 'utf8_general_ci';
+
+//Ejemplo de añadir tiempo al campo de genero del usuario//
+SELECT addtime('00:30:00',accion) as suma from usuario_genero_horas;
