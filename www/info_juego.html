@@ -11,67 +11,74 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <title>Cabecera</title>
+    <style>
+      th {background-color:lightsalmon;}
+      tr:nth-child(even) {background-color: rgb(53, 49, 49);}
+    </style>
   </head>
   <body>
 
     <!--HEADER-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="#" class="mr-4">
-        <img src="img/icon.png" width="100px;">
-        </a>
+     <!--HEADER-->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a href="#" class="mr-4">
+      <img src="img/icon.png" alt="logo" width="100">
+      </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarColor02">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link pl-3 mr-4" href="#">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link pl-3" href="#">Premium</a>
-            </li>
-          </ul>
-
-          <form class="form-inline my-2 my-lg-0 pl-3">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link pl-3 mr-4" href="#">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pl-3" href="#">Premium</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0 pl-3">
+          
+          <div class="container">
             <input class="form-control mr-sm-2" type="text" placeholder="Search">
             <button class="btn btn-secondary my-2 my-sm-0 mr-3" type="submit">Search</button>
-
             <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    <a href="#">
-                        <img src="img/icon2.png" width="50px;">
-                    </a>                
-                </button>
-                
-                <div class="dropdown-menu dropdown-menu-right">
-                    <div class="container">
-
-                        <div class="card" style="width:400px">
-                          <img class="card-img-top" src="img/icon2.png" alt="Card image" style="width:50%">
-                          <div class="card-body">
-                            <a href="#" class="btn btn-primary">Ajustes</a><br>
-                            <a href="FAQ.html" class="btn btn-primary">Ayuda</a><br>
-                            <a href="#" class="btn btn-primary">Cerrar Sesión</a><br>
+              <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img src="img/icon2.png" alt="icono_usuario" width="50"></a>
+              <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
+                  <div class="container p-0">
+                    <div class="card container d-flex justify-content-center p-0">
+                      <img class="card-img-top mt-4" src="img/icon2.png" alt="Card image" style="width:40%">
+                      <div class="card-body pb-1">
+                        <h4 class="card-title" style="font-size: 100%;">#Usuario</h4>
+                        <a href="#" class="btn btn-warning mt-2 col-sm container justify-content-center" style="width: 100%;">Ajustes</a>
+                        <a href="FAQ.html" class="btn btn-warning mt-2 col-sm container justify-content-center" style="width: 100%;">Ayuda</a>
+                        <a href="#" class="btn btn-warning mt-2 col-sm container" style="width: 100%; height: 500%;">Cerrar sesión</a>
+                      </div>
+                      <div class="row container pl-0 pr-0 pb-3 pt-3" style="font-size: 1vh;">
+                          <div class="col-sm d-flex justify-content-center">
+                            <a href="#">Politicas de privacidad</a>
                           </div>
-                        </div>
-
-                        <br>
+                          <div class="col-sm d-flex justify-content-center">
+                            <a href="#">Términos del servicio</a>
+                          </div>
+                      </div>
                     </div>
-                </div>
+                  </div>
               </div>
-          </form>
-          
-        </div>
-      </nav>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
     <!--END HEADER-->
 
     <!-- JUMBOTRON -->
     <div class="container" style="text-align: center;">
         <div class="jumbotron mt-5">
           <h1>Final Fantasy 3</h1>
-          <h4>La oscuridad amenaza con cubrir el mundo, pero 4 huerfanos elegidos por los cristales lucharán por evitarlo.</h4>     
+          <h4>La oscuridad amenaza con cubrir el mundo, pero 4 elegidos por los cristales lucharán por evitarlo.</h4>     
         </div>     
       </div>
     <!-- END JUMBOTRON -->
@@ -129,45 +136,162 @@
         </div>
       </div>
     <!-- END JUMBOTRON2 -->
+    <!--Tabla DETALLES-->
+    <div class="container" style="text-align: center;">
+      <h2>Detalles del Juego</h2>
+      <table class="table table-hover" style="text-align: center;">
+        <thead>
+          <tr>
+            <th>Final Fantasy 3 </th>
+            <th>Original Game</th>
+          </tr>
+          <tr>
+            <td>Fecha de Lanzamiento</td>
+            <td>27 de abril de 1990</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Desarrolladora</td>
+            <td>Square Enix</td>
+          </tr>
+          <tr>
+            <td>Idiomas</td>
+            <td>English, Spanish, Japanese</td>
+          </tr>
+          <tr>
+            <td>Paises</td>
+            <td>Spain, Japan, England, EEUU</td>
+          </tr>
+          <tr>
+            <td>Genero</td>
+            <td>Aventura, Rol</td>
+          </tr>
+          <tr>
+            <td>Modos de Juego</td>
+            <td>Un Jugador</td>
+          </tr>
+          <tr>
+            <td>Entradas compatibles</td>
+            <td>Teclado y ratón, Mando</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--END Tabla DETALLES-->
 
-
-    <!--FOOTER-->
-    <footer class="container pt-5 pl-4" style="margin-top: 150px;">
-        <div class="container pt-5 mt-3 col-sm">
-            <div class="container-fluid d-flex justify-content-center ml-3">
-                <div class="mr-3">
-                    <p class="ml-2">Contacto</p>
-                    <div class="container d-flex justify-content-center">
-                        <div>
-                            <div class="row">
-                                <div class="col-sm"><a href="FAQ.html">Ayuda</a></div>
-                            </div>
-                            <div class="row">
-                                <a href="#" class="col-sm">Sobre nosotros </a>
-                            </div>
-                        </div>
+    <!--PEGI-->
+    <div class="container pl-3">
+    <img src="https://pegi.info/sites/default/files/inline-images/age-12-black.jpg" style="width: 90px;;" alt="imagen">
+    <img src="https://pegi.info/sites/default/files/inline-images/violence-black-EN.jpg" style="width: 100px;" alt="imagenn">
+    </div>
+    <!--END PEGI-->
+      <!--COMENTARIOS-->
+      <div class="container">
+        <h2 class="text-center">Comentarios</h2>
+        
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                        <p class="text-secondary text-center">15 Minutes Ago</p>
                     </div>
-                </div>
-                <div class="mr-3">
-                    <p class="col-sm d-flex justify-content-center">Siguenos</p>
-                    <div class="container col-sm">
-                        <div class="d-flex justify-content-center">
-                            <div class="d-flex justify-content-center">
-                                <div class="row-sm d-flex justify-content-center">
-                                    <div class="col-sm p-1"><i><a href="#"><img src="img/facebook.png" alt="facebook"
-                                                    width="30"></a></i></div>
-                                    <div class="col-sm p-1"><i><a href="#"><img src="img/twitter.png" alt="twitter"
-                                                    width="30"></a></i></div>
-                                    <div class="col-sm p-1"><i><a href="#"><img src="img/instagram.png" alt="instagram"
-                                                    width="30"></a></i></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-10">
+                        <p>
+                            <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman Akash</strong></a>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                       </p>
+                       <div class="clearfix"></div>
+                        <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, 
+                          remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
+                          containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
+                          including versions of Lorem Ipsum.</p>
+                        <p>
+                            <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>
+                            <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                       </p>
                     </div>
-                </div>   
+                </div>     
             </div>
         </div>
-    </footer>
+
+        <div class="card">
+          <div class="card-body">
+              <div class="row">
+                  <div class="col-md-2">
+                      <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                      <p class="text-secondary text-center">15 Minutes Ago</p>
+                  </div>
+                  <div class="col-md-10">
+                      <p>
+                          <a class="float-left" href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman Akash</strong></a>
+                          <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                          <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                          <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                          <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                     </p>
+                     <div class="clearfix"></div>
+                      <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, 
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
+                        containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
+                        including versions of Lorem Ipsum.</p>
+                      <p>
+                          <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>
+                          <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                     </p>
+                  </div>
+              </div>     
+          </div>
+      </div>
+    </div>
+
+      <!--END COMENTARIOS-->
+    <!--FOOTER-->
+    <footer class="page-footer">
+      <div class="container pt-3 col-sm">
+          <div class="container-fluid d-flex justify-content-center">
+              <div class="mr-3">
+                  <p class="ml-2">Contacto</p>
+                  <div class="container d-flex justify-content-center">
+                      <div>
+                          <div class="row">
+                              <div class="col-sm"><a href="FAQ.html">Ayuda</a></div>
+                          </div>
+                          <div class="row">
+                              <a href="#" class="col-sm">Sobre nosotros </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="mr-3">
+                  <p class="col-sm d-flex justify-content-center">Siguenos</p>
+                  <div class="container col-sm">
+                      <div class="d-flex justify-content-center">
+                          <div class="d-flex justify-content-center">
+                              <div class="row-sm d-flex justify-content-center">
+                                  <div class="col-sm p-1"><i><a href="#"><img src="img/facebook.png" alt="facebook"
+                                                  width="30"></a></i></div>
+                                  <div class="col-sm p-1"><i><a href="#"><img src="img/twitter.png" alt="twitter"
+                                                  width="30"></a></i></div>
+                                  <div class="col-sm p-1"><i><a href="#"><img src="img/instagram.png" alt="instagram"
+                                                  width="30"></a></i></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+          <a href="#"> Pochadia.com</a>
+      </div>
+      <!-- Copyright -->
+  </footer>
     <!--END FOOTER-->
   </body>
 </html>
