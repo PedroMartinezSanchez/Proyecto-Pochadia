@@ -1,0 +1,36 @@
+{
+    "juegos": [
+        {
+            "titulo": "Final Fantasy 3",
+            "autor": "Original Game",
+            "anyo_lanzamiento": 1990,
+            "franquicia": "Square Enix",
+            "idiomas": "Inglés, Español, Japones",
+            "multijugador": "Un jugador"
+        },
+        {
+            "titulo": "Assassins Creed Odyssey",
+            "autor": "Ubisoft",
+            "anyo_lanzamiento": 2019,
+            "franquicia": "Assassins Creed",
+            "idiomas": "Inglés, francés, italiano, alemán, español, japonés, coreano, neerlandés",
+            "multijugador": "Un jugador"
+        },
+        {
+            "titulo": "Unravel Two",
+            "autor": "Coldwood Interactive",
+            "anyo_lanzamiento": 2019,
+            "franquicia": "EA Originals",
+            "idiomas": "Inglés, francés, italiano, alemán, español, japonés, coreano, neerlandés",
+            "multijugador": "Un jugador"
+        },
+        {
+            "titulo": "Satisfactory",
+            "autor": "Coffee Stain Studios",
+            "anyo_lanzamiento": 2020,
+            "franquicia": "Coffee Stain Studios",
+            "idiomas": "Inglés, francés, italiano, alemán, español, japonés, coreano, neerlandés",
+            "multijugador": "Un jugador"
+        }
+    ]
+}
