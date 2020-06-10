@@ -1,0 +1,20 @@
+{
+    "usuarios": [
+        {
+            "nombre": "Knekro58",
+            "img_perfil": "img/img_perfil/perfil_1.jpg"
+        },
+        {
+            "nombre": "Puchito",
+            "img_perfil": "img/img_perfil/perfil_2.jpg"
+        },
+        {
+            "nombre": "GranBanga",
+            "img_perfil": "img/img_perfil/perfil_3.jpg"
+        },
+        {
+            "nombre": "LuisitoGamer",
+            "img_perfil": "img/img_perfil/perfil_4.jpg"
+        }
+    ]
+}
