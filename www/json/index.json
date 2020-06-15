@@ -1,0 +1,18 @@
+{
+    "resultados": [
+        {
+            "nombre_usuario": "Knekro",
+            "img_perfil": "perfil_2.jpg"
+            
+        },
+        {
+            "juegos":[{
+                "img_index":"unravel_index.jpg",
+                "genero": ["accion","aventura","rol"],
+                "fecha_subida": "10/07/2020",
+                "tipo_suscriptor": "NORMAL",
+                "disponible": 1
+            }]
+        }
+    ]
+}
