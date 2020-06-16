@@ -4,13 +4,15 @@ CREATE TABLE usuario (
   contrasenya varchar(20) NOT NULL,
   fecha_nacimiento date NOT NULL,
   correo varchar(50) NOT NULL,
-  estado ENUM('Conectado','Ausente','Ocupado') NOT NULL,
-  imagen varchar(40), /*¿NOT NULL?*/ 
+  imagen varchar(40), /*¿NOT NULL?*/
+  img_banner varchar(40), 
   suscrito BIT NOT NULL,
+  fecha_alta_pre date,
+  fecha_vencimiento_pre date,
   PRIMARY KEY (id_usuario)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO usuario VALUES('00001','Pedro','1234','1994/10/11','correo@hotmail.com','Conectado','perfil.jpg',1);
+INSERT INTO usuario VALUES('00001','Pedro','1234','1994/10/11','correo@hotmail.com','perfil.jpg','banner_1.jpg',1,'2020/06/10','2020/09/10');
 
 CREATE TABLE juego (
   id_juego INT(5) NOT NULL,
@@ -25,15 +27,17 @@ CREATE TABLE juego (
   tipo_suscriptor ENUM('NORMAL','PREMIUM') NOT NULL,
   franquicia varchar(50) NOT NULL,
   idiomas varchar(500) NOT NULL,
+  descripcion_short varchar(500) NOT NULL,
+  descripcion_long varchar(900) NOT NULL,
   fecha_subida date NOT NULL,
-  imagen varchar(40) NOT NULL,
+  imagen_index varchar(400) NOT NULL,
   disponible BIT NOT NULL, 
   multijugador ENUM('NO','LOCAL','EN LINEA') NOT NULL,
   num_jugadores INT(3) NOT NULL,
   PRIMARY KEY (id_juego)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO juego VALUES('00001','12','5','34','0','2','Assassins Creed Odyssey','Ubisoft',2019,'NORMAL','Assassins Creed','Inglés, francés, italiano, alemán, español, japonés, coreano, neerlandés, polaco, portugués, ruso, chino (simplificado), chino (tradicional)','2020/06/02','Assassins_Creed_Odyssey.jpg',1,'NO',1);
+INSERT INTO juego VALUES('00001','12','5','34','0','2','Assassins Creed Odyssey','Ubisoft',2019,'NORMAL','Assassins Creed','Inglés, francés, italiano, alemán, español, japonés, coreano, neerlandés, polaco, portugués, ruso, chino (simplificado), chino (tradicional)','Descripción corta','Descripción larga','2020/06/02','Assassins_Creed_Odyssey.jpg',1,'NO',1);
 
 CREATE TABLE comentario (
   id_comentario INT(5) NOT NULL,
@@ -50,6 +54,19 @@ CREATE TABLE comentario (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO comentario VALUES('00001','00001',32,10,'2020/05/02 12:32','Mi opinión sobre Assassins Creed Odyssey','Es un juego muy entretenido, con mucho contenido y muchas horas de entretenimiento. La verdad es que al principio es un poco aburrido, todo hay que decirlo, pero poco a poco te va metiendo en la historia, en la trama. Tiene muchas cosas para hacer, por ejemplo (Sin hacer spoilers) hay un sistema de mercenarios, asi como una clasificación, es entretenido y te incita a ser el numero 1. Graficamente el juego es muy bonito y detallado.',1,'perfil.jpg');
+
+
+CREATE TABLE juego_carousel (
+   id_carousel INT(5) NOT NULL,
+   id_juego INT(5) NOT NULL,
+   img_1 varchar(600) NOT NULL,
+   img_2 varchar(600) NOT NULL,
+   img_3 varchar(600) NOT NULL,
+   PRIMARY KEY (id_carousel),
+   CONSTRAINT juego_carro FOREIGN KEY (id_juego) REFERENCES juego (id_juego)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO juego_carousel VALUES('00001','00001','Assassins_Creed_Odyssey_C1.jpg','Assassins_Creed_Odyssey_C2.jpg','Assassins_Creed_Odyssey_C3.jpg');
 
 CREATE TABLE info_usuario_juego (
    id_info INT(10) NOT NULL,
