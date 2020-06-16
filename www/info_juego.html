@@ -191,35 +191,81 @@
     <img src="https://pegi.info/sites/default/files/inline-images/violence-black-EN.jpg" style="width: 100px;" alt="imagenn">
     </div>
     <!--END PEGI-->
+
       <!--COMENTARIOS-->
+      
+      <!--CABECERA COMENTARIOS-->
       <div class="container">
+        <div class="card m-3">
         <h2 class="text-center">Comentarios</h2>
-        
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-2">
-                        <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
-                        <p class="text-center"> <small> 15 Minutes Ago</small> </p>
-                    </div>
-                    <div class="col-md-10">
-                       <div class="clearfix"></div>
-                        <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, 
-                          remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
-                          containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
-                          including versions of Lorem Ipsum.</p>
-                        <p>
-                            <a class="float-right btn btn-warning ml-2"> <i class="fa fa-reply"></i> Responder</a> <!-- ICONOS LIKE Y DISLIKE -->
-                            <a class="float-right btn text-white btn btn-danger ml-2"> No me Gusta <span class="badge">37</span></a>
-                            <a class="float-right btn text-white btn btn-success"> Me Gusta <span class="badge">3587</span></a>
-                       </p>
-                    </div>
-                </div>     
+          <form>
+
+            <label style="color: orange;" class="d-flex justify-content-center">Introduce una Cabecera</label>
+            <div class="form-group d-flex justify-content-center">
+              <input type="text" class="form-control w-25" id="cabeceraComentarios">
             </div>
+
+            <label style="color: orange;" class="d-flex justify-content-center">Opina sobre este Juego:</label>
+            <div class="form-group d-flex justify-content-center">
+              <textarea class="form-control w-75 " id="textarea" rows="3"></textarea>
+            </div>
+
+            <div class="form-group d-flex justify-content-center">
+              <a class="btn btn-warning w-25"> <i class="fa fa-reply"></i> Responder</a>
+            </div>
+          </form>
         </div>
+      </div>
+
+        <!--END CABECERA PARA METER COMENTARIOS-->
+        <div class="container">
+          <div class="card">
+              <div class="card-body">
+                <h4 style="color: orange;" id="cabecera">Buen Juego, muy entretenido y difícil
+                  <i class="fas fa-thumbs-up"style="color: cornflowerblue; float:right;" id="recomended"> Recomendado</i>
+                </h4>
+                  <div class="row">
+                      <div class="col-md-2">
+                          <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                          <p class="text-center"> <small> 15 Minutes Ago</small> </p>
+                      </div>
+                      <div class="col-md-10">
+                        <div class="clearfix"></div>
+                          <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, 
+                            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
+                            containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
+                            including versions of Lorem Ipsum.</p>
+                          <p>
+                          <a class="float-right btn btn-warning ml-2" onclick="if($('#respond').css('display')=='none'){$('#respond').show()}else{$('#respond').hide()}"> <i class="fa fa-reply"></i> Responder</a> <!-- ICONOS LIKE Y DISLIKE -->
+                            <a class="float-right btn text-white btn btn-danger ml-2"> No me Gusta <span class="badge">37</span></a>
+                              <a class="float-right btn text-white btn btn-success"> Me Gusta <span class="badge">3587</span></a>
+                        </p>
+                      </div>
+                  </div>     
+              </div>
+              <!--OCULTO EL RESPONDER-->
+              <div class="container" style="display:none" id="respond">
+                <div class="card m-3">
+                  <form>
+                    <label style="color: orange;" class="d-flex justify-content-center">Responde al Jugador:</label>
+                    <div class="form-group d-flex justify-content-center">
+                      <textarea class="form-control w-75 " id="textarea" rows="3"></textarea>
+                    </div>
+        
+                    <div class="form-group d-flex justify-content-center">
+                      <a class="btn btn-warning w-25" onclick="$('#respond').hide()"> <i class="fa fa-reply"></i> Responder</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+          </div>
+        <!--END OCULTO EL RESPONDER-->
 
         <div class="card">
           <div class="card-body">
+            <h4 style="color: orange;" id="cabecera">Buen Juego, muy entretenido y difícil
+              <i class="fas fa-thumbs-down"style="color: red; float:right;" id="recomended"> No Recomendado</i>
+            </h4>
               <div class="row">
                   <div class="col-md-2">
                       <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
@@ -241,7 +287,7 @@
           </div>
       </div>
     </div>
-
+  </div>
       <!--END COMENTARIOS-->
     <!--FOOTER-->
     <footer class="page-footer">
