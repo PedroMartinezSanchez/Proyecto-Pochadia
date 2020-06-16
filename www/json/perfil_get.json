@@ -1,0 +1,42 @@
+{
+    "resultados": [
+        {
+            "nombre": "pepe",
+            "img_usuario": "pepe.png",
+            "fecha_de_nacimiento": "2/2/1990",
+            "email": "pepe@pepe.com",
+            "img_banner": "pepe_banner.png",
+            "favoritos": {
+                "juegos": [
+                    {
+                        "nombre_juego": "unravel",
+                        "img_1": "unravel.png"
+                    },
+                    {
+                        "nombre_juego": "gta_v",
+                        "img_juego": "gta_v.png"
+                    }
+                ]
+            }
+        },
+        {
+            "nombre": "pepa",
+            "img_usuario": "pepa.png",
+            "fecha_de_nacimiento": "2/2/1990",
+            "email": "pepa@pepa.com",
+            "img_banner": "pepa_banner.png",
+            "favoritos": {
+                "juegos": [
+                    {
+                        "nombre_juego": "unravel",
+                        "img_1": "unravel.png"
+                    },
+                    {
+                        "nombre_juego": "gta_v",
+                        "img_juego": "gta_v.png"
+                    }
+                ]
+            }
+        }
+    ]
+}
