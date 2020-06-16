@@ -1,0 +1,29 @@
+{
+    "resultados": [
+        {
+            "usuarios": [
+                {
+                    "nombre_usuario": "Knekro",
+                    "img_perfil": "perfil_2.jpg",
+                    "fecha_alta_pre": "20/07/2020",
+                    "fecha_vencimiento_pre": "20/10/2020"
+                }
+            ]
+        },
+        {
+            "juegos": [
+                {
+                    "img_index": "unravel_index.jpg",
+                    "genero": [
+                        "accion",
+                        "aventura",
+                        "rol"
+                    ],
+                    "fecha_subida": "10/07/2020",
+                    "tipo_suscriptor": "NORMAL",
+                    "disponible": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "resultados": [
+        {
+            "usuarios": [
+                {
+                    "email": "christiana.hellwig@example.com",
+                    "sha256_pass": "07123E1F482356C415F684407A3B8723E10B2CBBC0B8FCD6282C49D37C9C1ABC"
+                }
+            ]
+        }
+    ]
+}
