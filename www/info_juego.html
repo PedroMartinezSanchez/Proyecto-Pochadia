@@ -202,8 +202,16 @@
 
             <label style="color: orange;" class="d-flex justify-content-center">Introduce una Cabecera</label>
             <div class="form-group d-flex justify-content-center">
-              <input type="text" class="form-control w-25" id="cabeceraComentarios">
+              <input type="text" class="form-control w-50" id="cabeceraComentarios">
             </div>
+
+
+            <h6 class="text-center" style="color: orange;">¿Recomiendas este juego?</h6>
+
+            <h4 style="color: orange;" id="cabecera" class="mx-auto text-center">
+              <button class="btn btn-light"><i class="fas fa-thumbs-up"style="color: blue;" id="recomended"> Recomendado</i></button>
+              <button class="btn btn-light"><i class="fas fa-thumbs-down pl-2"style="color: red;" id="recomended"> No Recomendado</i></button>
+            </h4>
 
             <label style="color: orange;" class="d-flex justify-content-center">Opina sobre este Juego:</label>
             <div class="form-group d-flex justify-content-center">
@@ -211,7 +219,7 @@
             </div>
 
             <div class="form-group d-flex justify-content-center">
-              <a class="btn btn-warning w-25"> <i class="fa fa-reply"></i> Responder</a>
+              <a class="btn btn-warning w-50"> <i class="fa fa-reply"></i> Responder</a>
             </div>
           </form>
         </div>
@@ -219,10 +227,9 @@
 
         <!--END CABECERA PARA METER COMENTARIOS-->
         <div class="container">
-          <div class="card">
+          <div class="card m-3">
               <div class="card-body">
                 <h4 style="color: orange;" id="cabecera">Buen Juego, muy entretenido y difícil
-                  <i class="fas fa-thumbs-up"style="color: cornflowerblue; float:right;" id="recomended"> Recomendado</i>
                 </h4>
                   <div class="row">
                       <div class="col-md-2">
@@ -231,6 +238,7 @@
                       </div>
                       <div class="col-md-10">
                         <div class="clearfix"></div>
+                          <h5><i class="fas fa-thumbs-up"style="color: cornflowerblue; float:right;" id="recomended"> Recomendado</i></h5><br>
                           <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, 
                             remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
                             containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
@@ -245,7 +253,7 @@
               </div>
               <!--OCULTO EL RESPONDER-->
               <div class="container" style="display:none" id="respond">
-                <div class="card m-3">
+                <div class="card m-3" style="background-color:dimgrey;">
                   <form>
                     <label style="color: orange;" class="d-flex justify-content-center">Responde al Jugador:</label>
                     <div class="form-group d-flex justify-content-center">
@@ -253,7 +261,7 @@
                     </div>
         
                     <div class="form-group d-flex justify-content-center">
-                      <a class="btn btn-warning w-25" onclick="$('#respond').hide()"> <i class="fa fa-reply"></i> Responder</a>
+                      <a class="btn btn-warning w-50" onclick="$('#respond').hide()"> <i class="fa fa-reply"></i> Responder</a>
                     </div>
                   </form>
                 </div>
@@ -261,10 +269,9 @@
           </div>
         <!--END OCULTO EL RESPONDER-->
 
-        <div class="card">
+        <div class="card m-3">
           <div class="card-body">
             <h4 style="color: orange;" id="cabecera">Buen Juego, muy entretenido y difícil
-              <i class="fas fa-thumbs-down"style="color: red; float:right;" id="recomended"> No Recomendado</i>
             </h4>
               <div class="row">
                   <div class="col-md-2">
@@ -273,6 +280,7 @@
                     </div>
                   <div class="col-md-10">
                      <div class="clearfix"></div>
+                     <h5><i class="fas fa-thumbs-down"style="color: red; float:right;" id="recomended"> No Recomendado</i></h5><br>
                       <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, 
                         remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
                         containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
