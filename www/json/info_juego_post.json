@@ -1,0 +1,17 @@
+{
+    "resultados": [
+        {
+            "juegos": {
+                "puntuacion": 1
+            },
+            "comentarios": {
+                "cabecera": "La cabesera xdxdxd",
+                "recomendado": 1,
+                "texto": "comentario 1 xd",
+                "hora_fecha":"2020/06/17 17:10",
+                "votos_positivos":0,
+                "votos_negativos":0
+            }
+        }
+    ]
+}
