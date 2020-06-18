@@ -1,7 +1,7 @@
 /*Juego mejor puntuado*/
 CREATE VIEW juego_mejor_puntuado
 AS
-SELECT juego.id_juego, (puntuacion_1_S*1)+(puntuacion_2_S*2)+(puntuacion_3_S*3)+(puntuacion_4_S*4)+(puntuacion_5_S*5) as puntuacion FROM pochadia.juego
+SELECT juego.id_juego, (puntuacion_4_S*4)+(puntuacion_5_S*5) as puntuacion FROM pochadia.juego
 order by puntuacion DESC;
 
 /*Juego más jugado*/
