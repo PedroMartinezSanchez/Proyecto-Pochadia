@@ -1,11 +1,5 @@
 {
-    "resultados": [
-        {
-            "usuarios": [
-                {
-                    "email": "christiana.hellwig@example.com"
-                }
-            ]
-        }
-    ]
+    "resultados": {
+        "email": "christiana.hellwig@example.com"
+    }
 }
