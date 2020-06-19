@@ -38,10 +38,10 @@
                 },
             "comentarios": [
                 {
-                    "id_comentario": "01",
+                    "id_comentario": 1,
                     "nombre_usuario": "Joseba",
                     "num_like": 23,
-                    "img_comentario": "img_perfil/perfil_3.jpg",
+                    "img_comentario": "img/img_perfil/perfil_3.jpg",
                     "num_dislike": 250,
                     "cabecera": "Mi opinión sobre este juegazo",
                     "texto": "Pues resulta que...",
@@ -51,7 +51,28 @@
                         {
                             "nombre_usuario": "Juanlu",
                             "num_like": 2,
-                            "img_comentario": "perfil_156.jpg",
+                            "img_comentario": "img/img_perfil/perfil_1.jpg",
+                            "num_dislike": 3,
+                            "texto": "Pues resulta que...",
+                            "hora_fecha": "10/07/2020 16:26"
+                        }
+                    ]
+                },
+                {
+                    "id_comentario": 2,
+                    "nombre_usuario": "Joseba",
+                    "num_like": 223,
+                    "img_comentario": "img/img_perfil/perfil_3.jpg",
+                    "num_dislike": 2250,
+                    "cabecera": "Mi opinión sobre este juegazo",
+                    "texto": "Pues resulta que...",
+                    "recomendado": 1,
+                    "hora_fecha": "10/07/2020 16:26",
+                    "respuestas": [
+                        {
+                            "nombre_usuario": "Juanlu",
+                            "num_like": 2,
+                            "img_comentario": "img/img_perfil/perfil_1.jpg",
                             "num_dislike": 3,
                             "texto": "Pues resulta que...",
                             "hora_fecha": "10/07/2020 16:26"
