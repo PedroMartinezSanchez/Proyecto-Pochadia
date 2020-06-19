@@ -11,6 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="js/slick-1.8.1/slick/slick.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/controlador_index.js"></script>
     <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
     <title>Inicio</title>
     <style>
@@ -24,7 +26,7 @@
     </style>
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
     <!--HEADER-->
     <div class="row">
         <div class="col-sm bg-dark" style="width: 100%;">
@@ -59,7 +61,7 @@
                                                 style="width:40%">
                                             <div class="card-body pb-1">
                                                 <h4 class="card-title" style="font-size: 100%;">#Usuario</h4>
-                                                <a href="perfil.html"
+                                                <a href="perfil.html?id_usuario={{idUsuario}}"
                                                     class="btn btn-warning mt-2 col-sm container justify-content-center"
                                                     style="width: 100%;">Ajustes</a>
                                                 <a href="FAQ.html"
@@ -89,63 +91,23 @@
     <article class="pt-2 col-sm pr-5 pl-5">
         <div class="ml-3"><h4>Juegos nuevos</h4></div>
         <div class="center">
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1225560/header.jpg?t=1591282642"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/594570/header.jpg?t=1590682472"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/582010/header.jpg?t=1587600484"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1233570/header.jpg?t=1591331039"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1172620/header.jpg?t=1591292124"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/271590/header.jpg?t=1586539531"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
+            <div class="ml-3" ng-repeat="juego in resultados[1].juegos"><a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}"
+                        alt="{{juego.nombre_juego}}" style="width:100%; height:100%"></a></div>
         </div>
         <div class="ml-3 mt-4"><h4>Rol</h4></div>
         <div class="center">
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1225560/header.jpg?t=1591282642"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/594570/header.jpg?t=1590682472"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/582010/header.jpg?t=1587600484"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1233570/header.jpg?t=1591331039"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1172620/header.jpg?t=1591292124"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/271590/header.jpg?t=1586539531"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
+            <div class="ml-3" ng-if="juego.genero.includes('rol')" ng-repeat="juego in resultados[1].juegos"><a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}"
+                alt="{{juego.nombre_juego}}" style="width:100%; height:100%"></a></div>
         </div>
         <div class="ml-3 mt-4"><h4>Accion</h4></div>
         <div class="center">
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1225560/header.jpg?t=1591282642"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/594570/header.jpg?t=1590682472"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/582010/header.jpg?t=1587600484"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1233570/header.jpg?t=1591331039"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1172620/header.jpg?t=1591292124"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/271590/header.jpg?t=1586539531"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
+            <div class="ml-3" ng-if="juego.genero.includes('accion')" ng-repeat="juego in resultados[1].juegos"><a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}"
+                alt="{{juego.nombre_juego}}" style="width:100%; height:100%"></a></div>
         </div>
         <div class="ml-3 mt-4"><h4>RPG</h4></div>
         <div class="center">
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1225560/header.jpg?t=1591282642"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/594570/header.jpg?t=1590682472"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/582010/header.jpg?t=1587600484"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1233570/header.jpg?t=1591331039"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/1172620/header.jpg?t=1591292124"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
-            <div class="ml-3"><a href="/info_juego.html"><img src="https://steamcdn-a.akamaihd.net/steam/apps/271590/header.jpg?t=1586539531"
-                        alt="unravel" style="width:100%; height:100%"></a></div>
+            <div class="ml-3" ng-if="juego.genero.includes('rpg')" ng-repeat="juego in resultados[1].juegos"><a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}"
+                alt="{{juego.nombre_juego}}" style="width:100%; height:100%"></a></div>
         </div>
     </article>
     <footer class="page-footer">

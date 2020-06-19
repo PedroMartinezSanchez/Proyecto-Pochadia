@@ -10,15 +10,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+    <script src="js/controlador_info_juego.js"></script>
     <title>Juego</title>
     <style>
       th {background-color:orange;}
       tr:nth-child(even) {background-color: rgb(53, 49, 49);}
     </style>
   </head>
-  <body>
+  <body ng-app="myApp" ng-controller="myCtrl">
 
     <!--HEADER-->
      <!--HEADER-->
@@ -79,7 +81,7 @@
     <!-- JUMBOTRON -->
     <div class="container" style="text-align: center;">
       <div class="jumbotron mt-5">
-        <h1 style="color: orange;">Final Fantasy 3</h1>
+        <h1 style="color: orange;">{{resultados[1].juegos.titulo}}</h1>
         <h4>La oscuridad amenaza con cubrir el mundo, pero 4 elegidos por los cristales lucharán por evitarlo.</h4> 
       </div>     
     </div>
@@ -227,13 +229,13 @@
 
         <!--END CABECERA PARA METER COMENTARIOS-->
         <div class="container">
-          <div class="card m-3">
+          <div class="card m-3" ng-repeat="comentarios in resultados[1].comentarios">
               <div class="card-body">
-                <h4 style="color: orange;" id="cabecera">Buen Juego, muy entretenido y difícil
+                <h4 style="color: orange;" id="cabecera">{{comentarios.cabecera}}
                 </h4>
                   <div class="row">
                       <div class="col-md-2">
-                          <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                          <img ng-src="{{comentarios.img_comentarios}}" class="img img-rounded img-fluid"/>
                           <p class="text-center"> <small> 15 Minutes Ago</small> </p>
                       </div>
                       <div class="col-md-10">
@@ -268,32 +270,6 @@
               </div>
           </div>
         <!--END OCULTO EL RESPONDER-->
-
-        <div class="card m-3">
-          <div class="card-body">
-            <h4 style="color: orange;" id="cabecera">Buen Juego, muy entretenido y difícil
-            </h4>
-              <div class="row">
-                  <div class="col-md-2">
-                      <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
-                      <p class="text-center"> <small> 1 Year Ago</small> </p>
-                    </div>
-                  <div class="col-md-10">
-                     <div class="clearfix"></div>
-                     <h5><i class="fas fa-thumbs-down text-danger"style="float:right;" id="recomended"> No Recomendado</i></h5><br>
-                      <p>Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting, 
-                        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
-                        containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
-                        including versions of Lorem Ipsum.</p>
-                      <p>
-                        <a class="float-right btn btn-warning ml-2"> <i class="fa fa-reply"></i> Responder</a> <!-- ICONOS LIKE Y DISLIKE -->
-                        <a class="float-right btn text-white btn btn-danger ml-2"> No me Gusta <span class="badge">37</span></a>
-                        <a class="float-right btn text-white btn btn-success"> Me Gusta <span class="badge">3587</span></a>
-                     </p>
-                  </div>
-              </div>     
-          </div>
-      </div>
     </div>
   </div>
       <!--END COMENTARIOS-->
