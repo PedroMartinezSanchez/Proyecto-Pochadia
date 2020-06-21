@@ -1,12 +1,20 @@
-/*Juego mejor puntuado*/
+/*Juego mejor puntuado (solo 3,4,5 estrellas)*/
 CREATE VIEW juego_mejor_puntuado
 AS
-SELECT juego.id_juego, (puntuacion_4_S*4)+(puntuacion_5_S*5) as puntuacion FROM pochadia.juego
+SELECT juego.id_juego, (puntuacion_3_S*3)+(puntuacion_4_S*4)+(puntuacion_5_S*5)/
+(puntuacion_3_S)+(puntuacion_4_S)+(puntuacion_5_S) 
+as puntuacion
+FROM pochadia.juego
 order by puntuacion DESC;
 
-/*Juego más jugado*/
-CREATE VIEW juego_mas_jugado
+/*Tiempo que ha jugado cada usuario a cada genero*/
+CREATE VIEW tiempo_genero_usuario
 AS
-SELECT id_juego as mas_jugado, cast(sum(horas_juego_usuario) as time) as tiempo_total FROM pochadia.info_usuario_juego
-group by id_juego
-order by tiempo_total desc;
+SELECT id_usuario, horas_juego_usuario, info_usuario_juego.id_juego, genero.id_genero, nombre_genero FROM info_usuario_juego, juego_genero, genero
+WHERE info_usuario_juego.id_juego = juego_genero.id_juego AND juego_genero.id_genero = genero.id_genero
+group by nombre_genero;
+
+/*Genero más jugado de un usuario*/
+CREATE VIEW genero_mas_jugado
+AS
+SELECT id_usuario, max(horas_juego_usuario) as genero_mas_jugado, nombre_genero FROM pochadia.tiempo_genero_usuario;
