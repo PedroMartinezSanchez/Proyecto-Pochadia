@@ -27,73 +27,88 @@
 </head>
 
 <body ng-app="myApp" ng-controller="myCtrl">
-    <!--HEADER-->
-    <div class="row">
-        <div class="col-sm bg-dark" style="width: 100%;">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <a href="#" class="mr-4">
-                    <img src="img/icon.png" alt="logo" width="100">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
-                    aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarColor02">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link pl-3 mr-4" href="index.html">Inicio <span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link pl-3" href="info_premium.html">Premium</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0 pl-3">
-                        <div class="container">
-                            <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
-                            <button class="btn btn-secondary my-2 my-sm-0 mr-3" type="submit">Buscar</button>
-                            <div class="dropdown">
-                                <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img src="img/icon2.png"
-                                        alt="icono_usuario" width="50"></a>
-                                <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
-                                    <div class="container p-0">
-                                        <div class="card container d-flex justify-content-center p-0">
-                                            <img class="card-img-top mt-4" src="img/icon2.png" alt="Card image"
-                                                style="width:40%">
-                                            <div class="card-body pb-1">
-                                                <h4 class="card-title" style="font-size: 100%;">#Usuario</h4>
-                                                <a href="perfil.html?id_usuario={{idUsuario}}"
-                                                    class="btn btn-warning mt-2 col-sm container justify-content-center"
-                                                    style="width: 100%;">Ajustes</a>
-                                                <a href="FAQ.html"
-                                                    class="btn btn-warning mt-2 col-sm container justify-content-center"
-                                                    style="width: 100%;">Ayuda</a>
-                                                <a href="#" class="btn btn-warning mt-2 col-sm container"
-                                                    style="width: 100%; height: 500%;">Cerrar sesión</a>
-                                            </div>
-                                            <div class="row container pl-0 pr-0 pb-3 pt-3" style="font-size: 11px;">
-                                                <div class="col-sm d-flex justify-content-center">
-                                                    <a target="_blank" href="./politicas/politicas.pdf">Politicas de
-                                                        privacidad</a>
-                                                </div>
-                                                <div class="col-sm d-flex justify-content-center">
-                                                    <a href="#">Términos del servicio</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-            </nav>
+   <!--HEADER-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a href="#" class="mr-4">
+      <img src="img/icon.png" alt="logo" width="100">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+      aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link pl-3 mr-4" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pl-3" href="info_premium.html">Premium</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 pl-3">
+
+        <div class="container">
+          <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+          <button class="btn btn-secondary my-2 my-sm-0 mr-3" type="submit">Buscar</button>
+          <div class="dropdown">
+            <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img class="rounded-circle" src="{{resultados[0].img_perfil}}" alt="icono_usuario"
+                width="50"></a>
+            <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
+              <div class="container p-0">
+                <div class="card container d-flex justify-content-center p-0">
+                  <img class="card-img-top mt-4 rounded-circle" src="{{resultados[0].img_perfil}}" alt="Card image" style="width:40%">
+                  <div class="card-body pb-1">
+                    <h4 class="card-title text-center" style="font-size: 100%;">{{resultados[0].nombre_usuario}}</h4>
+                    <a href="perfil.html" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                      style="width: 100%;">Ajustes</a>
+                    <a href="FAQ.html" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                      style="width: 100%;">Ayuda</a>
+                    <a href="#" class="btn btn-warning mt-2 col-sm container" style="width: 100%; height: 500%;">Cerrar
+                      sesión</a>
+                  </div>
+                  <div class="row container pl-0 pr-0 pb-3 pt-3" style="font-size: 1vh;">
+                    <div class="col-sm d-flex justify-content-center">
+                      <a target="_blank" href="./politicas/politicas.pdf">Politicas de privacidad</a>
+                    </div>
+                    <div class="col-sm d-flex justify-content-center">
+                      <a href="#">Términos del servicio</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </form>
     </div>
-    <!--Termina header-->
+  </nav>
+  <!--END HEADER-->
     <article class="pt-2 col-sm pr-5 pl-5">
         <div class="ml-3"><h4>Juegos nuevos</h4></div>
         <div data="juegosNuevos.length" slick-slider="{{slickParams}}">
             <div class="ml-3" ng-repeat="juego in juegosNuevos">
+                <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}" style="width:100%; height:100%"></a>
+            </div>
+        </div>
+        
+        <div class="ml-3 mt-4"><h4>Accion</h4></div>
+        <div data="juegosAccion.length" slick-slider="{{slickParams}}">
+            <div class="ml-3" ng-repeat="juego in juegosAccion">
+                <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}" style="width:100%; height:100%"></a>
+            </div>
+        </div>
+        <div class="ml-3 mt-4"><h4>Aventura</h4></div>
+        <div data="juegosAventura.length" slick-slider="{{slickParams}}">
+            <div class="ml-3" ng-repeat="juego in juegosAventura">
+                <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}" style="width:100%; height:100%"></a>
+            </div>
+        </div>
+        <div class="ml-3 mt-4"><h4>Carreras</h4></div>
+        <div data="juegosCarreras.length" slick-slider="{{slickParams}}">
+            <div class="ml-3" ng-repeat="juego in juegosCarreras">
                 <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}" style="width:100%; height:100%"></a>
             </div>
         </div>
@@ -103,15 +118,39 @@
                 <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}" style="width:100%; height:100%"></a>
             </div>
         </div>
-        <div class="ml-3 mt-4"><h4>Accion</h4></div>
-        <div data="juegosAccion.length" slick-slider="{{slickParams}}">
-            <div class="ml-3" ng-repeat="juego in juegosAccion">
+        <div class="ml-3 mt-4"><h4>Casual</h4></div>
+        <div data="juegosCasual.length" slick-slider="{{slickParams}}">
+            <div class="ml-3" ng-repeat="juego in juegosCasual">
                 <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}" style="width:100%; height:100%"></a>
             </div>
         </div>
-        <div class="ml-3 mt-4"><h4>RPG</h4></div>
-        <div data="juegosRpg.length" slick-slider="{{slickParams}}">
-            <div class="ml-3" ng-repeat="juego in juegosRpg">
+        <div class="ml-3 mt-4"><h4>Simuladores</h4></div>
+        <div data="juegosSimuladores.length" slick-slider="{{slickParams}}">
+            <div class="ml-3" ng-repeat="juego in juegosSimuladores">
+                <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}" style="width:100%; height:100%"></a>
+            </div>
+        </div>
+        <div class="ml-3 mt-4"><h4>Estrategia</h4></div>
+        <div data="juegosEstrategia.length" slick-slider="{{slickParams}}">
+            <div class="ml-3" ng-repeat="juego in juegosEstrategia">
+                <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}" style="width:100%; height:100%"></a>
+            </div>
+        </div>
+        <div class="ml-3 mt-4"><h4>Indie</h4></div>
+        <div data="juegosIndie.length" slick-slider="{{slickParams}}">
+            <div class="ml-3" ng-repeat="juego in juegosIndie">
+                <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}" style="width:100%; height:100%"></a>
+            </div>
+        </div>
+        <div class="ml-3 mt-4"><h4>Multijugador Masivo</h4></div>
+        <div data="juegosMultijugador.length" slick-slider="{{slickParams}}">
+            <div class="ml-3" ng-repeat="juego in juegosMultijugador">
+                <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}" style="width:100%; height:100%"></a>
+            </div>
+        </div>
+        <div class="ml-3 mt-4"><h4>Deportes</h4></div>
+        <div data="juegosDeportes.length" slick-slider="{{slickParams}}">
+            <div class="ml-3" ng-repeat="juego in juegosDeportes">
                 <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_index}}" style="width:100%; height:100%"></a>
             </div>
         </div>

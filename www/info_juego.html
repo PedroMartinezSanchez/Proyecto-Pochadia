@@ -33,7 +33,6 @@
 <body ng-app="myApp" ng-controller="myCtrl">
 
   <!--HEADER-->
-  <!--HEADER-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a href="#" class="mr-4">
       <img src="img/icon.png" alt="logo" width="100">
@@ -60,14 +59,14 @@
           <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
           <button class="btn btn-secondary my-2 my-sm-0 mr-3" type="submit">Buscar</button>
           <div class="dropdown">
-            <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img src="img/img_perfil/perfil_3.jpg" alt="icono_usuario"
+            <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img class="rounded-circle" src="{{resultados[0].img_perfil}}" alt="icono_usuario"
                 width="50"></a>
             <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
               <div class="container p-0">
                 <div class="card container d-flex justify-content-center p-0">
-                  <img class="card-img-top mt-4" src="{{resultados[0].usuarios.img_perfil}}" alt="Card image" style="width:40%">
+                  <img class="card-img-top mt-4 rounded-circle" src="{{resultados[0].img_perfil}}" alt="Card image" style="width:40%">
                   <div class="card-body pb-1">
-                    <h4 class="card-title text-center" style="font-size: 100%;">{{resultados[0].usuarios.nombre_usuario}}</h4>
+                    <h4 class="card-title text-center" style="font-size: 100%;">{{resultados[0].nombre_usuario}}</h4>
                     <a href="perfil.html" class="btn btn-warning mt-2 col-sm container justify-content-center"
                       style="width: 100%;">Ajustes</a>
                     <a href="FAQ.html" class="btn btn-warning mt-2 col-sm container justify-content-center"

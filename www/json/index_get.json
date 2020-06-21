@@ -2,7 +2,7 @@
     "resultados": [
         {
             "nombre_usuario": "Knekro",
-            "img_perfil": "perfil_2.jpg"
+            "img_perfil": "img/img_perfil/perfil_2.jpg"
         },
         {
             "juegos": [
@@ -12,7 +12,7 @@
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/1225560/header.jpg?t=1591282642",
                     "genero": [
                         "aventura",
-                        "rol"
+                        "accion"
                     ],
                     "fecha_subida": "10/07/2020",
                     "tipo_suscriptor": "NORMAL",
@@ -24,7 +24,7 @@
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/594570/header.jpg?t=1590682472",
                     "genero": [
                         "accion",
-                        "aventura"
+                        "estrategia"
                     ],
                     "fecha_subida": "10/07/2020",
                     "tipo_suscriptor": "NORMAL",
@@ -44,18 +44,137 @@
                     "disponible": 1
                 },
                 {
-                    "id_juego": 3,
-                    "nombre_juego": "Monster_hunter",
-                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/582010/header.jpg?t=1587600484",
+                    "id_juego": 4,
+                    "nombre_juego": "Skyrim_special_edition",
+                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/489830/header.jpg?t=1590515887",
                     "genero": [
-                        "accion",
-                        "aventura",
                         "rol"
                     ],
-                    "fecha_subida": "10/07/2020",
+                    "fecha_subida": "21/06/2020",
+                    "tipo_suscriptor": "NORMAL",
+                    "disponible": 1
+                },
+                {
+                    "id_juego": 5,
+                    "nombre_juego": "The_sims_4",
+                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/1222670/header.jpg?t=1592750152",
+                    "genero": [
+                        "casual",
+                        "simuladores"
+                    ],
+                    "fecha_subida": "21/06/2020",
+                    "tipo_suscriptor": "NORMAL",
+                    "disponible": 1
+                },
+                {
+                    "id_juego": 6,
+                    "nombre_juego": "Black_desert_online_remastered",
+                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/582660/header.jpg?t=1590581615",
+                    "genero": [
+                        "accion",
+                        "aventura", 
+                        "multijugador masivo",
+                        "rol",
+                        "estrategia"
+                    ],
+                    "fecha_subida": "21/06/2020",
+                    "tipo_suscriptor": "NORMAL",
+                    "disponible": 1
+                },
+                {
+                    "id_juego": 7,
+                    "nombre_juego": "Need_for_Speed_Most_Wanted",
+                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/1262560/header.jpg?t=1592510757",
+                    "genero": [
+                        "accion",
+                        "aventura", 
+                        "carreras"
+                    ],
+                    "fecha_subida": "21/06/2020",
+                    "tipo_suscriptor": "NORMAL",
+                    "disponible": 1
+                },
+                {
+                    "id_juego": 8,
+                    "nombre_juego": "Burnout_Paradise_Remastered",
+                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/1238080/header.jpg?t=1591812596",
+                    "genero": [
+                        "accion",
+                        "aventura", 
+                        "carreras"
+                    ],
+                    "fecha_subida": "21/06/2020",
+                    "tipo_suscriptor": "NORMAL",
+                    "disponible": 1
+                },
+                {
+                    "id_juego": 9,
+                    "nombre_juego": "DRIFT21",
+                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/520950/header.jpg?t=1592492482",
+                    "genero": [
+                        "accion",
+                        "aventura", 
+                        "carreras"
+                    ],
+                    "fecha_subida": "21/06/2020",
+                    "tipo_suscriptor": "NORMAL",
+                    "disponible": 1
+                },
+                {
+                    "id_juego": 10,
+                    "nombre_juego": "Farming_Simulator_19",
+                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/787860/header.jpg?t=1592404816",
+                    "genero": [
+                        "simuladores"
+
+                    ],
+                    "fecha_subida": "21/06/2020",
+                    "tipo_suscriptor": "NORMAL",
+                    "disponible": 1
+                },
+                {
+                    "id_juego": 11,
+                    "nombre_juego": "Stardew Valley",
+                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/413150/header.jpg?t=1592414257",
+                    "genero": [
+                        "simuladores",
+                        "indie",
+                        "rol",
+                        "casual"
+
+                    ],
+                    "fecha_subida": "21/06/2020",
+                    "tipo_suscriptor": "NORMAL",
+                    "disponible": 1
+                },
+                {
+                    "id_juego": 12,
+                    "nombre_juego": "Plants_vs_Zombies_La_Batalla_de_Neighborville",
+                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/1262240/header.jpg?t=1592013845",
+                    "genero": [
+                        "accion",
+                        "estrategia",
+                        "casual"
+
+                    ],
+                    "fecha_subida": "21/06/2020",
+                    "tipo_suscriptor": "NORMAL",
+                    "disponible": 1
+                },
+                {
+                    "id_juego": 13,
+                    "nombre_juego": "Football_Manager_2020",
+                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/1100600/header.jpg?t=1584981392",
+                    "genero": [
+                        "simuladores",
+                        "deportes"
+
+                    ],
+                    "fecha_subida": "21/06/2020",
                     "tipo_suscriptor": "NORMAL",
                     "disponible": 1
                 }
+                
             ]
         }
     ]

@@ -3,7 +3,14 @@ app.controller('myCtrl', function ($scope, $http) {
     $scope.juegosNuevos = [];
     $scope.juegosRol = [];
     $scope.juegosAccion = [];
-    $scope.juegosRpg = [];
+    $scope.juegosCasual = [];
+    $scope.juegosSimuladores = [];
+    $scope.juegosEstrategia = [];
+    $scope.juegosAventura = [];
+    $scope.juegosCarreras = [];
+    $scope.juegosIndie = [];
+    $scope.juegosMultijugador = [];
+    $scope.juegosDeportes = [];
 
     $scope.slickParams = {
         centerMode: false,
@@ -33,11 +40,19 @@ app.controller('myCtrl', function ($scope, $http) {
 
     $http.get("json/index_get.json")
         .then(function (response) {
+            $scope.resultados = response.data.resultados;
             response.data.resultados[1].juegos.forEach(juego => {
                 if (juego.fecha_subida.indexOf("2020") > 0) $scope.juegosNuevos.push(juego);
                 if (juego.genero.includes("rol")) $scope.juegosRol.push(juego);
                 if (juego.genero.includes("accion")) $scope.juegosAccion.push(juego); 
-                if (juego.genero.includes("rpg")) $scope.juegosRpg.push(juego);
+                if (juego.genero.includes("casual")) $scope.juegosCasual.push(juego);
+                if (juego.genero.includes("simuladores")) $scope.juegosSimuladores.push(juego);
+                if (juego.genero.includes("estrategia")) $scope.juegosEstrategia.push(juego);
+                if (juego.genero.includes("aventura")) $scope.juegosAventura.push(juego);
+                if (juego.genero.includes("carreras")) $scope.juegosCarreras.push(juego);
+                if (juego.genero.includes("indie")) $scope.juegosIndie.push(juego);
+                if (juego.genero.includes("multijugador masivo")) $scope.juegosMultijugador.push(juego);
+                if (juego.genero.includes("deportes")) $scope.juegosDeportes.push(juego);
             });
         });
 });
