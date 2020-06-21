@@ -1,8 +1,10 @@
 {
     "resultados": [
         {
+            "id_usuario": 1,
             "nombre_usuario": "Knekro",
-            "img_perfil": "img/img_perfil/perfil_2.jpg"
+            "img_perfil": "img/img_perfil/perfil_2.jpg",
+            "tipo_usuario": "NORMAL"
         },
         {
             "juegos": [
