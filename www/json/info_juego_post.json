@@ -20,7 +20,7 @@
             "votos_negativos": 0
         },
         "respuestas": {
-            "id_comentario": "01",
+            "id_comentario": 1,
             "texto": "comentario 1 xd",
             "hora_fecha": "2020/06/17 17:10"
         }
