@@ -4,7 +4,7 @@
             "usuarios":
                 {
                     "nombre_usuario": "Knekro",
-                    "img_perfil": "perfil_2.jpg"
+                    "img_perfil": "img/img_perfil/perfil_3.jpg"
                 }
         },
         {
@@ -13,9 +13,9 @@
                     "titulo": "Final Fantasy 3",
                     "descripcion_short": "La oscuridad amenaza con cubrir el mundo, pero 4 elegidos por los cristales lucharán por evitarlo.",
                     "img_carousel": [
-                        "FF3_car_1.jpg",
-                        "FF3_car_2.jpg",
-                        "FF3_car_3.jpg"
+                        "img/image1.png",
+                        "img/image2.png",
+                        "img/image3.png"
                     ],
                     "descripcion_long": "Cuentan la leyenda que cada cierto tiempo el equilibrio se rompe entre luz y oscuridad, desapareciendo la oscuridad y la luz respectivamente.4​ Cuando el equilibrio se rompe a favor de la luz, 4 guerreros de la oscuridad aparecen para restablecer el equilibrio; y cuando el equilibrio se inclina hacia la oscuridad, 4 guerreros de la luz aparecen para volver a restablecer el equilibrio. La trama se desarrolla cuando el equilibrio se rompe inclinándose hacia la oscuridad Mucho tiempo atrás, el gran mago Noah estaba al borde de la muerte y dividió su legado entre sus tres discípulos. A Doga le entregó el dominio de la magia, a Unne el dominio de los sueños y a Zande, la mortalidad. Sin embargo, Zande despreciaba su rol asignado y anhelaba el dominio de los tres mundos. Por esta ambición le lleva a invocar a la Nube de Oscuridad del Mundo Oscuro para que cumpla sus órdenes. Owen, otro de los discípulos de Noah, decide crear el Continente Flotante y una torre para controlarlo, y designa a su hijo Desch para que vigile a través de la torre. Sin embargo, la torre está siendo asediada por monstruos, y su hijo se ve obligado a escapar, perdiendo su memoria en la catástrofe.",
                     "autor": "Original Game",
@@ -23,17 +23,17 @@
                     "anyo_lanzamiento": 1990,
                     "franquicia": "Square Enix",
                     "genero": [
-                        "accion",
-                        "aventura",
-                        "rol"
+                        "Accion",
+                        "Aventura",
+                        "Rol"
                     ],
                     "idiomas": "Inglés, Español, Japones",
                     "multijugador": "Un jugador",
                     "num_jugadores": 1,
                     "puntuacion": 5,
                     "pegi": [
-                        "pegi_12",
-                        "violencia"
+                        "https://pegi.info/sites/default/files/inline-images/age-12-black.jpg",
+                        "https://pegi.info/sites/default/files/inline-images/violence-black-EN.jpg"
                     ]
                 },
             "comentarios": [

@@ -42,6 +42,19 @@
                     "fecha_subida": "10/07/2020",
                     "tipo_suscriptor": "NORMAL",
                     "disponible": 1
+                },
+                {
+                    "id_juego": 3,
+                    "nombre_juego": "Monster_hunter",
+                    "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/582010/header.jpg?t=1587600484",
+                    "genero": [
+                        "accion",
+                        "aventura",
+                        "rol"
+                    ],
+                    "fecha_subida": "10/07/2020",
+                    "tipo_suscriptor": "NORMAL",
+                    "disponible": 1
                 }
             ]
         }

@@ -1,7 +1,12 @@
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function ($scope, $http) {
+    $scope.juegosNuevos = [];
+    $scope.juegosRol = [];
+    $scope.juegosAccion = [];
+    $scope.juegosRpg = [];
+
     $scope.slickParams = {
-        centerMode: true,
+        centerMode: false,
         centerPadding: '60px',
         slidesToShow: 3,
         responsive: [
@@ -25,11 +30,18 @@ app.controller('myCtrl', function ($scope, $http) {
             }
         ]
     };
+
     $http.get("json/index_get.json")
         .then(function (response) {
-            $scope.resultados = response.data.resultados;
+            response.data.resultados[1].juegos.forEach(juego => {
+                if (juego.fecha_subida.indexOf("2020") > 0) $scope.juegosNuevos.push(juego);
+                if (juego.genero.includes("rol")) $scope.juegosRol.push(juego);
+                if (juego.genero.includes("accion")) $scope.juegosAccion.push(juego); 
+                if (juego.genero.includes("rpg")) $scope.juegosRpg.push(juego);
+            });
         });
 });
+
 app.directive('slickSlider', function () {
     return {
         restrict: 'A',
@@ -37,7 +49,7 @@ app.directive('slickSlider', function () {
         link: function (scope, element, attrs) {
             var isInitialized = false;
             scope.$watch('data', function(newVal, oldVal) {
-                if (newVal && newVal.length > 0 && !isInitialized) {
+                if (newVal > 0 && !isInitialized) {
                     $(element).slick(scope.$eval(attrs.slickSlider));
                     isInitialized = true;
                 }
