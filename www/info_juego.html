@@ -23,10 +23,12 @@
     th {
       background-color: orange;
     }
-
-    tr:nth-child(even) {
+    tr:nth-child(even)
+    {
       background-color: rgb(53, 49, 49);
     }
+    #star{ transition-duration: 10s;}
+    #star:hover{color: yellow; transition: 0.1s ease-in, max-height 1s ease-in 0.1s;}
   </style>
 </head>
 
@@ -115,11 +117,13 @@
     <button type="float btn" class="btn btn-danger w-50">JUGAR</button>
     <br><br>
     <h6>Valora este Juego</h6>
-    <span class="float btn" id="uno"><i class="text-warning fa fa-star"></i></span> <!-- ESTRELLAS -->
-    <span class="float btn" id="dos"><i class="text-warning fa fa-star"></i></span>
-    <span class="float btn" id="tres"><i class="text-warning fa fa-star"></i></span>
-    <span class="float btn" id="cuatro"><i class="text-warning fa fa-star"></i></span>
-    <span class="float btn" id="cinco"><i class="text-warning fa fa-star"></i></span>
+     <!-- ESTRELLAS -->
+     <span class="float btn" id="uno"><i class='far fa-star ' id="star" style='font-size:20px'></i></span>
+     <span class="float btn" id="dos"><i class='far fa-star ' id="star" style='font-size:20px'></i></span>
+     <span class="float btn" id="tres"><i class='far fa-star ' id="star" style='font-size:20px'></i></span>
+     <span class="float btn" id="cuatro"><i class='far fa-star ' id="star" style='font-size:20px'></i></span>
+     <span class="float btn" id="cinco"><i class='far fa-star ' id="star" style='font-size:20px'></i></span>
+
   </div>
   <!-- END jugar-->
 
