@@ -204,7 +204,7 @@
         </div>
 
         <div class="form-group d-flex justify-content-center">
-          <a class="btn btn-warning w-50"> <i class="fa fa-reply"></i> Responder</a>
+          <a class="btn btn-warning w-50"> <i class="fa fa-reply"></i> Enviar Comentario</a>
         </div>
       </form>
     </div>
@@ -214,8 +214,8 @@
   <div class="container">
     <div class="card m-3" ng-repeat="comentario in resultados[1].comentarios">
       <div class="card-body">
-        <h4 style="color: orange;" id="cabecera">{{comentario.cabecera}}
-        </h4>
+        <h4 style="color: orange;" id="cabecera">{{comentario.cabecera}}</h4>
+        <h5 style="color:darkorange;">{{comentario.nombre_usuario}}</h5>
         <div class="row">
           <div class="col-md-2">
             <img ng-src="{{comentario.img_comentario}}" class="img img-rounded img-fluid" />
@@ -255,6 +255,9 @@
             </form>
           </div>
         </div>
+
+        <h5 style="color:darkorange;" ng-repeat="respuesta in comentario.respuestas">{{respuesta.nombre_usuario}}</h5>
+
         <div class="row" ng-repeat="respuesta in comentario.respuestas">
           <div class="col-md-2">
             <img ng-src="{{respuesta.img_comentario}}" class="img img-rounded img-fluid" />
