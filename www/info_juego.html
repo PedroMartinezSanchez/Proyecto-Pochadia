@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -23,10 +24,12 @@
     th {
       background-color: orange;
     }
-
-    tr:nth-child(even) {
+    tr:nth-child(even)
+    {
       background-color: rgb(53, 49, 49);
     }
+    #star{ transition-duration: 10s;}
+    #star:hover{color: yellow; transition: 0.1s ease-in, max-height 1s ease-in 0.1s;}
   </style>
 </head>
 
@@ -115,11 +118,13 @@
     <button type="float btn" class="btn btn-danger w-50">JUGAR</button>
     <br><br>
     <h6>Valora este Juego</h6>
-    <span class="float btn" id="uno"><i class="text-warning fa fa-star"></i></span> <!-- ESTRELLAS -->
-    <span class="float btn" id="dos"><i class="text-warning fa fa-star"></i></span>
-    <span class="float btn" id="tres"><i class="text-warning fa fa-star"></i></span>
-    <span class="float btn" id="cuatro"><i class="text-warning fa fa-star"></i></span>
-    <span class="float btn" id="cinco"><i class="text-warning fa fa-star"></i></span>
+     <!-- ESTRELLAS -->
+     <span class="float btn" id="uno"><i class='far fa-star ' id="star" style='font-size:20px'></i></span>
+     <span class="float btn" id="dos"><i class='far fa-star ' id="star" style='font-size:20px'></i></span>
+     <span class="float btn" id="tres"><i class='far fa-star ' id="star" style='font-size:20px'></i></span>
+     <span class="float btn" id="cuatro"><i class='far fa-star ' id="star" style='font-size:20px'></i></span>
+     <span class="float btn" id="cinco"><i class='far fa-star ' id="star" style='font-size:20px'></i></span>
+
   </div>
   <!-- END jugar-->
 
@@ -204,7 +209,7 @@
         </div>
 
         <div class="form-group d-flex justify-content-center">
-          <a class="btn btn-warning w-50"> <i class="fa fa-reply"></i> Responder</a>
+          <a class="btn btn-warning w-50"> <i class="fa fa-reply"></i> Enviar Comentario</a>
         </div>
       </form>
     </div>
@@ -214,8 +219,8 @@
   <div class="container">
     <div class="card m-3" ng-repeat="comentario in resultados[1].comentarios">
       <div class="card-body">
-        <h4 style="color: orange;" id="cabecera">{{comentario.cabecera}}
-        </h4>
+        <h4 style="color: orange;" id="cabecera">{{comentario.cabecera}}</h4>
+        <h5 style="color:darkorange;">{{comentario.nombre_usuario}}</h5>
         <div class="row">
           <div class="col-md-2">
             <img ng-src="{{comentario.img_comentario}}" class="img img-rounded img-fluid" />
@@ -255,6 +260,9 @@
             </form>
           </div>
         </div>
+
+        <h5 style="color:darkorange;" ng-repeat="respuesta in comentario.respuestas">{{respuesta.nombre_usuario}}</h5>
+
         <div class="row" ng-repeat="respuesta in comentario.respuestas">
           <div class="col-md-2">
             <img ng-src="{{respuesta.img_comentario}}" class="img img-rounded img-fluid" />
