@@ -22,7 +22,7 @@
                 },
                 {
                     "id_juego": 2,
-                    "nombre_juego": "Total_war_Warhammer",
+                    "nombre_juego": "Total war Warhammer",
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/594570/header.jpg?t=1590682472",
                     "genero": [
                         "accion",
@@ -34,7 +34,7 @@
                 },
                 {
                     "id_juego": 3,
-                    "nombre_juego": "Monster_hunter",
+                    "nombre_juego": "Monster hunter",
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/582010/header.jpg?t=1587600484",
                     "genero": [
                         "accion",
@@ -47,7 +47,7 @@
                 },
                 {
                     "id_juego": 4,
-                    "nombre_juego": "Skyrim_special_edition",
+                    "nombre_juego": "Skyrim special edition",
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/489830/header.jpg?t=1590515887",
                     "genero": [
                         "rol"
@@ -58,7 +58,7 @@
                 },
                 {
                     "id_juego": 5,
-                    "nombre_juego": "The_sims_4",
+                    "nombre_juego": "The sims 4",
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/1222670/header.jpg?t=1592750152",
                     "genero": [
                         "casual",
@@ -70,7 +70,7 @@
                 },
                 {
                     "id_juego": 6,
-                    "nombre_juego": "Black_desert_online_remastered",
+                    "nombre_juego": "Black desert online remastered",
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/582660/header.jpg?t=1590581615",
                     "genero": [
                         "accion",
@@ -85,7 +85,7 @@
                 },
                 {
                     "id_juego": 7,
-                    "nombre_juego": "Need_for_Speed_Most_Wanted",
+                    "nombre_juego": "Need for Speed Most Wanted",
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/1262560/header.jpg?t=1592510757",
                     "genero": [
                         "accion",
@@ -98,7 +98,7 @@
                 },
                 {
                     "id_juego": 8,
-                    "nombre_juego": "Burnout_Paradise_Remastered",
+                    "nombre_juego": "Burnout Paradise Remastered",
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/1238080/header.jpg?t=1591812596",
                     "genero": [
                         "accion",
@@ -124,7 +124,7 @@
                 },
                 {
                     "id_juego": 10,
-                    "nombre_juego": "Farming_Simulator_19",
+                    "nombre_juego": "Farming Simulator 19",
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/787860/header.jpg?t=1592404816",
                     "genero": [
                         "simuladores"
@@ -151,7 +151,7 @@
                 },
                 {
                     "id_juego": 12,
-                    "nombre_juego": "Plants_vs_Zombies_La_Batalla_de_Neighborville",
+                    "nombre_juego": "Plants vs Zombies La Batalla de Neighborville",
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/1262240/header.jpg?t=1592013845",
                     "genero": [
                         "accion",
@@ -165,7 +165,7 @@
                 },
                 {
                     "id_juego": 13,
-                    "nombre_juego": "Football_Manager_2020",
+                    "nombre_juego": "Football Manager 2020",
                     "img_index": "https://steamcdn-a.akamaihd.net/steam/apps/1100600/header.jpg?t=1584981392",
                     "genero": [
                         "simuladores",
