@@ -18,3 +18,13 @@ group by nombre_genero;
 CREATE VIEW genero_mas_jugado
 AS
 SELECT id_usuario, max(horas_juego_usuario) as genero_mas_jugado, nombre_genero FROM pochadia.tiempo_genero_usuario;
+
+/*Tiempo en meses y días que le quedan de suscripcion al usuario*/
+CREATE VIEW tiempo_suscripcion
+AS
+SELECT id_usuario, TIMESTAMPDIFF(month, fecha_alta_pre, fecha_vencimiento_pre) as tiempo_suscripcion_meses, TIMESTAMPDIFF(day, fecha_alta_pre, fecha_vencimiento_pre) as tiempo_sucripcion_dias FROM pochadia.usuario;
+
+/*Años que tiene el usuario*/
+CREATE VIEW usuario_anyios
+AS
+SELECT id_usuario, TIMESTAMPDIFF(year, fecha_nacimiento, DATE_FORMAT(SYSDATE(), "%Y-%c-%d"))  as anyos FROM pochadia.usuario;
