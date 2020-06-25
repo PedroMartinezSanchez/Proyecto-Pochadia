@@ -83,7 +83,10 @@
   <div class="container">
     <div class="jumbotron p-3 mt-3">
       <h1 style="text-align: center;">Hola de nuevo {{resultados.nombre_usuario}}</h1>
-      <h2 style="text-align: center;">Te quedan 3 meses de Suscripción Premium</h2>
+      <h2 ng-if="resultados.dias == 30" style="text-align: center;">Te queda {{resultados.meses}} mes de Suscripción Premium</h2>
+      <h2 ng-if="resultados.dias > 30" style="text-align: center;">Te quedan {{resultados.meses}} meses de Suscripción Premium</h2>
+      <h2 ng-if="resultados.dias < 30 && resultados.dias != 1" style="text-align: center;">Te quedan {{resultados.dias}} días de Suscripción Premium</h2>
+      <h2 ng-if="resultados.dias < 30 && resultados.dias == 1" style="text-align: center;">Te queda {{resultados.dias}} día de Suscripción Premium</h2>
       <p style="text-align: center;">Ahora mismo estás disfrutando de todas las ventajas de ser premium</p>
     </div>
     <h4 style="text-align: center;">Recuerda que pasado ese tiempo, puedes renovar tu suscripción si lo deseas.</h4>
