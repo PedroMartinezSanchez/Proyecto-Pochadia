@@ -13,6 +13,8 @@
     <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
     <!--lib de cards-->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/controlador_aboutus.js"></script>
     <title>Sobre nosotros</title>
     <style>
         .campolog {
@@ -154,77 +156,74 @@
     </style>
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
 
     <!--HEADER-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a href="#" class="mr-4">
-            <img src="img/icon.png" alt="logo" width="100">
+          <img src="img/icon.png" alt="logo" width="100">
         </a>
-
+    
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
-            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarColor02">
-
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link pl-3 mr-4" href="#">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link pl-3" href="#">Premium</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0 pl-3">
-
-                <div class="container">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
-                    <button class="btn btn-secondary my-2 my-sm-0 mr-3" type="submit">Buscar</button>
-                    <div class="dropdown">
-                        <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img src="img/icon2.png"
-                                alt="icono_usuario" width="50"></a>
-                        <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
-                            <div class="container p-0">
-                                <div class="card container d-flex justify-content-center p-0">
-                                    <img class="card-img-top mt-4" src="img/icon2.png" alt="Card image"
-                                        style="width:40%">
-                                    <div class="card-body pb-1">
-                                        <h4 class="card-title" style="font-size: 100%;">#Usuario</h4>
-                                        <a href="perfil.html" class="btn btn-warning mt-2 col-sm container justify-content-center"
-                                            style="width: 100%;">Ajustes</a>
-                                        <a href="FAQ.html"
-                                            class="btn btn-warning mt-2 col-sm container justify-content-center"
-                                            style="width: 100%;">Ayuda</a>
-                                        <a href="#" class="btn btn-warning mt-2 col-sm container"
-                                            style="width: 100%; height: 500%;">Cerrar sesión</a>
-                                    </div>
-                                    <div class="row container pl-0 pr-0 pb-3 pt-3" style="font-size: 1vh;">
-                                        <div class="col-sm d-flex justify-content-center">
-                                            <a target="_blank" href="./politicas/politicas.pdf">Politicas de privacidad</a>
-                                        </div>
-                                        <div class="col-sm d-flex justify-content-center">
-                                            <a href="#">Términos del servicio</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+    
+        <div class="collapse navbar-collapse row" id="navbarColor02">
+    
+          <ul class="navbar-nav mr-auto col">
+            <li class="nav-item active">
+              <a class="nav-link pl-3 mr-4" href="index.html?id_usuario={{resultados.id_usuario}}">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-3" ng-if="resultados.tipo_usuario == 'NORMAL'" href="premium.html?id_usuario={{resultados.id_usuario}}">Premium</a>
+              <a class="nav-link pl-3" ng-if="resultados.tipo_usuario == 'PREMIUM'" href="info_premium.html?id_usuario={{resultados.id_usuario}}">Premium</a>
+            </li>
+          </ul>
+          <form class="form my-2 my-lg-0 pl-3 col">
+    
+            <div class="container d-flex justify-content-end">
+              <div class="dropdown">
+                <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img class="rounded-circle" src="{{resultados.img_perfil}}" alt="icono_usuario"
+                    width="50"></a>
+                <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
+                  <div class="container p-0">
+                    <div class="card container d-flex justify-content-center p-0">
+                      <img class="card-img-top mt-4 rounded-circle" src="{{resultados.img_perfil}}" alt="Card image" style="width:40%">
+                      <div class="card-body pb-1">
+                        <h4 class="card-title text-center" style="font-size: 100%;">{{resultados.nombre_usuario}}</h4>
+                        <a ng-href="/perfil.html?id_usuario={{resultados.id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                          style="width: 100%;">Ajustes</a>
+                        <a href="FAQ.html?id_usuario={{resultados.id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                          style="width: 100%;">Ayuda</a>
+                        <a href="#" class="btn btn-warning mt-2 col-sm container" style="width: 100%; height: 500%;">Cerrar
+                          sesión</a>
+                      </div>
+                      <div class="row container pl-0 pr-0 pb-3 pt-3" style="font-size: 1vh;">
+                        <div class="col-sm d-flex justify-content-center">
+                          <a target="_blank" href="./politicas/politicas.pdf">Politicas de privacidad</a>
                         </div>
+                        <div class="col-sm d-flex justify-content-center">
+                          <a href="#">Términos del servicio</a>
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </form>
+              </div>
+            </div>
+          </form>
         </div>
-    </nav>
-    <!--END HEADER-->
+      </nav>
+  <!--END HEADER-->
 
     <!--CUERPO-->
     <div class="container-fluid mt-5">
         <div class="row">
-            <div class="col-sm-4">
-                <img src="img/world.png" class="rounded-circle ml-5" alt="world_pocha">
+            <div class="col-sm-3">
+                <img src="img/world.png" class="rounded-circle mx-auto d-block" alt="world_pocha">
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-9">
                 <h1>Nuestros valores</h1>
                 <p class="valores">Somos un grupo de estudiantes de programación amantes
                     del código que tenemos como meta realizar un portal en el
@@ -399,8 +398,8 @@
         </section>
         <!-- Team -->
 
-        <a  href="ayuda.html" class="btn btn-warning container my-5 w-25 d-flex justify-content-center"
-        style="font-size: large;">Contacta con nosotros</a>
+        <a href="ayuda.html?id_usuario={{resultados.id_usuario}}" class="btn btn-warning container my-5 d-flex justify-content-center"
+        style="font-size: large; width: 30vh;">Contacta con nosotros</a>
         
         <!--FOOTER-->
         <footer class="page-footer">
@@ -411,10 +410,10 @@
                         <div class="container d-flex justify-content-center">
                             <div>
                                 <div class="row">
-                                    <div class="col-sm"><a href="FAQ.html">Ayuda</a></div>
+                                    <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a></div>
                                 </div>
                                 <div class="row">
-                                    <a href="aboutus.html" class="col-sm">Sobre nosotros </a>
+                                    <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre nosotros </a>
                                 </div>
                             </div>
                         </div>

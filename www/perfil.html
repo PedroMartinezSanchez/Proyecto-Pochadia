@@ -20,71 +20,65 @@
 </head>
 
 <body ng-app="myApp" ng-controller="myCtrl">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm bg-dark">
-                <nav class="navbar navbar-expand-lg navbar-dark" style="width: 100%;">
-                    <a href="#" class="mr-4">
-                        <img src="img/icon.png" alt="logo" width="100">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
-                        aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarColor02">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link pl-3 mr-4" href="index.html?id_usuario={{resultados.id_usuario}}">Inicio <span
-                                        class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pl-3" ng-if="resultados.tipo_usuario == 'NORMAL'" href="premium.html">Premium</a>
-                                <a class="nav-link pl-3" ng-if="resultados.tipo_usuario == 'PREMIUM'" href="info_premium.html?id_usuario={{resultados.id_usuario}}">Premium</a>
-                            </li>
-                        </ul>
-                        <form class="form-inline my-2 my-lg-0 pl-3">
-                            <div class="container">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
-                                <button class="btn btn-secondary my-2 my-sm-0 mr-3" type="submit">Buscar</button>
-                                <div class="dropdown">
-                                    <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img
-                                            class="rounded-circle" src="{{resultados.img_usuario}}" alt="icono_usuario" width="50"></a>
-                                    <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
-                                        <div class="container p-0">
-                                            <div class="card container d-flex justify-content-center p-0">
-                                                <img class="card-img-top mt-4 rounded-circle" src="{{resultados.img_usuario}}" alt="Card image"
-                                                    style="width:40%">
-                                                <div class="card-body pb-1">
-                                                    <h4 class="card-title text-center" style="font-size: 100%;">{{resultados.nombre_usuario}}</h4>
-                                                    <a href="perfil.html?id_usuario={{resultados.id_usuario}}"
-                                                        class="btn btn-warning mt-2 col-sm container justify-content-center"
-                                                        style="width: 100%;">Ajustes</a>
-                                                    <a href="FAQ.html?id_usuario={{resultados.id_usuario}}"
-                                                        class="btn btn-warning mt-2 col-sm container justify-content-center"
-                                                        style="width: 100%;">Ayuda</a>
-                                                    <a href="#" class="btn btn-warning mt-2 col-sm container"
-                                                        style="width: 100%; height: 500%;">Cerrar sesión</a>
-                                                </div>
-                                                <div class="row container pl-0 pr-0 pb-3 pt-3" style="font-size: 11px;">
-                                                    <div class="col-sm d-flex justify-content-center">
-                                                        <a target="_blank" href="./politicas/politicas.pdf">Politicas de
-                                                            privacidad</a>
-                                                    </div>
-                                                    <div class="col-sm d-flex justify-content-center">
-                                                        <a href="#">Términos del servicio</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                <!--HEADER-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="#" class="mr-4">
+          <img src="img/icon.png" alt="logo" width="100">
+        </a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+          aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse row" id="navbarColor02">
+    
+          <ul class="navbar-nav mr-auto col">
+            <li class="nav-item active">
+              <a class="nav-link pl-3 mr-4" href="index.html?id_usuario={{resultados.id_usuario}}">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-3" ng-if="resultados.tipo_usuario == 'NORMAL'" href="premium.html?id_usuario={{resultados.id_usuario}}">Premium</a>
+              <a class="nav-link pl-3" ng-if="resultados.tipo_usuario == 'PREMIUM'" href="info_premium.html?id_usuario={{resultados.id_usuario}}">Premium</a>
+            </li>
+          </ul>
+          <form class="form my-2 my-lg-0 pl-3 col">
+    
+            <div class="container d-flex justify-content-end">
+              <div class="dropdown">
+                <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img class="rounded-circle" src="{{resultados.img_usuario}}" alt="icono_usuario"
+                    width="50"></a>
+                <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
+                  <div class="container p-0">
+                    <div class="card container d-flex justify-content-center p-0">
+                      <img class="card-img-top mt-4 rounded-circle" src="{{resultados.img_usuario}}" alt="Card image" style="width:40%">
+                      <div class="card-body pb-1">
+                        <h4 class="card-title text-center" style="font-size: 100%;">{{resultados[0].nombre_usuario}}</h4>
+                        <a ng-href="/perfil.html?id_usuario={{resultados[0].id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                          style="width: 100%;">Ajustes</a>
+                        <a href="FAQ.html?id_usuario={{resultados.id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                          style="width: 100%;">Ayuda</a>
+                        <a href="#" class="btn btn-warning mt-2 col-sm container" style="width: 100%; height: 500%;">Cerrar
+                          sesión</a>
+                      </div>
+                      <div class="row container pl-0 pr-0 pb-3 pt-3" style="font-size: 1vh;">
+                        <div class="col-sm d-flex justify-content-center">
+                          <a target="_blank" href="./politicas/politicas.pdf">Politicas de privacidad</a>
+                        </div>
+                        <div class="col-sm d-flex justify-content-center">
+                          <a href="#">Términos del servicio</a>
+                        </div>
+                      </div>
                     </div>
-                </nav>
+                  </div>
+                </div>
+              </div>
             </div>
+          </form>
         </div>
-        <div class="row">
+      </nav>
+  <!--END HEADER-->
+        <div class="row mx-auto" style="width: 100%;">
             <div class="col-sm-3 pt-3">
                 <div class="row">
                     <div class="col-sm d-flex justify-content-center">
@@ -125,9 +119,9 @@
                     <p class="col-sm text-center">E-mail: {{resultados.email}}</p>
                 </div>
             </div>
-            <div class="col-sm-9 mb-5 pb-4">
-                <div class="row">
-                    <img src="{{resultados.img_banner}}" alt="banner" style="width: 100%; height: 25vh;" class="mt-2 pr-2">
+            <div class="col-sm-9">
+                <div class="row mx-auto d-block">
+                    <img src="{{resultados.img_banner}}" alt="banner" style="width: 100%; height: 25vh;" class="mt-2">
                 </div>
                 <div class="row">
                     <div class="col-sm d-flex justify-content-center">
