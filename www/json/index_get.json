@@ -4,7 +4,8 @@
             "id_usuario": 1,
             "nombre_usuario": "Knekro",
             "img_perfil": "img/img_perfil/perfil_2.jpg",
-            "tipo_usuario": "NORMAL"
+            "tipo_usuario": "NORMAL",
+            "edad": 25
         },
         {
             "juegos": [
@@ -18,6 +19,7 @@
                     ],
                     "fecha_subida": "10/07/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 7,
                     "disponible": 1
                 },
                 {
@@ -30,6 +32,7 @@
                     ],
                     "fecha_subida": "10/07/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 16,
                     "disponible": 1
                 },
                 {
@@ -43,6 +46,7 @@
                     ],
                     "fecha_subida": "10/07/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 16,
                     "disponible": 1
                 },
                 {
@@ -54,6 +58,7 @@
                     ],
                     "fecha_subida": "21/06/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 16,
                     "disponible": 1
                 },
                 {
@@ -66,6 +71,7 @@
                     ],
                     "fecha_subida": "21/06/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 12,
                     "disponible": 1
                 },
                 {
@@ -81,6 +87,7 @@
                     ],
                     "fecha_subida": "21/06/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 16,
                     "disponible": 1
                 },
                 {
@@ -94,6 +101,7 @@
                     ],
                     "fecha_subida": "21/06/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 12,
                     "disponible": 1
                 },
                 {
@@ -107,6 +115,7 @@
                     ],
                     "fecha_subida": "21/06/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 12,
                     "disponible": 1
                 },
                 {
@@ -120,6 +129,7 @@
                     ],
                     "fecha_subida": "21/06/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 12,
                     "disponible": 1
                 },
                 {
@@ -132,6 +142,7 @@
                     ],
                     "fecha_subida": "21/06/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 7,
                     "disponible": 1
                 },
                 {
@@ -147,6 +158,7 @@
                     ],
                     "fecha_subida": "21/06/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 7,
                     "disponible": 1
                 },
                 {
@@ -161,6 +173,7 @@
                     ],
                     "fecha_subida": "21/06/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 7,
                     "disponible": 1
                 },
                 {
@@ -174,6 +187,7 @@
                     ],
                     "fecha_subida": "21/06/2020",
                     "tipo_suscriptor": "NORMAL",
+                    "pegi": 18,
                     "disponible": 1
                 }
                 

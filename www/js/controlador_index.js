@@ -14,7 +14,6 @@ app.controller('myCtrl', function ($scope, $http) {
     $scope.juegosBusqueda = [];
     $scope.busqueda;
 
-
     $scope.slickParams = {
         centerMode: false,
         centerPadding: '60px',
@@ -45,18 +44,19 @@ app.controller('myCtrl', function ($scope, $http) {
         .then(function (response) {
             $scope.resultados = response.data.resultados;
             response.data.resultados[1].juegos.forEach(juego => {
-                if (juego.fecha_subida.indexOf("2020") > 0) $scope.juegosNuevos.push(juego);
-                if (juego.genero.includes("rol")) $scope.juegosRol.push(juego);
-                if (juego.genero.includes("accion")) $scope.juegosAccion.push(juego); 
-                if (juego.genero.includes("casual")) $scope.juegosCasual.push(juego);
-                if (juego.genero.includes("simuladores")) $scope.juegosSimuladores.push(juego);
-                if (juego.genero.includes("estrategia")) $scope.juegosEstrategia.push(juego);
-                if (juego.genero.includes("aventura")) $scope.juegosAventura.push(juego);
-                if (juego.genero.includes("carreras")) $scope.juegosCarreras.push(juego);
-                if (juego.genero.includes("indie")) $scope.juegosIndie.push(juego);
-                if (juego.genero.includes("multijugador masivo")) $scope.juegosMultijugador.push(juego);
-                if (juego.genero.includes("deportes")) $scope.juegosDeportes.push(juego);
-                $scope.juegosBusqueda.push(juego);
+                if (juego.fecha_subida.indexOf("2020") > 0 && response.data.resultados[0].edad >= juego.pegi) $scope.juegosNuevos.push(juego);
+                if (juego.genero.includes("rol") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosRol.push(juego);
+                if (juego.genero.includes("accion") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosAccion.push(juego); 
+                if (juego.genero.includes("casual") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosCasual.push(juego);
+                if (juego.genero.includes("simuladores") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosSimuladores.push(juego);
+                if (juego.genero.includes("estrategia") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosEstrategia.push(juego);
+                if (juego.genero.includes("aventura") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosAventura.push(juego);
+                if (juego.genero.includes("carreras") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosCarreras.push(juego);
+                if (juego.genero.includes("indie") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosIndie.push(juego);
+                if (juego.genero.includes("multijugador masivo") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosMultijugador.push(juego);
+                if (juego.genero.includes("deportes") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosDeportes.push(juego);
+                if(response.data.resultados[0].edad >= juego.pegi) $scope.juegosBusqueda.push(juego);
+
                 /*
                 if(juego.titulo.includes(busqueda)){
                     $scope.juegosBusqueda.push(juego);
