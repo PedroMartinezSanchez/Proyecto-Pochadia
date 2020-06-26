@@ -28,3 +28,5 @@ SELECT id_usuario, TIMESTAMPDIFF(month, fecha_alta_pre, fecha_vencimiento_pre) a
 CREATE VIEW usuario_anyios
 AS
 SELECT id_usuario, TIMESTAMPDIFF(year, fecha_nacimiento, DATE_FORMAT(SYSDATE(), "%Y-%c-%d"))  as anyos FROM pochadia.usuario;
+
+/*Juego y su pegi*/
