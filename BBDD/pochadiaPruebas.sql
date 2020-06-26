@@ -6,13 +6,13 @@ CREATE TABLE usuario (
   correo varchar(50) NOT NULL,
   imagen varchar(40), /*¿NOT NULL?*/
   img_banner varchar(40), 
-  suscrito BIT NOT NULL,
+  suscrito ENUM('NORMAL','PREMIUM') NOT NULL,
   fecha_alta_pre date,
   fecha_vencimiento_pre date,
   PRIMARY KEY (id_usuario)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO usuario VALUES('00001','Pedro','1234','1994/10/11','correo@hotmail.com','perfil.jpg','banner_1.jpg',1,'2020/06/10','2020/09/10');
+INSERT INTO usuario VALUES('00001','Pedro','1234','1994/10/11','correo@hotmail.com','perfil.jpg','banner_1.jpg','NORMAL','2020/06/10','2020/09/10');
 
 CREATE TABLE juego (
   id_juego INT(5) NOT NULL,
@@ -61,6 +61,7 @@ INSERT INTO genero VALUES('00010','Simuladores');
 
 CREATE TABLE comentario (
   id_comentario INT(5) NOT NULL,
+  id_respuesta INT(5) NOT NULL,
   id_usuario INT(5) NOT NULL,
   id_juego INT(5) NOT NULL,
   votos_positivos INT(10) NOT NULL,
@@ -74,22 +75,7 @@ CREATE TABLE comentario (
   CONSTRAINT comentario_juego FOREIGN KEY (id_juego) REFERENCES juego (id_juego)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO comentario VALUES('00001','00001','00001', 32,10,'2020/05/02 12:32','Mi opinión sobre Assassins Creed Odyssey','Es un juego muy entretenido, con mucho contenido y muchas horas de entretenimiento. La verdad es que al principio es un poco aburrido, todo hay que decirlo, pero poco a poco te va metiendo en la historia, en la trama. Tiene muchas cosas para hacer, por ejemplo (Sin hacer spoilers) hay un sistema de mercenarios, asi como una clasificación, es entretenido y te incita a ser el numero 1. Graficamente el juego es muy bonito y detallado.',1);
-
-CREATE TABLE respuesta (
-  id_respuesta INT(5) NOT NULL,
-  id_comentario INT(5) NOT NULL,
-  id_usuario INT(5) NOT NULL,
-  votos_positivos INT(10) NOT NULL,
-  votos_negativos INT(10) NOT NULL,
-  hora_fecha datetime NOT NULL,
-  texto varchar(600) NOT NULL,
-  PRIMARY KEY (id_respuesta),
-  CONSTRAINT respuesta_comentario FOREIGN KEY (id_comentario) REFERENCES comentario (id_comentario),
-  CONSTRAINT respuesta_usuario FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-INSERT INTO respuesta VALUES('00001','00001','00001',32,10,'2020/05/02 12:32','Creo que te estas equivocando ya que...');
+INSERT INTO comentario VALUES('00001','00001','00001','00001', 32,10,'2020/05/02 12:32','Mi opinión sobre Assassins Creed Odyssey','Es un juego muy entretenido, con mucho contenido y muchas horas de entretenimiento. La verdad es que al principio es un poco aburrido, todo hay que decirlo, pero poco a poco te va metiendo en la historia, en la trama. Tiene muchas cosas para hacer, por ejemplo (Sin hacer spoilers) hay un sistema de mercenarios, asi como una clasificación, es entretenido y te incita a ser el numero 1. Graficamente el juego es muy bonito y detallado.',1);
 
 CREATE TABLE juego_carousel (
    id_juego INT(5) NOT NULL,

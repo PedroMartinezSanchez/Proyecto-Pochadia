@@ -29,4 +29,27 @@ CREATE VIEW usuario_anyios
 AS
 SELECT id_usuario, TIMESTAMPDIFF(year, fecha_nacimiento, DATE_FORMAT(SYSDATE(), "%Y-%c-%d"))  as anyos FROM pochadia.usuario;
 
-/*Juego y su pegi*/
+/*Juego y sus pegis*/
+CREATE VIEW pegis_de_juego
+AS
+SELECT juego_pegi.id_juego, juego_pegi.id_pegi, nombre_pegi, juego.titulo FROM pochadia.juego_pegi, juego, pegi
+where juego_pegi.id_juego = juego.id_juego and juego_pegi.id_pegi = pegi.id_pegi
+group by id_pegi;
+
+/*Juego y su pegi de edad*/
+CREATE VIEW pegi_edad_juego
+AS 
+SELECT * FROM pochadia.pegis_de_juego
+where nombre_pegi = '18'
+or nombre_pegi = '16'
+or nombre_pegi = '12'
+or nombre_pegi = '7'
+or nombre_pegi = '3'
+
+/*index*/
+CREATE VIEW indice
+AS
+SELECT j.id_juego, u.id_usuario, u.nombre, u.imagen, ua.anyos as usuario_anyos, j.titulo, j.imagen_index, g.nombre_genero, j.fecha_subida, p.nombre_pegi, j.tipo_suscriptor as tipo_juego, u.suscrito as usuario_suscrito, j.disponible
+FROM juego_genero jg, genero g, juego j, usuario u, pegi_edad_juego p, juego_pegi jp, usuario_anyios ua
+WHERE  jg.id_genero = g.id_genero and jg.id_juego=j.id_juego and jp.id_juego = j.id_juego and jp.id_pegi = p.id_pegi
+
