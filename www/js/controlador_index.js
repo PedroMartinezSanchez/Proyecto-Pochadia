@@ -13,6 +13,7 @@ app.controller('myCtrl', function ($scope, $http) {
     $scope.juegosDeportes = [];
     $scope.juegosBusqueda = [];
     $scope.busqueda;
+    $scope.msg;
 
     $scope.slickParams = {
         centerMode: false,
@@ -55,14 +56,7 @@ app.controller('myCtrl', function ($scope, $http) {
                 if (juego.genero.includes("indie") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosIndie.push(juego);
                 if (juego.genero.includes("multijugador masivo") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosMultijugador.push(juego);
                 if (juego.genero.includes("deportes") && response.data.resultados[0].edad >= juego.pegi) $scope.juegosDeportes.push(juego);
-                if(response.data.resultados[0].edad >= juego.pegi) $scope.juegosBusqueda.push(juego);
-
-                /*
-                if(juego.titulo.includes(busqueda)){
-                    $scope.juegosBusqueda.push(juego);
-                }
-                */
-                
+                if(response.data.resultados[0].edad >= juego.pegi) $scope.juegosBusqueda.push(juego);            
             });
         });
 });
