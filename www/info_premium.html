@@ -14,13 +14,16 @@
     <script src="js/slick-1.8.1/slick/slick.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="js/controlador_info_premium.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+    <title>Info_Premium</title>
+    <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
 </head>
 
-<body ng-app="myApp" ng-cloak ng-controller="myCtrl">
+<body ng-app="myApp" ng-controller="myCtrl">
 
   <!--HEADER-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a href="#" class="mr-4">
+    <a href="#" class="mr-4 animated fadeInDownBig">
       <img src="img/icon.png" alt="logo" width="100">
     </a>
 
@@ -33,28 +36,28 @@
 
       <ul class="navbar-nav mr-auto col">
         <li class="nav-item active">
-          <a class="nav-link pl-3 mr-4" href="index.html?id_usuario={{resultados.id_usuario}}">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link pl-3 mr-4" href="index.html?id_usuario={{resultados[0].id_usuario}}">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link pl-3" ng-if="resultados.tipo_usuario == 'NORMAL'" href="premium.html?id_usuario={{resultados.id_usuario}}">Premium</a>
-          <a class="nav-link pl-3" ng-if="resultados.tipo_usuario == 'PREMIUM'" href="info_premium.html?id_usuario={{resultados.id_usuario}}">Premium</a>
+          <a class="nav-link pl-3" ng-if="resultados[0].tipo_usuario == 'NORMAL'" href="premium.html?id_usuario={{resultados[0].id_usuario}}">Premium</a>
+          <a class="nav-link pl-3" ng-if="resultados[0].tipo_usuario == 'PREMIUM'" href="info_premium.html?id_usuario={{resultados[0].id_usuario}}">Premium</a>
         </li>
       </ul>
       <form class="form my-2 my-lg-0 pl-3 col">
 
         <div class="container d-flex justify-content-end">
           <div class="dropdown">
-            <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img class="rounded-circle" src="{{resultados.img_perfil}}" alt="icono_usuario"
+            <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img class="rounded-circle" src="{{resultados[0].img_perfil}}" alt="icono_usuario"
                 width="50"></a>
             <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
               <div class="container p-0">
                 <div class="card container d-flex justify-content-center p-0">
-                  <img class="card-img-top mt-4 rounded-circle" src="{{resultados.img_perfil}}" alt="Card image" style="width:40%">
+                  <img class="card-img-top mt-4 rounded-circle" src="{{resultados[0].img_perfil}}" alt="Card image" style="width:40%">
                   <div class="card-body pb-1">
-                    <h4 class="card-title text-center" style="font-size: 100%;">{{resultados.nombre_usuario}}</h4>
-                    <a ng-href="/perfil.html?id_usuario={{resultados.id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                    <h4 class="card-title text-center" style="font-size: 100%;">{{resultados[0].nombre_usuario}}</h4>
+                    <a ng-href="/perfil.html?id_usuario={{resultados[0].id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
                       style="width: 100%;">Ajustes</a>
-                    <a href="FAQ.html?id_usuario={{resultados.id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                    <a href="FAQ.html?id_usuario={{resultados[0].id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
                       style="width: 100%;">Ayuda</a>
                     <a href="#" class="btn btn-warning mt-2 col-sm container" style="width: 100%; height: 500%;">Cerrar
                       sesión</a>
@@ -77,16 +80,16 @@
   </nav>
 <!--END HEADER-->
   <div class="container d-flex justify-content-center">
-    <img class ="rounded-circle mt-3" src="{{resultados.img_perfil}}" alt="Profile" width="300" height="300" class="mt-5">
+    <img class ="rounded-circle mt-3 animated rotateIn" src="{{resultados[0].img_perfil}}" alt="Profile" width="300" height="300" class="mt-5">
   </div>
 
   <div class="container">
     <div class="jumbotron p-3 mt-3">
-      <h1 style="text-align: center;">Hola de nuevo {{resultados.nombre_usuario}}</h1>
-      <h2 ng-if="resultados.dias == 30" style="text-align: center;">Te queda {{resultados.meses}} mes de Suscripción Premium</h2>
-      <h2 ng-if="resultados.dias > 30" style="text-align: center;">Te quedan {{resultados.meses}} meses de Suscripción Premium</h2>
-      <h2 ng-if="resultados.dias < 30 && resultados.dias != 1" style="text-align: center;">Te quedan {{resultados.dias}} días de Suscripción Premium</h2>
-      <h2 ng-if="resultados.dias < 30 && resultados.dias == 1" style="text-align: center;">Te queda {{resultados.dias}} día de Suscripción Premium</h2>
+      <h1 style="text-align: center;">Hola de nuevo {{resultados[0].nombre_usuario}}</h1>
+      <h2 ng-if="resultados[0].dias == 30" style="text-align: center;">Te queda {{resultados[0].meses}} mes de Suscripción Premium</h2>
+      <h2 ng-if="resultados[0].dias > 30" style="text-align: center;">Te quedan {{resultados[0].meses}} meses de Suscripción Premium</h2>
+      <h2 ng-if="resultados[0].dias < 30 && resultados.dias != 1" style="text-align: center;">Te quedan {{resultados[0].dias}} días de Suscripción Premium</h2>
+      <h2 ng-if="resultados[0].dias < 30 && resultados.dias == 1" style="text-align: center;">Te queda {{resultados[0].dias}} día de Suscripción Premium</h2>
       <p style="text-align: center;">Ahora mismo estás disfrutando de todas las ventajas de ser premium</p>
     </div>
     <h4 style="text-align: center;">Recuerda que pasado ese tiempo, puedes renovar tu suscripción si lo deseas.</h4>
@@ -106,10 +109,10 @@
           <div class="container d-flex justify-content-center">
             <div>
               <div class="row">
-                <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a></div>
+                <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados[0].id_usuario}}">Ayuda</a></div>
               </div>
               <div class="row">
-                <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre nosotros </a>
+                <a href="aboutus.html?id_usuario={{resultados[0].id_usuario}}" class="col-sm">Sobre nosotros </a>
               </div>
             </div>
           </div>
@@ -120,11 +123,11 @@
             <div class="d-flex justify-content-center">
               <div class="d-flex justify-content-center">
                 <div class="row-sm d-flex justify-content-center">
-                  <div class="col-sm p-1"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img
+                  <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img
                           src="img/facebook.png" alt="facebook" style="width:4vh;"></a></i></div>
-                  <div class="col-sm p-1"><i><a href="https://twitter.com/pochadia"><img src="img/twitter.png"
+                  <div class="col-sm p-1 animated zoomIn"><i><a href="https://twitter.com/pochadia"><img src="img/twitter.png"
                           alt="twitter" style="width:4vh;"></a></i></div>
-                  <div class="col-sm p-1"><i><a href="https://www.instagram.com/pochadia/"><img src="img/instagram.png"
+                  <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img src="img/instagram.png"
                           alt="instagram" style="width:4vh;"></a></i></div>
                 </div>
               </div>

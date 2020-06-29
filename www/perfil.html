@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="js/slick-1.8.1/slick/slick.css">
     <script src="js/controlador_perfil.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+    <script src="js/slick-1.8.1/slick/slick.min.js"></script>
     <title>Perfil</title>
 </head>
 
@@ -24,13 +26,13 @@
         <div class="row mx-auto" style="width: 100%;">
             <div class="col-sm-3 pt-3">
                 <div class="row">
-                    <div class="col-sm d-flex justify-content-center">
-                        <img ng-src="{{resultados.img_perfil}}" alt="icono_usuario" style="width: 35%;">
+                    <div class="col-sm d-flex justify-content-center animated backInLeft">
+                        <img ng-src="{{resultados[0].img_perfil}}" alt="icono_usuario" style="width: 35%;">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm d-flex justify-content-center">
-                        <span>{{resultados.nombre_usuario}}</span>
+                        <span>{{resultados[0].nombre_usuario}}</span>
                     </div>
                 </div>
                 <div class="row">
@@ -41,9 +43,9 @@
                 </div>
                 <div class="row">
                     <div class="col-sm d-flex justify-content-center">
-                        <a ng-if="resultados.tipo_usuario == 'NORMAL'" href="/premium.html" class="btn btn-warning text-dark mt-1"
+                        <a ng-if="resultados[0].tipo_usuario == 'NORMAL'" href="/premium.html" class="btn btn-warning text-dark mt-1"
                             style="width: 70%;">Únete a premium</a>
-                            <a ng-if="resultados.tipo_usuario == 'PREMIUM'" href="info_premium.html?id_usuario={{resultados.id_usuario}}" class="btn btn-warning text-dark mt-1"
+                            <a ng-if="resultados[0].tipo_usuario == 'PREMIUM'" href="info_premium.html?id_usuario={{resultados[0].id_usuario}}" class="btn btn-warning text-dark mt-1"
                             style="width: 70%;">Consultar suscripcion</a>
                     </div>
                 </div>
@@ -53,18 +55,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p class="col-sm text-center">Nombre: {{resultados.nombre_usuario}}</p>
+                    <p class="col-sm text-center">Nombre: {{resultados[0].nombre_usuario}}</p>
                 </div>
                 <div class="row">
-                    <p class="col-sm text-center">Fecha de nacimiento: {{resultados.fecha_de_nacimiento}}</p>
+                    <p class="col-sm text-center">Fecha de nacimiento: {{resultados[0].fecha_de_nacimiento}}</p>
                 </div>
                 <div class="row">
-                    <p class="col-sm text-center">E-mail: {{resultados.email}}</p>
+                    <p class="col-sm text-center">E-mail: {{resultados[0].email}}</p>
                 </div>
             </div>
             <div class="col-sm-9">
                 <div class="row mx-auto d-block">
-                    <img src="{{resultados.img_banner}}" alt="banner" style="width: 100%; height: 25vh;" class="mt-2">
+                    <img src="{{resultados[0].img_banner}}" alt="banner" style="width: 100%; height: 25vh;" class="mt-2">
                 </div>
                 <div class="row">
                     <div class="col-sm d-flex justify-content-center">
@@ -93,8 +95,8 @@
                             </div>
                         </div>
                         <div class="single-item mr-3 mx-auto" style="width: 80%; height: 80%;">
-                            <div data="resultados.favoritos.juegos.length" slick-slider="{{slickParams}}">
-                                <div class="ml-3" ng-repeat="juego in resultados.favoritos.juegos">
+                            <div data="resultados[0].favoritos.juegos.length" slick-slider="{{slickParams}}">
+                                <div class="ml-3" ng-repeat="juego in resultados[0].favoritos.juegos">
                                     <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_juego}}" style="width:100%; height:100%"></a>
                                 </div>
                             </div>
@@ -102,61 +104,56 @@
                     </div>
                 </div>
             </div>
-            <div class="row d-flex justify-content-center pt-5 mt-2" style="width: 100%;">
-                <footer class="page-footer">
-                    <div class="container">
-                        <div class="container-fluid d-flex justify-content-center ml-3">
-                            <div class="mr-3">
-                                <p class="ml-2">Contacto</p>
-                                <div class="container d-flex justify-content-center">
-                                    <div>
-                                        <div class="row">
-                                            <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a></div>
-                                        </div>
-                                        <div class="row">
-                                            <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre nosotros </a>
-                                        </div>
-                                    </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center pt-5 mt-5" style="width: 100%;">
+        <footer class="page-footer pt-4">
+            <div class="container">
+                <div class="container-fluid d-flex justify-content-center ml-3">
+                    <div class="mr-3">
+                        <p class="ml-2">Contacto</p>
+                        <div class="container d-flex justify-content-center">
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a></div>
+                                </div>
+                                <div class="row">
+                                    <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre nosotros </a>
                                 </div>
                             </div>
-                            <div class="mr-3">
-                                <p class="col-sm d-flex justify-content-center">Siguenos</p>
-                                <div class="container col-sm">
-                                    <div class="d-flex justify-content-center">
-                                        <div class="d-flex justify-content-center">
-                                            <div class="row-sm d-flex justify-content-center">
-                                                <div class="col-sm p-1"><i><a
-                                                            href="https://www.facebook.com/profile.php?id=100052372509502"><img
-                                                                src="img/facebook.png" alt="facebook"
-                                                                style="width:4vh;"></a></i></div>
-                                                <div class="col-sm p-1"><i><a href="https://twitter.com/pochadia"><img
-                                                                src="img/twitter.png" alt="twitter"
-                                                                style="width:4vh;"></a></i></div>
-                                                <div class="col-sm p-1"><i><a
-                                                            href="https://www.instagram.com/pochadia/"><img
-                                                                src="img/instagram.png" alt="instagram"
-                                                                style="width:4vh;"></a></i></div>
-                                            </div>
-                                        </div>
+                        </div>
+                    </div>
+                    <div class="mr-3">
+                        <p class="col-sm d-flex justify-content-center">Siguenos</p>
+                        <div class="container col-sm">
+                            <div class="d-flex justify-content-center">
+                                <div class="d-flex justify-content-center">
+                                    <div class="row-sm d-flex justify-content-center">
+                                        <div class="col-sm p-1 animated zoomIn"><i><a
+                                                    href="https://www.facebook.com/profile.php?id=100052372509502"><img
+                                                        src="img/facebook.png" alt="facebook"
+                                                        style="width:4vh;"></a></i></div>
+                                        <div class="col-sm p-1 animated zoomIn"><i><a href="https://twitter.com/pochadia"><img
+                                                        src="img/twitter.png" alt="twitter"
+                                                        style="width:4vh;"></a></i></div>
+                                        <div class="col-sm p-1 animated zoomIn"><i><a
+                                                    href="https://www.instagram.com/pochadia/"><img
+                                                        src="img/instagram.png" alt="instagram"
+                                                        style="width:4vh;"></a></i></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Copyright -->
-                    <div class="footer-copyright text-center pb-2 pt-2">© 2020 Copyright:
-                        <a href="principal.html"> Pochadia.com</a>
-                    </div>
-                    <!-- Copyright -->
-                </footer>
+                </div>
             </div>
-        </div>
+            <!-- Copyright -->
+            <div class="footer-copyright text-center pb-2 pt-2">© 2020 Copyright:
+                <a href="principal.html"> Pochadia.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
     </div>
-
-    <script src="js/slick-1.8.1/slick/slick.min.js"></script>
-    <script>
-        $('.single-item').slick();
-    </script>
 </body>
 
 </html>

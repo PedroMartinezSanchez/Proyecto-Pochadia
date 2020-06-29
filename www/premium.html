@@ -62,66 +62,9 @@
     </style>
 </head>
 
-<body ng-app="myApp" ng-cloak ng-controller="myCtrl">
+<body ng-app="myApp" ng-controller="myCtrl">
 
-   <!--HEADER-->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a href="#" class="mr-4">
-      <img src="img/icon.png" alt="logo" width="100">
-    </a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
-      aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse row" id="navbarColor02">
-
-      <ul class="navbar-nav mr-auto col">
-        <li class="nav-item active">
-          <a class="nav-link pl-3 mr-4" href="index.html?id_usuario={{resultados.id_usuario}}">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link pl-3" ng-if="resultados.tipo_usuario == 'NORMAL'" href="premium.html?id_usuario={{resultados.id_usuario}}">Premium</a>
-          <a class="nav-link pl-3" ng-if="resultados.tipo_usuario == 'PREMIUM'" href="info_premium.html?id_usuario={{resultados.id_usuario}}">Premium</a>
-        </li>
-      </ul>
-      <form class="form my-2 my-lg-0 pl-3 col">
-
-        <div class="container d-flex justify-content-end">
-          <div class="dropdown">
-            <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img class="rounded-circle" src="{{resultados.img_perfil}}" alt="icono_usuario"
-                width="50"></a>
-            <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
-              <div class="container p-0">
-                <div class="card container d-flex justify-content-center p-0">
-                  <img class="card-img-top mt-4 rounded-circle" src="{{resultados.img_perfil}}" alt="Card image" style="width:40%">
-                  <div class="card-body pb-1">
-                    <h4 class="card-title text-center" style="font-size: 100%;">{{resultados.nombre_usuario}}</h4>
-                    <a ng-href="/perfil.html?id_usuario={{resultados.id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
-                      style="width: 100%;">Ajustes</a>
-                    <a href="FAQ.html?id_usuario={{resultados.id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
-                      style="width: 100%;">Ayuda</a>
-                    <a href="#" class="btn btn-warning mt-2 col-sm container" style="width: 100%; height: 500%;">Cerrar
-                      sesión</a>
-                  </div>
-                  <div class="row container pl-0 pr-0 pb-3 pt-3" style="font-size: 1vh;">
-                    <div class="col-sm d-flex justify-content-center">
-                      <a target="_blank" href="./politicas/politicas.pdf">Politicas de privacidad</a>
-                    </div>
-                    <div class="col-sm d-flex justify-content-center">
-                      <a href="#">Términos del servicio</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </nav>
-<!--END HEADER-->
+   <div ng-include="'cabecera-sinbuscar.html'"></div>
 
     <!--CUERPO-->
 
@@ -152,7 +95,6 @@
 
             </div>
             <!-- Grid column -->
-
         </div>
         <!-- Grid row -->
 
@@ -220,9 +162,6 @@
             adaptados a tus necesidades.
         </p>
     </div>
-
-
-
     <!--PRECIOS-->
     <div class="container mt-5">
         <div class="card-deck mb-3 text-center">
@@ -377,9 +316,9 @@
                             <div class="d-flex justify-content-center">
                                 <div class="d-flex justify-content-center">
                                     <div class="row-sm d-flex justify-content-center">
-                                        <div class="col-sm p-1"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img class="icon-foot" src="img/facebook.png" alt="facebook" style="width:4vh;"></a></i></div>
-                                        <div class="col-sm p-1"><i><a href="https://twitter.com/pochadia"><img class="icon-foot" src="img/twitter.png" alt="twitter" style="width:4vh;"></a></i></div>
-                                        <div class="col-sm p-1"><i><a href="https://www.instagram.com/pochadia/"><img class="icon-foot" src="img/instagram.png" alt="instagram" style="width:4vh;"></a></i></div>
+                                        <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img class="icon-foot" src="img/facebook.png" alt="facebook" style="width:4vh;"></a></i></div>
+                                        <div class="col-sm p-1 animated zoomIn"><i><a href="https://twitter.com/pochadia"><img class="icon-foot" src="img/twitter.png" alt="twitter" style="width:4vh;"></a></i></div>
+                                        <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img class="icon-foot" src="img/instagram.png" alt="instagram" style="width:4vh;"></a></i></div>
                                     </div>
                                 </div>
                             </div>

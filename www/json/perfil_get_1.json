@@ -1,6 +1,6 @@
 {
     "resultados":
-        {
+        [{
             "id_usuario": 1,
             "tipo_usuario": "PREMIUM",
             "nombre_usuario": "Pepe",
@@ -20,5 +20,5 @@
                     }
                 ]
             }
-        }
+        }]
 }
