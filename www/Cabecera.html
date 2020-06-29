@@ -1,72 +1,68 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--HEADER-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
+  <a href="index.html?id_usuario={{resultados[0].id_usuario}}" class="mr-4 pl-3">
+      <img src="img/icon.png" alt="logo" width="100">
+  </a>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
-    <title>Cabecera</title>
-  </head>
-  <body>
+  <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarColor02"
+      aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <!--HEADER-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a href="#" class="mr-4">
-        <img src="img/icon.png" alt="logo" width="100">
-        </a>
+  <div class="collapse navbar-collapse" id="navbarColor02">
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarColor02">
-          
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link pl-3 mr-4" href="#">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link pl-3" href="#">Premium</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0 pl-3">
-            
-            <div class="container">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search">
-              <button class="btn btn-secondary my-2 my-sm-0 mr-3" type="submit">Search</button>
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link pl-3 mr-4" href="index.html?id_usuario={{resultados[0].id_usuario}}">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link pl-3" ng-if="resultados[0].tipo_usuario == 'NORMAL'"
+                  href="premium.html?id_usuario={{resultados[0].id_usuario}}">Premium</a>
+              <a class="nav-link pl-3" ng-if="resultados[0].tipo_usuario == 'PREMIUM'"
+                  href="info_premium.html?id_usuario={{resultados[0].id_usuario}}">Premium</a>
+          </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 pl-3">
+          <div class="container">
+              <input class="form-control mr-sm-2 animated lightSpeedInLeft" type="text" id="buscar" ng-model="$parent.busqueda"
+                  placeholder="Buscar">
+              <button class="btn btn-secondary my-2 my-sm-0 mr-3 animated lightSpeedInLeft" type="submit">Buscar</button>
               <div class="dropdown">
-                <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img src="img/icon2.png" alt="icono_usuario" width="50"></a>
-                <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
-                    <div class="container p-0">
-                      <div class="card container d-flex justify-content-center p-0">
-                        <img class="card-img-top mt-4" src="img/icon2.png" alt="Card image" style="width:40%">
-                        <div class="card-body pb-1">
-                          <h4 class="card-title" style="font-size: 100%;">#Usuario</h4>
-                          <a href="#" class="btn btn-warning mt-2 col-sm container justify-content-center" style="width: 100%;">Ajustes</a>
-                          <a href="FAQ.html" class="btn btn-warning mt-2 col-sm container justify-content-center" style="width: 100%;">Ayuda</a>
-                          <a href="#" class="btn btn-warning mt-2 col-sm container" style="width: 100%; height: 500%;">Cerrar sesión</a>
-                        </div>
-                        <div class="row container pl-0 pr-0 pb-3 pt-3" style="font-size: 11px;">
-                            <div class="col-sm d-flex justify-content-center">
-                              <a target="_blank" href="./politicas/politicas.pdf">Politicas de privacidad</a>
-                            </div>
-                            <div class="col-sm d-flex justify-content-center">
-                              <a href="#">Términos del servicio</a>
-                            </div>
-                        </div>
+                  <a href="#" class="btn dropdown-toggle" data-toggle="dropdown"><img class="rounded-circle"
+                          src="{{resultados[0].img_perfil}}" alt="icono_usuario" width="50"></a>
+                  <div class="dropdown-menu dropdown-menu-right row p-0" style="width: 30vh;">
+                      <div class="container p-0" >
+                          <div class="card container d-flex justify-content-center p-0 animated fadeIn">
+                              <img class="card-img-top mt-4 rounded-circle" src="{{resultados[0].img_perfil}}"
+                                  alt="Card image" style="width:40%">
+                              <div class="card-body pb-1">
+                                  <h4 class="card-title text-center" style="font-size: 100%;">
+                                      {{resultados[0].nombre_usuario}}</h4>
+                                  <a ng-href="/perfil.html?id_usuario={{resultados[0].id_usuario}}"
+                                      class="btn btn-warning mt-2 col-sm container justify-content-center"
+                                      style="width: 100%;">Ajustes</a>
+                                  <a ng-href="/perfil.html?id_usuario={{resultados[0].id_usuario}}"
+                                      class="btn btn-warning mt-2 col-sm container justify-content-center"
+                                      style="width: 100%;">Ayuda</a>
+                                  <a href="#" class="btn btn-warning mt-2 col-sm container"
+                                      style="width: 100%; height: 500%;">Cerrar
+                                      sesión</a>
+                              </div>
+                              <div class="row container pl-0 pr-0 pb-3 pt-3" style="font-size: 1vh;">
+                                  <div class="col-sm d-flex justify-content-center">
+                                      <a target="_blank" href="./politicas/politicas.pdf">Politicas de
+                                          privacidad</a>
+                                  </div>
+                                  <div class="col-sm d-flex justify-content-center">
+                                      <a href="#">Términos del servicio</a>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
-                    </div>
-                </div>
+                  </div>
               </div>
-            </div>
-          </form>
-        </div>
-      </nav>
-  </body>
-</html>
+          </div>
+      </form>
+  </div>
+</nav>
+<!--END HEADER-->
