@@ -12,6 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+    <!--Animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <title>Alta</title>
     <style>
         form {
@@ -26,49 +29,49 @@
 </head>
 
 <body>
-    <div class="container d-flex justify-content-center"><img src="img/icon.png" alt="Pochadia" style="width:250; height:230;"></div>
+    <div class="container d-flex justify-content-center"><img src="img/icon.png" class="animated zoomInDown" alt="Pochadia" style="width:250; height:230;"></div>
     <div class="container d-flex justify-content-center">
 
-        <form action="/action_page.php" class="pt-4 pl-5 pr-5 bg-white" style="border-radius: 8px;">
+        <form action="/action_page.php" class="pt-4 pl-5 pr-5 bg-white was-validated animated zoomIn" style="border-radius: 8px;">
             <h3 class="text-dark pb-2 text-center">Regístrate</h3>
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Introduce tu nombre" id="name">
+                <input type="text" class="form-control" placeholder="Introduce tu nombre" id="name" required>
             </div>
 
             <div class="form-group">
 
-                <input type="text" class="form-control" placeholder="Introduce tus apellidos" id="lastname">
+                <input type="text" class="form-control" placeholder="Introduce tus apellidos" id="lastname" required>
             </div>
 
             <div class="form-group">
 
                 <input type="text" class="form-control" placeholder="Introduce tu nombre que verán los demás usuarios"
-                    id="nick">
+                    id="nick" required>
             </div>
 
             <div class="form-group">
 
-                <input type="email" class="form-control" placeholder="Introduce tu email" id="mail">
+                <input type="email" class="form-control" placeholder="Introduce tu email" id="mail" required>
             </div>
 
             <div class="form-group">
 
-                <input type="date" class="form-control" id="date">
+                <input type="date" class="form-control" id="date" required>
             </div>
 
             <div class="form-group">
 
-                <input type="password" class="form-control" placeholder="Introduce tu contraseña" id="pass">
+                <input type="password" class="form-control" placeholder="Introduce tu contraseña" id="pass" required>
             </div>
 
             <div class="form-group">
 
-                <input type="password" class="form-control" placeholder="Confirma tu contraseña" id="pass2">
+                <input type="password" class="form-control" placeholder="Confirma tu contraseña" id="pass2" required>
             </div>
 
             <div class="form-check-inline text-dark">
 
-                <input type="checkbox" class="form-check-input" value=""><a target="_blank" href="./politicas/politicas.pdf">Acepto términos y condiciones de uso de
+                <input type="checkbox" class="form-check-input" value="" required><a target="_blank" href="./politicas/politicas.pdf">Acepto términos y condiciones de uso de
                     Pochadia Site.</a>
             </div><br>
             <button type="submit" class="btn btn-warning mt-3 mb-1 container">Enviar</button>
@@ -97,11 +100,11 @@
                         <div class="d-flex justify-content-center">
                             <div class="d-flex justify-content-center">
                                 <div class="row-sm d-flex justify-content-center">
-                                    <div class="col-sm p-1"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img src="img/facebook.png" alt="facebook"
+                                    <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img src="img/facebook.png" alt="facebook"
                                         style="width:4vh;"></a></i></div>
-                                    <div class="col-sm p-1"><i><a href="https://twitter.com/pochadia"><img src="img/twitter.png" alt="twitter"
+                                    <div class="col-sm p-1 animated zoomIn"><i><a href="https://twitter.com/pochadia"><img src="img/twitter.png" alt="twitter"
                                         style="width:4vh;"></a></i></div>
-                                    <div class="col-sm p-1"><i><a href="https://www.instagram.com/pochadia/"><img src="img/instagram.png" alt="instagram"
+                                    <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img src="img/instagram.png" alt="instagram"
                                         style="width:4vh;"></a></i></div>
                                 </div>
                             </div>
@@ -116,15 +119,6 @@
         </div>
         <!-- Copyright -->
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
