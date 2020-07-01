@@ -2,56 +2,26 @@
 <html lang="es">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
-    <title>Principal</title>
-    <style>
-      th {background-color:orange;}
-      tr:nth-child(even) {background-color: rgb(53, 49, 49);}
-
-      .ini{
-        color:black;
-        float: left;
-      }
-    </style>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick-theme.css" />
+      <link rel="stylesheet" href="js/slick-1.8.1/slick/slick.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      <script src="js/slick-1.8.1/slick/slick.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <script src="js/controlador_info_premium.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+      <title>Principal</title>
+      <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
   </head>
-  <body>
+  <body ng-app="myApp" ng-controller="myCtrl">
 
  <!--HEADER-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a href="#" class="mr-4">
-      <img src="img/icon.png" alt="logo" width="100">
-      </a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarColor02">
-        
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link pl-3 mr-4" href="#"><span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link pl-3" href="#"></a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0 pl-3">
-          <div class="container">
-            <a href="form_login.html" class="btn btn-warning mt-2 col-sm container justify-content-center" style="width: 100%;">Iniciar Sesión</a>
-          </div>
-        </form>
-      </div>
-    </nav>
-     <!--END HEADER-->
+ <div ng-include="'cabecera-sinbuscar.html'"></div>
+  <!--END HEADER-->
 
     <!-- JUMBOTRON -->
     <div class="container" style="text-align: center;">
