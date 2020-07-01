@@ -17,14 +17,31 @@
     <!--Animate.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <title>Recuperar contraseña</title>
+    <!--WOW-->
+    <script src="js/wow.js"></script>
+    <script>
+        wow = new WOW(
+            {
+                animateClass: 'animated',
+                offset: 100,
+                callback: function (box) {
+                    console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                }
+            }
+        );
+        wow.init();
+    </script>
+
+    <title>Premium</title>
     <style>
         .campolog {
             width: 350px;
         }
+
         p {
             font-size: 15px;
         }
+
         .gallery {
             -webkit-column-count: 3;
             -moz-column-count: 3;
@@ -33,10 +50,12 @@
             -moz-column-width: 33%;
             /*column-width: 33%;*/
         }
+
         .gallery .pics {
             -webkit-transition: all 350ms ease;
             transition: all 350ms ease;
         }
+
         .gallery .animation {
             -webkit-transform: scale(1);
             -ms-transform: scale(1);
@@ -53,6 +72,7 @@
                 /*column-width: 100%;*/
             }
         }
+
         @media (max-width: 400px) {
             .btn.filter {
                 padding-left: 1.1rem;
@@ -60,11 +80,13 @@
             }
         }
     </style>
+
+
 </head>
 
 <body ng-app="myApp" ng-controller="myCtrl">
 
-   <div ng-include="'cabecera-sinbuscar.html'"></div>
+    <div ng-include="'cabecera-sinbuscar.html'"></div>
 
     <!--CUERPO-->
 
@@ -99,7 +121,7 @@
         <!-- Grid row -->
 
         <!-- Grid row -->
-        <div class="gallery animated fadeInDown" id="gallery">
+        <div class="gallery wow fadeInDown" id="gallery">
 
             <!-- Grid column -->
             <div class="mb-3 pics animation all 2">
@@ -111,8 +133,7 @@
 
             <!-- Grid column -->
             <div class="mb-3 pics animation all 1 2">
-                ><img class="img-fluid"
-                    src="https://s3.gaming-cdn.com/images/products/893/271x377/unravel-cover.jpg"
+                ><img class="img-fluid" src="https://s3.gaming-cdn.com/images/products/893/271x377/unravel-cover.jpg"
                     alt="Unravel">
             </div>
             <!-- Grid column -->
@@ -127,8 +148,7 @@
 
             <!-- Grid column -->
             <div class="mb-3 pics animation all 2">
-                <img class="img-fluid"
-                    src="https://s3.gaming-cdn.com/images/products/272/271x377/los-sims-4-cover.jpg"
+                <img class="img-fluid" src="https://s3.gaming-cdn.com/images/products/272/271x377/los-sims-4-cover.jpg"
                     alt="Sims 4">
             </div>
             <!-- Grid column -->
@@ -163,7 +183,7 @@
         </p>
     </div>
     <!--PRECIOS-->
-    <div class="container mt-5">
+    <div class="container mt-5 wow fadeInDown">
         <div class="card-deck mb-3 text-center">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
@@ -212,7 +232,7 @@
             </div>
         </div>
         <!--DESGLOSE PRECIOS-->
-        <div class="container">
+        <div class="container wow fadeInDown">
             <div class="row">
                 <div class="col-md-10 my-4 mx-auto">
                     <h2 class="text-center">¡Compara tú mismo!</h2>
@@ -289,36 +309,45 @@
             </div>
         </div>
     </div>
-        <!--END DESGLOSE PRECIOS-->
-        <!--END PRECIOS-->
-        <!--END CUERPO-->
-
-        <!--FOOTER-->
-        <footer class="page-footer">
-            <div class="container pt-3 col-sm">
-                <div class="container-fluid d-flex justify-content-center ml-2">
-                    <div class="mr-3">
-                        <p class="ml-2">Contacto</p>
-                        <div class="container d-flex justify-content-center">
-                            <div>
-                                <div class="row">
-                                    <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a></div>
+    <!--END DESGLOSE PRECIOS-->
+    <!--END PRECIOS-->
+    <!--END CUERPO-->
+    <!--FOOTER-->
+    <footer class="page-footer wow fadeInDown">
+        <div class="container pt-3 col-sm">
+            <div class="container-fluid d-flex justify-content-center ml-2">
+                <div class="mr-3">
+                    <p class="ml-2">Contacto</p>
+                    <div class="container d-flex justify-content-center">
+                        <div>
+                            <div class="row">
+                                <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a>
                                 </div>
-                                <div class="row">
-                                    <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre nosotros </a>
-                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre
+                                    nosotros </a>
                             </div>
                         </div>
                     </div>
-                    <div class="mr-3">
-                        <p class="col-sm d-flex justify-content-center">Siguenos</p>
-                        <div class="container col-sm">
+                </div>
+                <div class="mr-3">
+                    <p class="col-sm d-flex justify-content-center">Siguenos</p>
+                    <div class="container col-sm">
+                        <div class="d-flex justify-content-center">
                             <div class="d-flex justify-content-center">
-                                <div class="d-flex justify-content-center">
-                                    <div class="row-sm d-flex justify-content-center">
-                                        <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img class="icon-foot" src="img/facebook.png" alt="facebook" style="width:4vh;"></a></i></div>
-                                        <div class="col-sm p-1 animated zoomIn"><i><a href="https://twitter.com/pochadia"><img class="icon-foot" src="img/twitter.png" alt="twitter" style="width:4vh;"></a></i></div>
-                                        <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img class="icon-foot" src="img/instagram.png" alt="instagram" style="width:4vh;"></a></i></div>
+                                <div class="row-sm d-flex justify-content-center">
+                                    <div class="col-sm p-1"><i><a
+                                                href="https://www.facebook.com/profile.php?id=100052372509502"><img
+                                                    class="icon-foot wow zoomIn" src="img/facebook.png" alt="facebook"
+                                                    style="width:4vh;"></a></i></div>
+                                    <div class="col-sm p-1"><i><a href="https://twitter.com/pochadia"><img
+                                                    class="icon-foot wow zoomIn" src="img/twitter.png" alt="twitter"
+                                                    style="width:4vh;"></a></i>
+                                    </div>
+                                    <div class="col-sm p-1"><i><a href="https://www.instagram.com/pochadia/"><img
+                                                    class="icon-foot wow zoomIn" src="img/instagram.png" alt="instagram"
+                                                    style="width:4vh;"></a></i>
                                     </div>
                                 </div>
                             </div>
@@ -326,13 +355,15 @@
                     </div>
                 </div>
             </div>
-            <!--END FOOTER-->
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                <a href="principal.html"> Pochadia.com</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
+        </div>
+        <!--END FOOTER-->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 mt-2">© 2020 Copyright:
+            <a href="principal.html"> Pochadia.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
 </body>
 
 </html>
