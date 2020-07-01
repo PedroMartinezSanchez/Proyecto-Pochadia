@@ -12,7 +12,8 @@ CREATE VIEW tiempo_genero_usuario
 AS
 SELECT id_usuario, horas_juego_usuario, info_usuario_juego.id_juego, genero.id_genero, nombre_genero FROM info_usuario_juego, juego_genero, genero
 WHERE info_usuario_juego.id_juego = juego_genero.id_juego AND juego_genero.id_genero = genero.id_genero
-group by nombre_genero;
+group by nombre_genero
+order by horas_juego_usuario desc;
 
 /*Genero más jugado de un usuario*/
 CREATE VIEW genero_mas_jugado
@@ -44,12 +45,12 @@ where nombre_pegi = '18'
 or nombre_pegi = '16'
 or nombre_pegi = '12'
 or nombre_pegi = '7'
-or nombre_pegi = '3'
+or nombre_pegi = '3';
 
 /*index*/
 CREATE VIEW indice
 AS
 SELECT j.id_juego, u.id_usuario, u.nombre, u.imagen, ua.anyos as usuario_anyos, j.titulo, j.imagen_index, g.nombre_genero, j.fecha_subida, p.nombre_pegi, j.tipo_suscriptor as tipo_juego, u.suscrito as usuario_suscrito, j.disponible
 FROM juego_genero jg, genero g, juego j, usuario u, pegi_edad_juego p, juego_pegi jp, usuario_anyios ua
-WHERE  jg.id_genero = g.id_genero and jg.id_juego=j.id_juego and jp.id_juego = j.id_juego and jp.id_pegi = p.id_pegi
+WHERE  jg.id_genero = g.id_genero and jg.id_juego=j.id_juego and jp.id_juego = j.id_juego and jp.id_pegi = p.id_pegi;
 
