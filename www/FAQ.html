@@ -15,6 +15,23 @@
     <!--Angular y controlador-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="js/controlador_FAQ.js"></script>
+    <!--Animate.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!--WOW-->
+  <script src="js/wow.js"></script>
+  <script>
+      wow = new WOW(
+          {
+              animateClass: 'animated',
+              offset: 100,
+              callback: function (box) {
+                  console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+              }
+          }
+      );
+      wow.init();
+  </script>
     <title>Preguntas frecuentes</title>
     <style>
         body {
@@ -41,7 +58,7 @@
     <!--END HEADER-->
 
     <!--CUERPO-->
-    <div class="container mt-4">
+    <div class="container mt-4 wow fadeIn">
         <h3 class="text-center">¿Necesitas ayuda?</h3>
         <h4 class="text-center">Consulta nuestras FAQ</h4>
         <div class="row">
@@ -228,7 +245,7 @@
     <!--END CUERPO-->
 
     <!--FOOTER-->
-    <footer class="page-footer">
+    <footer class="page-footer wow fadeIn">
         <div class="container pt-3 col-sm">
             <div class="container-fluid d-flex justify-content-center ml-3">
                 <div class="mr-3">
