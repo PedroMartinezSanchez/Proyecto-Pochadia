@@ -82,15 +82,15 @@
 
   <!-- jugar-->
   <div class="container" style="text-align: center;">
-    <button type="float btn" class="btn btn-danger w-50 wow fadeIn">JUGAR</button>
+    <button type="float btn" class="btn btn-danger w-50 wow jackInTheBox">JUGAR</button>
     <br><br>
-    <h6 class="wow fadeInwow fadeIn">Valora este Juego</h6>
+    <h6 class="wow fadeInwow fadeInDown">Valora este Juego</h6>
     <!-- ESTRELLAS -->
-    <span class="float btn wow fadeIn"><i class='far fa-star' id="uno" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeIn"><i class='far fa-star' id="dos" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeIn"><i class='far fa-star' id="tres" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeIn"><i class='far fa-star' id="cuatro" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeIn"><i class='far fa-star' id="cinco" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.5s"><i class='far fa-star' id="uno" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.6s"><i class='far fa-star' id="dos" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.7s"><i class='far fa-star' id="tres" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.8s"><i class='far fa-star' id="cuatro" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.9s"><i class='far fa-star' id="cinco" style='font-size:20px'></i></span>
 
   </div>
   <!-- END jugar-->
@@ -145,7 +145,7 @@
 
   <!--PEGI-->
   <div class="container pl-3">
-    <img ng-repeat="pegi in resultados[1].juegos.pegi" src="{{pegi}}" style="width: 7%; height: 7%;">
+    <img class="wow fadeInDown" ng-repeat="pegi in resultados[1].juegos.pegi" src="{{pegi}}" style="width: 7%; height: 7%;">
   </div>
   <!--END PEGI-->
 
@@ -274,7 +274,7 @@
   </div>
   <!--END COMENTARIOS-->
   <!--FOOTER-->
-  <footer class="page-footer wow fadeIn">
+  <footer class="page-footer wow fadeInDown">
     <div class="container pt-3 col-sm">
       <div class="container-fluid d-flex justify-content-center">
         <div class="mr-3">
@@ -296,11 +296,11 @@
             <div class="d-flex justify-content-center">
               <div class="d-flex justify-content-center">
                 <div class="row-sm d-flex justify-content-center">
-                  <div class="col-sm p-1"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img
+                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img
                           src="img/facebook.png" alt="facebook" width="30"></a></i></div>
-                  <div class="col-sm p-1"><i><a href="https://twitter.com/pochadia"><img src="img/twitter.png"
+                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://twitter.com/pochadia"><img src="img/twitter.png"
                           alt="twitter" width="30"></a></i></div>
-                  <div class="col-sm p-1"><i><a href="https://www.instagram.com/pochadia/"><img src="img/instagram.png"
+                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img src="img/instagram.png"
                           alt="instagram" width="30"></a></i></div>
                 </div>
               </div>
@@ -310,7 +310,7 @@
       </div>
     </div>
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <div class="footer-copyright text-center py-3 mt-2">© 2020 Copyright:
       <a href="principal.html"> Pochadia.com</a>
     </div>
     <!-- Copyright -->
