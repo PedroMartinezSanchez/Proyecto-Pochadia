@@ -18,93 +18,112 @@
     <script src="js/controlador_perfil.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
     <script src="js/slick-1.8.1/slick/slick.min.js"></script>
+    <script src="cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <title>Perfil</title>
+    <style>
+        #upload {
+            opacity: 0;
+        }
+
+        #upload-label {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+        }
+    </style>
 </head>
 
 <body ng-app="myApp" ng-cloak ng-controller="myCtrl">
-        <div ng-include="'cabecera-sinbuscar.html'"></div>
-        <div class="row mx-auto" style="width: 100%;">
-            <div class="col-sm-3 pt-3">
-                <div class="row">
-                    <div class="col-sm d-flex justify-content-center animated backInLeft">
-                        <img ng-src="{{resultados[0].img_perfil}}" alt="icono_usuario" style="width: 35%;">
-                    </div>
-                </div>
-                <div class="row">
+    <div ng-include="'cabecera-sinbuscar.html'"></div>
+    <div class="row mx-auto" style="width: 100%;">
+        <div class="col-sm-3 pt-3">
+            <div class="row d-flex justify-content-center">
+                <div class="row animated backInLeft">
                     <div class="col-sm d-flex justify-content-center">
-                        <span>{{resultados[0].nombre_usuario}}</span>
+                        <label class="d-flex justify-content-center" for="editar"><img ng-src="{{imagen}}" alt="icono_usuario" style="width:40%;"></label>
+                        <input cuando-cambie="confirmar" ng-hide="true" type="file" name="editar" id="editar">
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm d-flex justify-content-center">
-                        <a href="#" class="btn btn-warning text-dark mt-1" style="width: 70%;">Cambiar
-                            nick</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm d-flex justify-content-center">
-                        <a ng-if="resultados[0].tipo_usuario == 'NORMAL'" href="/premium.html" class="btn btn-warning text-dark mt-1"
-                            style="width: 70%;">Únete a premium</a>
-                            <a ng-if="resultados[0].tipo_usuario == 'PREMIUM'" href="info_premium.html?id_usuario={{resultados[0].id_usuario}}" class="btn btn-warning text-dark mt-1"
-                            style="width: 70%;">Consultar suscripcion</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="container col-sm d-flex justify-content-center">
-                        <h4 class="mt-4 d-flex justify-content-center">Mis datos</h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <p class="col-sm text-center">Nombre: {{resultados[0].nombre_usuario}}</p>
-                </div>
-                <div class="row">
-                    <p class="col-sm text-center">Fecha de nacimiento: {{resultados[0].fecha_de_nacimiento}}</p>
-                </div>
-                <div class="row">
-                    <p class="col-sm text-center">E-mail: {{resultados[0].email}}</p>
                 </div>
             </div>
-            <div class="col-sm-9">
-                <div class="row mx-auto d-block">
-                    <img src="{{resultados[0].img_banner}}" alt="banner" style="width: 100%; height: 25vh;" class="mt-2">
+            <div class="row mt-2">
+                <div class="col-sm d-flex justify-content-center">
+                    <span>{{resultados[0].nombre_usuario}}</span>
                 </div>
-                <div class="row">
-                    <div class="col-sm d-flex justify-content-center">
-                        <form action="/action_page.php" class="pt-3" style="width: 65%;">
-                            <div class="form-group">
-                                <label>Cambiar e-mail</label>
-                                <input type="email" class="form-control mb-2" id="old_email"
-                                    placeholder="Antiguo e-mail" name="old_email">
-                                <input type="email" class="form-control" id="new_email" placeholder="Nuevo e-mail"
-                                    name="new_email">
-                            </div>
-                            <div class="form-group">
-                                <label>Cambiar contraseña</label>
-                                <input type="password" class="form-control mb-2" id="old_pswd"
-                                    placeholder="Antigua contraseña" name="old_pswd">
-                                <input type="password" class="form-control" id="new_pwd" placeholder="Nueva contraseña"
-                                    name="new_pwd">
-                            </div>
-                            <button type="submit" class="btn btn-warning text-dark">Enviar</button>
-                        </form>
-                    </div>
-                    <div class="col-sm" style="width: 100%;">
-                        <div class="row">
-                            <div class="col-sm d-flex justify-content-center mt-3 mb-2">
-                                <h4 class="text-warning">Tus favoritos</h4>
-                            </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-sm d-flex justify-content-center">
+                    <a href="#" class="btn btn-warning text-dark mt-1" style="width: 70%;">Cambiar
+                        nick</a>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm d-flex justify-content-center">
+                    <a ng-if="resultados[0].tipo_usuario == 'NORMAL'" href="/premium.html"
+                        class="btn btn-warning text-dark mt-1" style="width: 70%;">Únete a premium</a>
+                    <a ng-if="resultados[0].tipo_usuario == 'PREMIUM'"
+                        href="info_premium.html?id_usuario={{resultados[0].id_usuario}}"
+                        class="btn btn-warning text-dark mt-1" style="width: 70%;">Consultar suscripcion</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container col-sm d-flex justify-content-center">
+                    <h4 class="mt-4 d-flex justify-content-center">Mis datos</h4>
+                </div>
+            </div>
+            <div class="row">
+                <p class="col-sm text-center">Nombre: {{resultados[0].nombre_usuario}}</p>
+            </div>
+            <div class="row">
+                <p class="col-sm text-center">Fecha de nacimiento: {{resultados[0].fecha_de_nacimiento}}</p>
+            </div>
+            <div class="row">
+                <p class="col-sm text-center">E-mail: {{resultados[0].email}}</p>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="row mx-auto d-block">
+                <img src="{{resultados[0].img_banner}}" alt="banner" style="width: 100%; height: 25vh;" class="mt-2">
+            </div>
+            <div class="row">
+                <div class="col-sm d-flex justify-content-center">
+                    <form action="/action_page.php" class="pt-3" style="width: 65%;">
+                        <div class="form-group">
+                            <label>Cambiar e-mail</label>
+                            <input type="email" class="form-control mb-2" id="old_email" placeholder="Antiguo e-mail"
+                                name="old_email">
+                            <input type="email" class="form-control" id="new_email" placeholder="Nuevo e-mail"
+                                name="new_email">
                         </div>
-                        <div class="single-item mr-3 mx-auto" style="width: 80%; height: 80%;">
-                            <div data="resultados[0].favoritos.juegos.length" slick-slider="{{slickParams}}">
-                                <div class="ml-3" ng-repeat="juego in resultados[0].favoritos.juegos">
-                                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.img_juego}}" style="width:100%; height:100%"></a>
-                                </div>
+                        <div class="form-group">
+                            <label>Cambiar contraseña</label>
+                            <input type="password" class="form-control mb-2" id="old_pswd"
+                                placeholder="Antigua contraseña" name="old_pswd">
+                            <input type="password" class="form-control" id="new_pwd" placeholder="Nueva contraseña"
+                                name="new_pwd">
+                        </div>
+                        <button type="submit" class="btn btn-warning text-dark">Enviar</button>
+                    </form>
+                </div>
+                <div class="col-sm" style="width: 100%;">
+                    <div class="row">
+                        <div class="col-sm d-flex justify-content-center mt-3 mb-2">
+                            <h4 class="text-warning">Tus favoritos</h4>
+                        </div>
+                    </div>
+                    <div class="single-item mr-3 mx-auto" style="width: 80%; height: 80%;">
+                        <div data="resultados[0].favoritos.juegos.length" slick-slider="{{slickParams}}">
+                            <div class="ml-3" ng-repeat="juego in resultados[0].favoritos.juegos">
+                                <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img
+                                        ng-src="{{juego.img_juego}}" style="width:100%; height:100%"></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="row d-flex justify-content-center pt-5 mt-5" style="width: 100%;">
         <footer class="page-footer pt-4">
@@ -115,10 +134,12 @@
                         <div class="container d-flex justify-content-center">
                             <div>
                                 <div class="row">
-                                    <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a></div>
+                                    <div class="col-sm"><a
+                                            href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a></div>
                                 </div>
                                 <div class="row">
-                                    <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre nosotros </a>
+                                    <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre
+                                        nosotros </a>
                                 </div>
                             </div>
                         </div>
@@ -133,9 +154,9 @@
                                                     href="https://www.facebook.com/profile.php?id=100052372509502"><img
                                                         src="img/facebook.png" alt="facebook"
                                                         style="width:4vh;"></a></i></div>
-                                        <div class="col-sm p-1 animated zoomIn"><i><a href="https://twitter.com/pochadia"><img
-                                                        src="img/twitter.png" alt="twitter"
-                                                        style="width:4vh;"></a></i></div>
+                                        <div class="col-sm p-1 animated zoomIn"><i><a
+                                                    href="https://twitter.com/pochadia"><img src="img/twitter.png"
+                                                        alt="twitter" style="width:4vh;"></a></i></div>
                                         <div class="col-sm p-1 animated zoomIn"><i><a
                                                     href="https://www.instagram.com/pochadia/"><img
                                                         src="img/instagram.png" alt="instagram"

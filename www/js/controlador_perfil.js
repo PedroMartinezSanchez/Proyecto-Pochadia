@@ -1,5 +1,5 @@
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function ($scope, $http) {
+app.controller('myCtrl', function ($scope, $http, $timeout) {
     var url = new URL(window.location.href);
     $scope.idUsuario = url.searchParams.get("id_usuario");
     if (!$scope.idUsuario) $scope.idUsuario = 1;
@@ -32,10 +32,37 @@ app.controller('myCtrl', function ($scope, $http) {
         ]
     };
 
+    $scope.confirmar = function (event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        
+        reader.onload = function () {
+            Swal.fire({
+                title: "¿Estas seguro?",
+                html: "<img src='" + reader.result + "' style='width:250px;'>",
+                showCancelButton: true,
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            }).then(result => {
+                if (result.isConfirmed) {
+                    $timeout(function() {
+                        $scope.imagen = reader.result;
+                    }, 0);
+                    
+                } else {
+                }
+            });
+        };
+        reader.readAsDataURL(file);
+    };
     $http.get("json/perfil_get_" + $scope.idUsuario + ".json")
         .then(function (response) {
             $scope.resultados = response.data.resultados;
-
+            $scope.imagen = response.data.resultados[0].img_perfil;
         });
 });
 
@@ -51,6 +78,14 @@ app.directive('slickSlider', function () {
                     isInitialized = true;
                 }
             });
+        }
+    }
+});
+app.directive('cuandoCambie', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            element.bind('change', scope.$eval(attrs.cuandoCambie));
         }
     }
 });

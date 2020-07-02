@@ -38,7 +38,7 @@ app.controller('myCtrl', function ($scope, $http) {
     $http.get("json/info_juego_get_" + $scope.idJuego + ".json")
         .then(function (response) {
             $scope.resultados = response.data.resultados;
-
+            $scope.imagen = response.data.resultados[0].img_perfil;
 
         });
 });
