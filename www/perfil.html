@@ -18,7 +18,6 @@
     <script src="js/controlador_perfil.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
     <script src="js/slick-1.8.1/slick/slick.min.js"></script>
-    <script src="cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <title>Perfil</title>
     <style>
@@ -32,6 +31,13 @@
             left: 1rem;
             transform: translateY(-50%);
         }
+        .edit-icon{
+            width: 20%;
+            position: absolute;
+            z-index: 1;
+            margin-top: 10%;
+        }
+
     </style>
 </head>
 
@@ -43,9 +49,13 @@
                 <div class="row animated backInLeft">
                     <div class="col-sm d-flex justify-content-center">
                         <label class="d-flex justify-content-center" title="Cambiar imagen" data-toggle="tooltip" data-placement="left" for="editar">
-                            <img ng-src="{{imagen}}" alt="icono_usuario" style="width:45%;">
+                                <div class="d-flex justify-content-center">
+                                <img class="img-perfil" ng-src="{{imagen}}" alt="icono_usuario" style="width:45%;">
+                                <img class="edit-icon" src="img/icon-pencil.png"  alt="icono_edit"> 
+                                </div>     
+                                                                          
                         </label>
-                        <input cuando-cambie="confirmar" ng-hide="true" type="file" name="editar" id="editar">
+                        <input cuando-cambie="confirmar" accept=".jpg,.jpeg,.png" ng-hide="true" type="file" name="editar" id="editar">
                     </div>
                 </div>
             </div>

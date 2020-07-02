@@ -32,10 +32,56 @@ app.controller('myCtrl', function ($scope, $http, $timeout) {
         ]
     };
 
+    //Evento de cambio de imagen
+    
+    $(".edit-icon").hide();
+    $(".img-perfil").mouseover(function(){        
+        $(".edit-icon").fadeIn();
+    });
+    $(".edit-icon").mouseover(function(){
+        $(".edit-icon").fadeIn();
+    });
+    $(".img-perfil").mouseout(function(){
+        $(".edit-icon").fadeOut();
+    });
+    
+
     $scope.confirmar = function (event) {
         var file = event.target.files[0];
         var reader = new FileReader();
-        
+
+        reader.onload = function () {
+
+            Swal.fire({
+                title: '¿Estas seguro?',
+                html: "<img class='rounded-circle' src='" + reader.result + "' style='width:300px;'>",
+                text: "Escoge una imagen que se ajuste bien a tu gusto",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Confirmar'
+            }).then((result) => {
+
+                console.log(result);
+                if (result.isConfirmed) {
+                    //console.log("confirmado!");
+                    //console.log(reader.result);
+                    $timeout(function(){
+                        
+                        $scope.imagen = reader.result;
+                    }, 0);
+
+                    Swal.fire(
+                        'Imagen actualizada',
+                        '¡Ha quedado genial!',
+                        'success'
+                    )
+                } else {
+                    console.log("cancelado!");
+                }
+            });
+        /*
         reader.onload = function () {
             Swal.fire({
                 title: "¿Estas seguro?",
@@ -56,6 +102,7 @@ app.controller('myCtrl', function ($scope, $http, $timeout) {
                 } else {
                 }
             });
+            */
         };
         reader.readAsDataURL(file);
     };
