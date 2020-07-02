@@ -42,7 +42,9 @@
             <div class="row d-flex justify-content-center">
                 <div class="row animated backInLeft">
                     <div class="col-sm d-flex justify-content-center">
-                        <label class="d-flex justify-content-center" for="editar"><img ng-src="{{imagen}}" alt="icono_usuario" style="width:40%;"></label>
+                        <label class="d-flex justify-content-center" title="Cambiar imagen" data-toggle="tooltip" data-placement="left" for="editar">
+                            <img ng-src="{{imagen}}" alt="icono_usuario" style="width:45%;">
+                        </label>
                         <input cuando-cambie="confirmar" ng-hide="true" type="file" name="editar" id="editar">
                     </div>
                 </div>
