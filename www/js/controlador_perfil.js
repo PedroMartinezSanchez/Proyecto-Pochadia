@@ -33,28 +33,28 @@ app.controller('myCtrl', function ($scope, $http, $timeout) {
     };
 
     //Evento de cambio de imagen
-    
+
     $(".edit-icon").hide();
-    $(".img-perfil").mouseover(function(){        
+    $(".img-perfil").mouseover(function () {
         $(".edit-icon").fadeIn();
     });
-    $(".edit-icon").mouseover(function(){
+    $(".edit-icon").mouseover(function () {
         $(".edit-icon").fadeIn();
     });
-    $(".img-perfil").mouseout(function(){
+    $(".img-perfil").mouseout(function () {
         $(".edit-icon").fadeOut();
     });
     $(".edit-icon2").hide();
-    $(".img-banner").mouseover(function(){        
+    $(".img-banner").mouseover(function () {
         $(".edit-icon2").fadeIn();
     });
-    $(".edit-icon2").mouseover(function(){
+    $(".edit-icon2").mouseover(function () {
         $(".edit-icon2").fadeIn();
     });
-    $(".img-banner").mouseout(function(){
+    $(".img-banner").mouseout(function () {
         $(".edit-icon2").fadeOut();
     });
-    
+
 
     $scope.confirmar = function (event) {
         var file = event.target.files[0];
@@ -75,9 +75,9 @@ app.controller('myCtrl', function ($scope, $http, $timeout) {
 
                 console.log(result);
                 if (result.isConfirmed) {
-                    $timeout(function(){
-                        
-                    $scope.imagen = reader.result;
+                    $timeout(function () {
+
+                        $scope.imagen = reader.result;
                     }, 0);
 
                     Swal.fire(
@@ -95,15 +95,12 @@ app.controller('myCtrl', function ($scope, $http, $timeout) {
     $scope.confirmar2 = function (event2) {
         var file2 = event2.target.files[0];
         var reader2 = new FileReader();
-        
-        
+        var image = new Image();
+
         reader2.onload = function () {
-            var image = new Image();
-            image = reader2.result;
-            image.onload = function() {
-                console.log(image.width);
+            image.src = reader2.result;
+
             if (image.width < 630 || image.height < 230) {
-                
                 Swal.fire({
                     title: '¡El tamaño de la imagen es muy pequeño!',
                     text: "Te recomendamos unas medidas de 630x230",
@@ -123,14 +120,14 @@ app.controller('myCtrl', function ($scope, $http, $timeout) {
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Confirmar'
                 }).then((result) => {
-    
+
                     console.log(result);
                     if (result.isConfirmed) {
-                        $timeout(function(){
-                            
-                        $scope.imagen2 = reader2.result;
+                        $timeout(function () {
+
+                            $scope.imagen2 = reader2.result;
                         }, 0);
-    
+
                         Swal.fire(
                             'Imagen actualizada',
                             '¡Ha quedado genial!',
@@ -140,11 +137,7 @@ app.controller('myCtrl', function ($scope, $http, $timeout) {
                         console.log("cancelado!");
                     }
                 });
-            }
-            }
-            
-            
-            
+            };  
         };
         reader2.readAsDataURL(file2);
     };
