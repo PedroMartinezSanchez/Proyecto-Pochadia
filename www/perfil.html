@@ -42,7 +42,11 @@
             position: absolute;
             z-index: 1;
         }
-
+        body {
+            background: url(img/background.png);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
     </style>
 </head>
 
@@ -71,7 +75,7 @@
             </div>
             <div class="row mt-1">
                 <div class="col-sm d-flex justify-content-center">
-                    <a href="#" class="btn btn-warning text-dark mt-1" style="width: 70%;">Cambiar
+                    <a href="#" class="btn btn-warning text-dark mt-1 font-weight-bold" style="width: 70%;">Cambiar
                         nick</a>
                 </div>
             </div>
@@ -81,7 +85,7 @@
                         class="btn btn-warning text-dark mt-1" style="width: 70%;">Únete a premium</a>
                     <a ng-if="resultados[0].tipo_usuario == 'PREMIUM'"
                         href="info_premium.html?id_usuario={{resultados[0].id_usuario}}"
-                        class="btn btn-warning text-dark mt-1" style="width: 70%;">Consultar suscripcion</a>
+                        class="btn btn-warning text-dark mt-1 font-weight-bold" style="width: 70%;">Consultar suscripcion</a>
                 </div>
             </div>
             <div class="row">
@@ -130,7 +134,7 @@
                             <input type="password" class="form-control" id="new_pwd" placeholder="Nueva contraseña"
                                 name="new_pwd">
                         </div>
-                        <button type="submit" class="btn btn-warning text-dark">Enviar</button>
+                        <button type="submit" class="btn btn-warning text-dark font-weight-bold">Enviar</button>
                     </form>
                 </div>
                 <div class="col-sm" style="width: 100%;">
