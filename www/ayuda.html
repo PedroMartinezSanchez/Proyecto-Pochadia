@@ -12,6 +12,20 @@
     <!--Animate.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!--WOW-->
+    <script src="js/wow.js"></script>
+    <script>
+        wow = new WOW(
+            {
+                animateClass: 'animated',
+                offset: 100,
+                callback: function (box) {
+                    console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                }
+            }
+        );
+        wow.init();
+    </script>
     <title>Ayuda</title>
     <style>
         .campolog {
@@ -34,7 +48,7 @@
 
 
     <article class="pt-2 container-fluid">
-        <div class="container d-flex justify-content-center animated zoomInDown">
+        <div class="container d-flex justify-content-center wow zoomInDown">
             <img src="img/icon.png" alt="icon_pochadia" style="width: 20vh; height: 20vh;">
         </div>
         <form action="#" class="campolog bg-white p-3 container was-validated animated zoomIn" style="width: 25%; border-radius: 8px;">
@@ -62,7 +76,7 @@
     </article>
 
 
-    <footer class="page-footer pt-5 mt-5 animated fadeInDown">
+    <footer class="page-footer pt-5 mt-5 wow fadeInDown">
         <div class="container pt-3 col-sm">
             <div class="container-fluid d-flex justify-content-center">
                 <div class="mr-3">
@@ -84,14 +98,14 @@
                         <div class="d-flex justify-content-center">
                             <div class="d-flex justify-content-center">
                                 <div class="row-sm d-flex justify-content-center">
-                                    <div class="col-sm p-1 animated zoomIn"><i><a
+                                    <div class="col-sm p-1 wow zoomIn"><i><a
                                                 href="https://www.facebook.com/profile.php?id=100052372509502"><img
                                                     src="img/facebook.png" alt="facebook" style="width:4vh;"></a></i>
                                     </div>
-                                    <div class="col-sm p-1 animated zoomIn"><i><a href="https://twitter.com/pochadia"><img
+                                    <div class="col-sm p-1 wow zoomIn"><i><a href="https://twitter.com/pochadia"><img
                                                     src="img/twitter.png" alt="twitter" style="width:4vh;"></a></i>
                                     </div>
-                                    <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img
+                                    <div class="col-sm p-1 wow zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img
                                                     src="img/instagram.png" alt="instagram" style="width:4vh;"></a></i>
                                     </div>
                                 </div>
@@ -102,7 +116,7 @@
             </div>
         </div>
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <div class="footer-copyright mt-4 text-center py-3">© 2020 Copyright:
             <a href="principal.html"> Pochadia.com</a>
         </div>
         <!-- Copyright -->
