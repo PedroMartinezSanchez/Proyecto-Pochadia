@@ -70,7 +70,7 @@ CREATE TABLE comentario (
   cabecera varchar(50),
   texto varchar(600) NOT NULL,
   recomendado BIT,
-  PRIMARY KEY (id_comentario),
+  PRIMARY KEY (id_comentario, id_respuesta),
   CONSTRAINT comentario_usuario FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
   CONSTRAINT comentario_juego FOREIGN KEY (id_juego) REFERENCES juego (id_juego)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
