@@ -1,0 +1,35 @@
+Usuario
+--------
+Atributos
+..........
+Id_Usuario : String
+Nombre : String
+Contraseña : String
+Suscripcion : boolean
+Imagen : String
+Correo : String
+Fecha_nacimiento : Datetime
+Fecha_alta_premium : Datetime
+Fecha_vencimiento_premium : Datetime
+Imagen_banner : String
+Tiempo_Suscripcion : Enum (3 meses, 6 meses, 1 año)
+Array de comentarios
+Array de respuestas
+Array de juegos_fav
+-----------------------
+Metodos
+..........
+Usuario()
+setNombre(nombre : String) : void
+setContraseña(contraseña : String) : void
+setCorreo(correo : String) : void
+Cambiar_suscripcion() : void //Se ejecutara cada x tiempo//
+Cambiar_Imagen(imagen : String, int imagen_a_cambiar) : void
+Poner_Comentario(id_usuario : String,  id_juego : String, Cabecera : String, Texto : String, Recomendado : Boolean) : void
+Poner_Respuesta(id_comentario : String, id_usuario : String, Texto : String) : void
+Puntuar_Juego(puntuacion : int, id_juego : String)
+Voto_Comentario(voto : boolean, id_comentario) : void
+Voto_Respuesta(voto : boolean, id_respuesta) : void
+Añadir_A_Favoritos(id_juego : String) : void
+Horas_Jugadas(id_juego : String, horas : datetime) : void
+
