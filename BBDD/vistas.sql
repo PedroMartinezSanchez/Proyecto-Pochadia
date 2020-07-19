@@ -18,7 +18,8 @@ order by horas_juego_usuario desc;
 /*Genero más jugado de un usuario*/
 CREATE VIEW genero_mas_jugado
 AS
-SELECT id_usuario, max(horas_juego_usuario) as genero_mas_jugado, nombre_genero FROM pochadia.tiempo_genero_usuario;
+SELECT id_usuario, max(horas_juego_usuario) as genero_mas_jugado, nombre_genero FROM pochadia.tiempo_genero_usuario
+group by id_usuario;
 
 /*Tiempo en meses y días que le quedan de suscripcion al usuario*/
 CREATE VIEW tiempo_suscripcion
@@ -35,7 +36,7 @@ CREATE VIEW pegis_de_juego
 AS
 SELECT juego_pegi.id_juego, juego_pegi.id_pegi, nombre_pegi, juego.titulo FROM pochadia.juego_pegi, juego, pegi
 where juego_pegi.id_juego = juego.id_juego and juego_pegi.id_pegi = pegi.id_pegi
-group by id_pegi;
+group by id_juego;
 
 /*Juego y su pegi de edad*/
 CREATE VIEW pegi_edad_juego
