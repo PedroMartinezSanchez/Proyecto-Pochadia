@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="js/slick-1.8.1/slick/slick.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/slick-1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="js/slick-1.8.1/slick/slick.css">
+    <script src="js/controlador_perfil.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+    <script src="js/slick-1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- Editor -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-image-editor/v3.9.0/tui-image-editor.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.0/fabric.min.js"></script>
+    <script src="https://uicdn.toast.com/tui.code-snippet/v1.5.2/tui-code-snippet.min.js"></script>
+    <script src="https://uicdn.toast.com/tui-color-picker/v2.2.6/tui-color-picker.min.js"></script>
+    <script src="https://uicdn.toast.com/tui-image-editor/v3.9.0/tui-image-editor.min.js"></script>
+    <title>Perfil</title>
+    <style>
+        #upload {
+            opacity: 0;
+        }
+
+        #upload-label {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+        }
+        .edit-icon{
+            width: 20%;
+            position: absolute;
+            z-index: 1;
+            margin-top: 10%;
+        }
+        .edit-icon2{
+            width: 15%;
+            position: absolute;
+            z-index: 1;
+        }
+        body {
+            background: url(img/background.png);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        .tui-image-editor-header-logo {
+            display: none;
+        } 
+    </style>
+</head>
+
+<body ng-app="myApp" ng-cloak ng-controller="myCtrl">
+    <div ng-include="'cabecera-sinbuscar.html'"></div>
+    <div class="row mx-auto" style="width: 100%;">
+        <div class="col-sm-3 pt-3">
+            <div class="row d-flex justify-content-center">
+                <div class="row animated backInLeft">
+                    <div class="col-sm d-flex justify-content-center">
+                        <label class="d-flex justify-content-center" title="Cambiar imagen" data-toggle="tooltip" data-placement="left" for="editar">
+                                <div class="d-flex justify-content-center">
+                                <img class="img-perfil" ng-src="{{imagen}}" alt="icono_usuario" style="width:45%;">
+                                <img class="edit-icon" src="img/icon-pencil.png"  alt="icono_edit"> 
+                                </div>     
+                                                                          
+                        </label>
+                        <input cuando-cambie="confirmar" accept=".jpg,.jpeg,.png" ng-hide="true" type="file" name="editar" id="editar">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm d-flex justify-content-center">
+                    <span>{{resultados[0].nombre_usuario}}</span>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-sm d-flex justify-content-center">
+                    <a href="#" class="btn btn-warning text-dark mt-1 font-weight-bold" style="width: 70%;">Cambiar
+                        nick</a>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm d-flex justify-content-center">
+                    <a ng-if="resultados[0].tipo_usuario == 'NORMAL'" href="/premium.html"
+                        class="btn btn-warning text-dark mt-1" style="width: 70%;">Únete a premium</a>
+                    <a ng-if="resultados[0].tipo_usuario == 'PREMIUM'"
+                        href="info_premium.html?id_usuario={{resultados[0].id_usuario}}"
+                        class="btn btn-warning text-dark mt-1 font-weight-bold" style="width: 70%;">Consultar suscripcion</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container col-sm d-flex justify-content-center">
+                    <h4 class="mt-4 d-flex justify-content-center">Mis datos</h4>
+                </div>
+            </div>
+            <div class="row">
+                <p class="col-sm text-center">Nombre: {{resultados[0].nombre_usuario}}</p>
+            </div>
+            <div class="row">
+                <p class="col-sm text-center">Fecha de nacimiento: {{resultados[0].fecha_de_nacimiento}}</p>
+            </div>
+            <div class="row">
+                <p class="col-sm text-center">E-mail: {{resultados[0].email}}</p>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="row mx-auto d-block">
+                    <div class="row animated backInLeft">
+                        <div class="col-sm d-flex justify-content-center">
+                            <label class="d-flex justify-content-center" title="Cambiar imagen" data-toggle="tooltip" data-placement="left" for="editar2">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                    <img class="img-banner mt-2" ng-src="{{imagen2}}" alt="img_banner" style="width: 100%; height: 25vh;">
+                                    <img class="edit-icon2" src="img/icon-pencil.png"  alt="icono_edit">
+                                    </div>                                      
+                            </label>
+                            <input cuando-cambie="confirmar2" accept=".jpg,.jpeg,.png" ng-hide="true" type="file" name="editar2" id="editar2"> 
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm d-flex justify-content-center">
+                    <form action="http://localhost/servicios/prueba.php" class="pt-3" style="width: 65%;">
+                        <div class="form-group">
+                            <label>Cambiar e-mail</label>
+                            <input type="email" class="form-control mb-2" id="old_email" placeholder="Antiguo e-mail"
+                                name="old_email">
+                            <input type="email" class="form-control" id="new_email" placeholder="Nuevo e-mail"
+                                name="new_email">
+                        </div>
+                        <div class="form-group">
+                            <label>Cambiar contraseña</label>
+                            <input type="password" class="form-control mb-2" id="old_pswd"
+                                placeholder="Antigua contraseña" name="old_pswd">
+                            <input type="password" class="form-control" id="new_pwd" placeholder="Nueva contraseña"
+                                name="new_pwd">
+                        </div>
+                        <button type="submit" ng-click="postdata(old_email, new_email,old_pswd,new_pwd)" class="btn btn-warning text-dark font-weight-bold">Enviar</button>
+                    </form>
+                </div>
+                <div class="col-sm" style="width: 100%;">
+                    <div class="row">
+                        <div class="col-sm d-flex justify-content-center mt-3 mb-2">
+                            <h4 class="text-warning">Tus favoritos</h4>
+                        </div>
+                    </div>
+                    <div class="single-item mr-3 mx-auto" style="width: 80%; height: 80%;">
+                        <div data="resultados[0].favoritos.juegos.length" slick-slider="{{slickParams}}">
+                            <div class="ml-3" ng-repeat="juego in resultados[0].favoritos.juegos">
+                                <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img
+                                        ng-src="{{juego.img_juego}}" style="width:100%; height:100%"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row d-flex justify-content-center pt-5 mt-5" style="width: 100%;">
+        <footer class="page-footer pt-4">
+            <div class="container">
+                <div class="container-fluid d-flex justify-content-center ml-3">
+                    <div class="mr-3">
+                        <p class="ml-2">Contacto</p>
+                        <div class="container d-flex justify-content-center">
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm"><a
+                                            href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a></div>
+                                </div>
+                                <div class="row">
+                                    <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre
+                                        nosotros </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mr-3">
+                        <p class="col-sm d-flex justify-content-center">Siguenos</p>
+                        <div class="container col-sm">
+                            <div class="d-flex justify-content-center">
+                                <div class="d-flex justify-content-center">
+                                    <div class="row-sm d-flex justify-content-center">
+                                        <div class="col-sm p-1 animated zoomIn"><i><a
+                                                    href="https://www.facebook.com/profile.php?id=100052372509502"><img
+                                                        src="img/facebook.png" alt="facebook"
+                                                        style="width:4vh;"></a></i></div>
+                                        <div class="col-sm p-1 animated zoomIn"><i><a
+                                                    href="https://twitter.com/pochadia"><img src="img/twitter.png"
+                                                        alt="twitter" style="width:4vh;"></a></i></div>
+                                        <div class="col-sm p-1 animated zoomIn"><i><a
+                                                    href="https://www.instagram.com/pochadia/"><img
+                                                        src="img/instagram.png" alt="instagram"
+                                                        style="width:4vh;"></a></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="footer-copyright text-center pb-2 pt-2">© 2020 Copyright:
+                <a href="principal.html"> Pochadia.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </div>
+</body>
+
+</html>

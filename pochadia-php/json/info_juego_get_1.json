@@ -1,0 +1,82 @@
+{
+    "resultados": [
+        {
+            "id_usuario": 1,
+            "nombre_usuario": "Knekro",
+            "img_perfil": "img/img_perfil/perfil_2.jpg",
+            "tipo_usuario": "NORMAL"
+        },
+        {
+            "juegos": {
+                "titulo": "Unravel",
+                "descripcion_short": "Unravel es un juego de plataformas basado en la física. Yarny, un personaje hecho de una hebra de lana, vivirá una aventura que desborda la realidad.",
+                "img_carousel": [
+                    "https://steamcdn-a.akamaihd.net/steam/apps/1225560/ss_222b64545eaedb17f47dae9898a4054a18251c75.600x338.jpg?t=1591282642",
+                    "https://steamcdn-a.akamaihd.net/steam/apps/1225560/ss_107b49291a2cdc76a73b1c84191dbf0b86a6c8ef.600x338.jpg?t=1591282642",
+                    "https://steamcdn-a.akamaihd.net/steam/apps/1225560/ss_dc020a2272f1d0949be22dee31b281b9c128e827.600x338.jpg?t=1591282642"
+                ],
+                "descripcion_long": "Con Unravel conoceremos a Yarny, un simpático y adorable personaje nuevo hecho de una única hebra de lana que se va desenrollando progresivamente. Inspirado en los impresionantes e irrepetibles paisajes nórdicos, Unravel es un juego de plataformas basado en la física con un imponente aspecto visual. Yarny podrá usar su lana para afrontar cualquier desafío, desde saltar de rama en rama hasta dar un paseo en cometa. Al cobrar vida, nuestro protagonista representa los lazos que unen a los seres queridos. Acompaña a Yarny en una aventura que desborda la realidad y vuelve a conectar los recuerdos perdidos de una familia. Disfruta de un relato sin palabras, de una historia sincera y emocionante sobre el amor, la esperanza y el viaje de la vida.",
+                "autor": "Coldwood Interactive",
+                "tipo_suscriptor": "NORMAL",
+                "anyo_lanzamiento": 2020,
+                "franquicia": "EA Originals",
+                "genero": [
+                    "Accion",
+                    "Aventura"
+                ],
+                "idiomas": "Inglés, Alemán, Francés, Italiano,  Español, Japones",
+                "multijugador": "Un jugador",
+                "num_jugadores": 1,
+                "puntuacion": 5,
+                "pegi": [
+                    "https://pegi.info/sites/default/files/inline-images/age-7-black.jpg",
+                    "https://pegi.info/sites/default/files/inline-images/violence-black-EN.jpg"
+                ]
+            },
+            "comentarios": [
+                {
+                    "id_comentario": 1,
+                    "nombre_usuario": "Joseba",
+                    "num_like": 23,
+                    "img_comentario": "img/img_perfil/perfil_3.jpg",
+                    "num_dislike": 250,
+                    "cabecera": "Mi opinión sobre este juegazo",
+                    "texto": "Pues resulta que...",
+                    "recomendado": 1,
+                    "hora_fecha": "10/07/2020 16:26",
+                    "respuestas": [
+                        {
+                            "nombre_usuario": "Juanlu",
+                            "num_like": 2,
+                            "img_comentario": "img/img_perfil/perfil_1.jpg",
+                            "num_dislike": 3,
+                            "texto": "Pues resulta que...",
+                            "hora_fecha": "10/07/2020 16:26"
+                        }
+                    ]
+                },
+                {
+                    "id_comentario": 2,
+                    "nombre_usuario": "Joseba",
+                    "num_like": 223,
+                    "img_comentario": "img/img_perfil/perfil_3.jpg",
+                    "num_dislike": 2250,
+                    "cabecera": "Mi opinión sobre este juegazo",
+                    "texto": "Pues resulta que...",
+                    "recomendado": 1,
+                    "hora_fecha": "10/07/2020 16:26",
+                    "respuestas": [
+                        {
+                            "nombre_usuario": "Juanlu",
+                            "num_like": 2,
+                            "img_comentario": "img/img_perfil/perfil_1.jpg",
+                            "num_dislike": 3,
+                            "texto": "Pues resulta que...",
+                            "hora_fecha": "10/07/2020 16:26"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

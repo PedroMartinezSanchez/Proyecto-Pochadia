@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="js/slick-1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="js/slick-1.8.1/slick/slick.css">
+  <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+  <script src="js/controlador_info_juego.js"></script>
+  <script src="js/info_juego.js"></script>
+  <!--Animate.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!--WOW-->
+  <script src="js/wow.js"></script>
+  <script>
+      wow = new WOW(
+          {
+              animateClass: 'animated',
+              offset: 100,
+              callback: function (box) {
+                  console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+              }
+          }
+      );
+      wow.init();
+  </script>
+  <title>Juego</title>
+  <style>
+    th {
+      background-color: orange;
+    }
+    body{overflow-x: hidden;}
+    tr:nth-child(even) {
+      background-color: rgb(53, 49, 49);
+    }
+
+    #uno,
+    #dos,
+    #tres,
+    #cuatro,
+    #cinco {
+      color: white;
+    }
+  </style>
+</head>
+
+<body ng-app="myApp" ng-cloak ng-controller="myCtrl">
+
+  <!--HEADER-->
+  <div ng-include="'cabecera-sinbuscar.html'"></div>
+  <!--END HEADER-->
+
+  <!-- JUMBOTRON -->
+  <div class="container d-flex justify-content-center" style="text-align: center;">
+    <div class="jumbotron mt-3 w-75 wow fadeIn">
+      <h1 style="color: orange;">{{resultados[1].juegos.titulo}}</h1>
+      <h4>{{resultados[1].juegos.descripcion_short}}</h4>
+    </div>
+  </div>
+  <!-- END JUMBOTRON -->
+
+  <!-- CARRUSEL -->
+  <div data="resultados[1].juegos.img_carousel.length" slick-slider="{{slickParams}}">
+    <div class="ml-3 d-flex justify-content-center wow fadeIn" ng-repeat="img in resultados[1].juegos.img_carousel">
+      <img ng-src="{{img}}" style="width:60%; height:60%;" class="pb-3">
+    </div>
+  </div>
+  <!-- END CARRUSEL -->
+
+  <!-- jugar-->
+  <div class="container" style="text-align: center;">
+    <button type="float btn" class="btn btn-danger w-50 wow jackInTheBox">JUGAR</button>
+    <br><br>
+    <h6 class="wow fadeInwow fadeInDown">Valora este Juego</h6>
+    <!-- ESTRELLAS -->
+    <span class="float btn wow fadeInDown" data-wow-delay="0.5s"><i class='far fa-star' id="uno" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.6s"><i class='far fa-star' id="dos" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.7s"><i class='far fa-star' id="tres" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.8s"><i class='far fa-star' id="cuatro" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.9s"><i class='far fa-star' id="cinco" style='font-size:20px'></i></span>
+
+  </div>
+  <!-- END jugar-->
+
+  <!-- JUMBOTRON2 -->
+  <div class="container pt-3">
+    <div class="jumbotron wow fadeIn">
+      <p >{{resultados[1].juegos.descripcion_long}}</p>
+    </div>
+  </div>
+  <!-- END JUMBOTRON2 -->
+  <!--Tabla DETALLES-->
+  <div class="container wow fadeIn" style="text-align: center;">
+    <h2>Detalles del Juego</h2>
+    <table class="table table-hover" style="text-align: center;">
+      <thead>
+        <tr>
+          <th>{{resultados[1].juegos.titulo}}</th>
+          <th>{{resultados[1].juegos.autor}}</th>
+        </tr>
+        <tr>
+          <td>Año de Lanzamiento</td>
+          <td>{{resultados[1].juegos.anyo_lanzamiento}}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Franquicia</td>
+          <td>{{resultados[1].juegos.franquicia}}</td>
+        </tr>
+        <tr>
+          <td>Idiomas</td>
+          <td>{{resultados[1].juegos.idiomas}}</td>
+        </tr>
+
+        <tr>
+          <td>Genero</td>
+          <td><span ng-repeat="genero in resultados[1].juegos.genero">{{genero}} </span></td>
+        </tr>
+        <tr>
+          <td>Modos de Juego</td>
+          <td>{{resultados[1].juegos.multijugador}}</td>
+        </tr>
+        <tr>
+          <td>Numero Jugadores</td>
+          <td>{{resultados[1].juegos.num_jugadores}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--END Tabla DETALLES-->
+
+  <!--PEGI-->
+  <div class="container pl-3">
+    <img class="wow fadeInDown" ng-repeat="pegi in resultados[1].juegos.pegi" src="{{pegi}}" style="width: 7%; height: 7%;">
+  </div>
+  <!--END PEGI-->
+
+  <!--COMENTARIOS-->
+
+  <!--CABECERA COMENTARIOS-->
+  <div class="container wow fadeIn">
+    <div class="card m-3">
+      <h2 class="text-center">Comentarios</h2>
+      <form>
+        <label style="color: orange;" class="d-flex justify-content-center">Introduce una Cabecera</label>
+        <div class="form-group d-flex justify-content-center">
+          <input type="text" class="form-control w-50" id="cabeceraComentarios">
+        </div>
+
+        <h6 class="text-center" style="color: orange;">¿Recomiendas este juego?</h6>
+
+        <h4 style="color: orange;" id="cabecera" class="mx-auto text-center">
+          <button class="btn btn-primary mb-1"><i class="fas fa-thumbs-up text-success" id="recomended">
+              Recomendado</i></button>
+          <button class="btn btn-primary mb-1"><i class="fas fa-thumbs-down text-danger pl-2" id="recomended"> No
+              Recomendado</i></button>
+        </h4>
+
+        <label style="color: orange;" class="d-flex justify-content-center">Opina sobre este Juego:</label>
+        <div class="form-group d-flex justify-content-center">
+          <textarea class="form-control w-75 " id="textarea" rows="3"></textarea>
+        </div>
+
+        <div class="form-group d-flex justify-content-center">
+          <a class="btn btn-warning w-50"> <i class="fa fa-reply"></i> Enviar Comentario</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!--END CABECERA PARA METER COMENTARIOS-->
+  <div class="container wow fadeIn">
+    <div class="card m-3" ng-repeat="comentario in resultados[1].comentarios">
+      <div class="card-body">
+        <h4 style="color: orange;" id="cabecera">{{comentario.cabecera}}</h4>
+        <h5 style="color:darkorange;">{{comentario.nombre_usuario}}</h5>
+        <div class="row">
+          <div class="col-md-2">
+            <img ng-src="{{comentario.img_comentario}}" class="img img-rounded img-fluid" />
+            <p class="text-center"> <small> {{comentario.hora_fecha}}</small> </p>
+          </div>
+          <div class="col-md-10">
+            <div class="clearfix"></div>
+            <h5>
+              <i class="fas fa-thumbs-up text-success" style="float:right;"
+                ng-if="cometario.recomendado == 1">Recomnendado</i>
+              <i class="fas fa-thumbs-up text-danger" style="float:right;" ng-if="cometario.recomendado == 0">No
+                recomendado</i>
+            </h5><br>
+            <p>{{comentario.texto}}</p>
+            <p>
+              <a class="float-right btn btn-warning ml-2 mb-1" ng-click="muestraComentario=!muestraComentario"> <i
+                  class="fa fa-reply"></i> Responder</a> <!-- ICONOS LIKE Y DISLIKE -->
+              <a class="float-right btn text-white btn btn-danger ml-2 mb-1"> No me Gusta <span
+                  class="badge">{{comentario.num_like}}</span></a>
+              <a class="float-right btn text-white btn btn-success"> Me Gusta <span
+                  class="badge">{{comentario.num_dislike}}</span></a>
+            </p>
+          </div>
+        </div>
+        <div class="container" ng-if="muestraComentario" ng-hide="ocultar">
+          <div class="card m-3" style="background-color:dimgrey;">
+            <form>
+              <label style="color: orange;" class="d-flex justify-content-center">Responde al Jugador:</label>
+              <div class="form-group d-flex justify-content-center">
+                <textarea class="form-control w-75 " id="textarea" rows="3"></textarea>
+              </div>
+
+              <div class="form-group d-flex justify-content-center">
+                <a class="btn btn-warning w-50" ng-click="ocultar = true"> <i class="fa fa-reply"></i>
+                  Responder</a>
+              </div>
+            </form>
+          </div>
+        </div>
+    <!--OCULTO EL RESPONDER-->
+
+        <h5 style="color:darkorange;" ng-repeat="respuesta in comentario.respuestas">{{respuesta.nombre_usuario}}</h5>
+
+        <div class="row" ng-repeat="respuesta in comentario.respuestas">
+          <div class="col-md-2">
+            <img ng-src="{{respuesta.img_comentario}}" class="img img-rounded img-fluid" />
+            <p class="text-center"> <small> {{respuesta.hora_fecha}}</small> </p>
+          </div>
+          <div class="col-md-10">
+            <div class="clearfix"></div>
+            <p>{{respuesta.texto}}</p>
+            <p>
+              <a class="float-right btn btn-warning ml-2 mb-1" ng-click="muestraRespuesta=!muestraRespuesta"> <i
+                  class="fa fa-reply"></i> Responder</a> <!-- ICONOS LIKE Y DISLIKE -->
+              <a class="float-right btn text-white btn btn-danger ml-2 mb-1"> No me Gusta <span
+                  class="badge">{{respuesta.num_like}}</span></a>
+              <a class="float-right btn text-white btn btn-success"> Me Gusta <span
+                  class="badge">{{respuesta.num_dislike}}</span></a>
+            </p>
+          </div>
+          <div class="container" ng-if="muestraRespuesta" ng-hide="ocultar">
+            <div class="card m-3" style="background-color:dimgrey;">
+              <form>
+                <label style="color: orange;" class="d-flex justify-content-center">Responde al Jugador:</label>
+                <div class="form-group d-flex justify-content-center">
+                  <textarea class="form-control w-75 " id="textarea" rows="3"></textarea>
+                </div>
+
+                <div class="form-group d-flex justify-content-center">
+                  <a class="btn btn-warning w-50" ng-click="ocultar = true"> <i class="fa fa-reply"></i>
+                    Responder</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!--END OCULTO EL RESPONDER-->
+  </div>
+  </div>
+  <!--END COMENTARIOS-->
+  <!--FOOTER-->
+  <footer class="page-footer wow fadeInDown">
+    <div class="container pt-3 col-sm">
+      <div class="container-fluid d-flex justify-content-center">
+        <div class="mr-3">
+          <p class="ml-2">Contacto</p>
+          <div class="container d-flex justify-content-center">
+            <div>
+              <div class="row">
+                <div class="col-sm"><a href="FAQ.html">Ayuda</a></div>
+              </div>
+              <div class="row">
+                <a href="aboutus.html" class="col-sm">Sobre nosotros </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mr-3">
+          <p class="col-sm d-flex justify-content-center">Siguenos</p>
+          <div class="container col-sm">
+            <div class="d-flex justify-content-center">
+              <div class="d-flex justify-content-center">
+                <div class="row-sm d-flex justify-content-center">
+                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img
+                          src="img/facebook.png" alt="facebook" width="30"></a></i></div>
+                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://twitter.com/pochadia"><img src="img/twitter.png"
+                          alt="twitter" width="30"></a></i></div>
+                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img src="img/instagram.png"
+                          alt="instagram" width="30"></a></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 mt-2">© 2020 Copyright:
+      <a href="principal.html"> Pochadia.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--END FOOTER-->
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="js/slick-1.8.1/slick/slick.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="js/slick-1.8.1/slick/slick.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="js/controlador_info_premium.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+  <title>Principal</title>
+  <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+
+  <!--Animate.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!--WOW-->
+  <script src="js/wow.js"></script>
+  <script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset: 100,
+        callback: function (box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+  </script>
+
+  <style>
+    body {
+      background: url(img/background.png);
+      background-attachment: fixed;
+      overflow-x: hidden;
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--HEADER-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item container text-center">
+        <a href="#" class="mr-4 wow fadeInDownBig">
+          <img src="img/icon.png" alt="logo" width="100">
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 pl-3" action="form_login.html">
+      <div class="container">
+        <button class="btn btn-warning text-dark my-2 my-sm-0 mr-3 animated lightSpeedInLeft" type="submit"
+          value="Iniciar Sesión"><span class="font-weight-bold">Iniciar Sesión</span></button>
+      </div>
+    </form>
+  </nav>
+  <!--END HEADER-->
+
+  <!-- JUMBOTRON -->
+  <div class="container wow fadeInDown" style="text-align: center;">
+    <div class="jumbotron mt-5">
+      <h1 style="color: orange;">¿Qué és Pochadia?</h1>
+      <h4>El mejor servicio para jugar en línea sin necesidad de un ordenador potente.</h4>
+      <h5>Estos son algunos de los juegos que encontrarás en Pochadia</h5>
+    </div>
+  </div>
+  <!-- END JUMBOTRON -->
+
+  <!-- Imagenes -->
+  <div class="container">
+    <img src="https://steamcdn-a.akamaihd.net/steam/apps/1225560/header.jpg?t=1591282642" width="45%"
+      class="rounded float-left mx-auto m-3 wow bounceInLeft" alt="img">
+    <img src="https://steamcdn-a.akamaihd.net/steam/apps/594570/header.jpg?t=1590682472" width="45%"
+      class="rounded float-right mx-auto m-3 wow bounceInRight" alt="img">
+    <img src="https://steamcdn-a.akamaihd.net/steam/apps/582010/header.jpg?t=1587600484" width="45%"
+      class="rounded float-left mx-auto m-3 wow bounceInLeft" alt="img">
+    <img src="https://steamcdn-a.akamaihd.net/steam/apps/1222670/header.jpg?t=1592750152" width="45%"
+      class="rounded float-right mx-auto m-3 wow bounceInRight" alt="img">
+    <img src="https://steamcdn-a.akamaihd.net/steam/apps/1262560/header.jpg?t=1592510757" width="45%"
+      class="rounded float-left mx-auto m-3 wow bounceInLeft" alt="img">
+    <img src="https://steamcdn-a.akamaihd.net/steam/apps/413150/header.jpg?t=1592414257" width="45%"
+      class="rounded float-right mx-auto m-3 wow bounceInRight" alt="img">
+  </div>
+  <!-- END Imagenes -->
+
+  <!-- 3 Campos -->
+  <div class="container" style="text-align: center;">
+    <h2 class="wow fadeIn">Nuestros Servicios</h2>
+    <div class="card-columns">
+      <div class="card bg-primary wow bounceInLeft">
+        <div class="card-body text-center">
+          <h4>Juegos Gratis</h4>
+          <p class="card-text">Disfruta de una gran variedad de juegos gratuitos sin coste alguno.</p>
+        </div>
+      </div>
+      <div class="card bg-success wow bounceInDown">
+        <div class="card-body text-center">
+          <h4>Juega sin problemas</h4>
+          <p class="card-text">Disponemos de los ordenadores mas potentes de la actualidad para que disfrutes sin
+            problemas del mejor streaming de juegos.</p>
+        </div>
+      </div>
+      <div class="card bg-warning wow ">
+        <div class="card-body text-center bounceInRight">
+          <h4>Juegos de Pago</h4>
+          <p class="card-text">Los Juegos más actuales, siempre al mejor precio, garantizado, por solo 12€ al mes.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- END 3 Campos -->
+
+  <!--FOOTER-->
+  <footer class="page-footer wow fadeInDown">
+    <div class="container pt-3 col-sm">
+      <div class="container-fluid d-flex justify-content-center">
+        <div class="mr-3">
+          <p class="ml-2">Contacto</p>
+          <div class="container d-flex justify-content-center">
+            <div>
+              <div class="row">
+                <div class="col-sm"><a href="FAQ.html">Ayuda</a></div>
+              </div>
+              <div class="row">
+                <a href="aboutus.html" class="col-sm">Sobre nosotros </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mr-3">
+          <p class="col-sm d-flex justify-content-center">Siguenos</p>
+          <div class="container col-sm">
+            <div class="d-flex justify-content-center">
+              <div class="d-flex justify-content-center">
+                <div class="row-sm d-flex justify-content-center">
+                  <div class="col-sm p-1 wow zoomIn"><i><a
+                        href="https://www.facebook.com/profile.php?id=100052372509502"><img src="img/facebook.png"
+                          alt="facebook" width="30"></a></i></div>
+                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://twitter.com/pochadia"><img
+                          src="img/twitter.png" alt="twitter" width="30"></a></i></div>
+                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img
+                          src="img/instagram.png" alt="instagram" width="30"></a></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 mt-2">© 2020 Copyright:
+      <a href="principal.html"> Pochadia.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--END FOOTER-->
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="js/premium.js"></script>
+    <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/controlador_premium.js"></script>
+    <!--Animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!--WOW-->
+    <script src="js/wow.js"></script>
+    <script>
+        wow = new WOW(
+            {
+                animateClass: 'animated',
+                offset: 100,
+                callback: function (box) {
+                    console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                }
+            }
+        );
+        wow.init();
+    </script>
+
+    <title>Premium</title>
+    <style>
+        .campolog {
+            width: 350px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+        body {
+            background: url(img/background.png);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        .gallery {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+            -webkit-column-width: 33%;
+            -moz-column-width: 33%;
+            /*column-width: 33%;*/
+        }
+
+        .gallery .pics {
+            -webkit-transition: all 350ms ease;
+            transition: all 350ms ease;
+        }
+
+        .gallery .animation {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+
+        @media (max-width: 450px) {
+            .gallery {
+                -webkit-column-count: 1;
+                -moz-column-count: 1;
+                column-count: 1;
+                -webkit-column-width: 100%;
+                -moz-column-width: 100%;
+                /*column-width: 100%;*/
+            }
+        }
+
+        @media (max-width: 400px) {
+            .btn.filter {
+                padding-left: 1.1rem;
+                padding-right: 1.1rem;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+    <div ng-include="'cabecera-sinbuscar.html'"></div>
+
+    <!--CUERPO-->
+
+    <div class="container text-center w-50 mt-3">
+        <h3>¡Ventajas de ser Premium!</h3>
+        <p>Ser miembro de Pochadia Premium significa que los suscriptores pueden
+            acceder a algunas ventajas que el suscriptor habitual no tiene.
+            Es decir, los miembros de Pochadia Premium pueden disfrutar del catalogo
+            de juegos completo ¡además de una reprodución en streaming a toda pastilla
+            y a la mayor resolución!
+        </p>
+    </div>
+
+    <div class="container text-center w-50">
+        <!--GALERIA-->
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-12 d-flex justify-content-center mb-5">
+
+
+                <button type="button" class="btn btn-primary m-1 filter" data-rel="1"><i class="fas fa-car-side"></i>
+                    Suscripcion normal</button>
+                <!--<button type="button" class="btn btn-warning m-1 filter" data-rel="all">Todos</button>-->
+                <button type="button" class="btn btn-warning m-1 filter" data-rel="2"><i class="fas fa-fighter-jet"></i>
+                    Suscripcion Premium</button>
+
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+
+        <!-- Grid row -->
+        <div class="gallery wow fadeInDown" id="gallery">
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 2">
+                <img class="img-fluid"
+                    src="https://s1.gaming-cdn.com/images/products/1512/271x377/the-elder-scrolls-v-skyrim-special-edition-cover.jpg"
+                    alt="Skyrim">
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 1 2">
+                <img class="img-fluid" src="https://s3.gaming-cdn.com/images/products/893/271x377/unravel-cover.jpg"
+                    alt="Unravel">
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 1 2">
+                <img class="img-fluid"
+                    src="https://s2.gaming-cdn.com/images/products/2014/271x377/total-war-warhammer-ii-cover.jpg"
+                    alt="Warhammer Total War 2">
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 2">
+                <img class="img-fluid" src="https://s3.gaming-cdn.com/images/products/272/271x377/los-sims-4-cover.jpg"
+                    alt="Sims 4">
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 2">
+                <img class="img-fluid"
+                    src="https://s1.gaming-cdn.com/images/products/1767/271x377/stardew-valley-cover.jpg"
+                    alt="Stardew Valley">
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="mb-3 pics animation all 1 2">
+                <img class="img-fluid"
+                    src="https://s3.gaming-cdn.com/images/products/2648/271x377/assassins-creed-odyssey-cover.jpg"
+                    alt="AC odyssey">
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+
+    </div>
+    <!--END GALERIA-->
+
+    <div class="container text-center w-50 mt-5">
+        <h3>¡Únete a Premium!</h3>
+        <p>Con Pochadia Premium podrás disfrutar de una gran variedad de
+            juegos a los que tendrás acceso de manera inmediata. Disfruta de
+            la acción en tiempo real y en la mejor calidad visual con planes
+            adaptados a tus necesidades.
+        </p>
+    </div>
+    <!--PRECIOS-->
+    <div class="container mt-5 wow fadeInDown">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Básico</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">0€ <small class="text-muted">/ mes</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Acceso a más de 50 juegos</li>
+                        <li>Resolución maxíma de 1280x720</li>
+                        <li>Soporte técnico</li>
+                        <li>1 sola sesión</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">¡Te elijo a ti!</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Premium Core</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">12€ <small class="text-muted">/ mes</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Acceso a más de 150 juegos</li>
+                        <li>Resolución maxíma de 1980x1080</li>
+                        <li>Soporte técnico</li>
+                        <li>Hasta 3 sesiónes</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">¡Te elijo a ti!</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Premium StarPlatinum</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">29€ <small class="text-muted">/ mes</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Acceso a más de 300 juegos</li>
+                        <li>Resolución maxíma de 2k</li>
+                        <li>Soporte técnico</li>
+                        <li>Sin límite de sesiónes</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">¡Te elijo a ti!</button>
+                </div>
+            </div>
+        </div>
+        <!--DESGLOSE PRECIOS-->
+        <div class="container wow fadeInDown">
+            <div class="row">
+                <div class="col-md-10 my-4 mx-auto">
+                    <h2 class="text-center">¡Compara tú mismo!</h2>
+
+                    <div class="row table-responsive">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                    <thead class="thead-inverse">
+                                        <tr>
+                                            <th class="w-25"></th>
+                                            <th class="">Básico</th>
+                                            <th class="">Premium Core</th>
+                                            <th class="">Premium StarPlatinum</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="w-25 option">Nº juegos incluidos</td>
+                                            <td class="">más de 50</td>
+                                            <td class="">más de 150</td>
+                                            <td class="">más de 300</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="option">Resolución maxíma streaming</td>
+                                            <td>1280x720</td>
+                                            <td>1980x1080</td>
+                                            <td>2k</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="option">Soporte técnico</td>
+                                            <td><i class="fa fa-check"></i></td>
+                                            <td><i class="fa fa-check"></i></td>
+                                            <td><i class="fa fa-check"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="option">Sesiones</td>
+                                            <td>1</td>
+                                            <td>3</td>
+                                            <td>¡Sin límites!</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="option">Descargas locales</td>
+                                            <td>-</td>
+                                            <td><i class="fa fa-check"></i></td>
+                                            <td><i class="fa fa-check"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="option">Disponible en movil</td>
+                                            <td>-</td>
+                                            <td><i class="fa fa-check"></i></td>
+                                            <td><i class="fa fa-check"></i></td>
+                                        </tr>
+                                        <tr class="text-uppercase font-weight-bold">
+                                            <td></td>
+                                            <td>Gratis</td>
+                                            <td>12€/mes</td>
+                                            <td>29€/mes</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot class="thead-inverse">
+                                        <tr>
+                                            <th class="w-25"></th>
+                                            <th class=""><button class="btn btn-primary">Registrarse</button></th>
+                                            <th class=""><button class="btn btn-primary">Contratar</button></th>
+                                            <th class=""><button class="btn btn-primary">Contratar</button></th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--END DESGLOSE PRECIOS-->
+    <!--END PRECIOS-->
+    <!--END CUERPO-->
+    <!--FOOTER-->
+    <footer class="page-footer wow fadeInDown">
+        <div class="container pt-3 col-sm">
+            <div class="container-fluid d-flex justify-content-center ml-2">
+                <div class="mr-3">
+                    <p class="ml-2">Contacto</p>
+                    <div class="container d-flex justify-content-center">
+                        <div>
+                            <div class="row">
+                                <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre
+                                    nosotros </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mr-3">
+                    <p class="col-sm d-flex justify-content-center">Siguenos</p>
+                    <div class="container col-sm">
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div class="row-sm d-flex justify-content-center">
+                                    <div class="col-sm p-1"><i><a
+                                                href="https://www.facebook.com/profile.php?id=100052372509502"><img
+                                                    class="icon-foot wow zoomIn" src="img/facebook.png" alt="facebook"
+                                                    style="width:4vh;"></a></i></div>
+                                    <div class="col-sm p-1"><i><a href="https://twitter.com/pochadia"><img
+                                                    class="icon-foot wow zoomIn" src="img/twitter.png" alt="twitter"
+                                                    style="width:4vh;"></a></i>
+                                    </div>
+                                    <div class="col-sm p-1"><i><a href="https://www.instagram.com/pochadia/"><img
+                                                    class="icon-foot wow zoomIn" src="img/instagram.png" alt="instagram"
+                                                    style="width:4vh;"></a></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END FOOTER-->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 mt-2">© 2020 Copyright:
+            <a href="principal.html"> Pochadia.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+</body>
+
+</html>

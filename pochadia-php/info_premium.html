@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="js/slick-1.8.1/slick/slick.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="js/slick-1.8.1/slick/slick.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/controlador_info_premium.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+    <title>Info_Premium</title>
+    <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+    <style>
+      body {
+            background: url(img/background.png);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+  <!--HEADER-->
+  <div ng-include="'cabecera-sinbuscar.html'"></div>
+<!--END HEADER-->
+  <div class="container d-flex justify-content-center">
+    <img class ="rounded-circle mt-3 animated rotateIn" src="{{resultados[0].img_perfil}}" alt="Profile" width="300" height="300" class="mt-5">
+  </div>
+
+  <div class="container animated fadeIn">
+    <div class="jumbotron p-3 mt-3">
+      <h1 style="text-align: center;">Hola de nuevo {{resultados[0].nombre}}</h1>
+      <h2 ng-if="resultados[0].dias == 30" style="text-align: center;">Te queda {{resultados[0].meses}} mes de Suscripción Premium</h2>
+      <h2 ng-if="resultados[0].dias > 30" style="text-align: center;">Te quedan {{resultados[0].meses}} meses de Suscripción Premium</h2>
+      <h2 ng-if="resultados[0].dias < 30 && resultados.dias != 1" style="text-align: center;">Te quedan {{resultados[0].dias}} días de Suscripción Premium</h2>
+      <h2 ng-if="resultados[0].dias < 30 && resultados.dias == 1" style="text-align: center;">Te queda {{resultados[0].dias}} día de Suscripción Premium</h2>
+      <p style="text-align: center;">Ahora mismo estás disfrutando de todas las ventajas de ser premium</p>
+    </div>
+    <h4 style="text-align: center;">Recuerda que pasado ese tiempo, puedes renovar tu suscripción si lo deseas.</h4>
+    <h4 style="text-align: center;">Solo tienes que pulsar el botón que ves aquí abajo y listo.</h4>
+    <div class="container">
+
+      <button type="button" class="btn btn-warning container mt-5 d-flex justify-content-center font-weight-bold text-dark"
+        style="font-size: large; width: 39vh;">Suscribirse 3 meses más</button>
+    </div>
+  </div>
+  <!--FOOTER-->
+  <footer class="page-footer">
+    <div class="container pt-3 col-sm">
+      <div class="container-fluid d-flex justify-content-center ml-2">
+        <div class="mr-3">
+          <p class="ml-2">Contacto</p>
+          <div class="container d-flex justify-content-center">
+            <div>
+              <div class="row">
+                <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados[0].id_usuario}}">Ayuda</a></div>
+              </div>
+              <div class="row">
+                <a href="aboutus.html?id_usuario={{resultados[0].id_usuario}}" class="col-sm">Sobre nosotros </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mr-3">
+          <p class="col-sm d-flex justify-content-center">Siguenos</p>
+          <div class="container col-sm">
+            <div class="d-flex justify-content-center">
+              <div class="d-flex justify-content-center">
+                <div class="row-sm d-flex justify-content-center">
+                  <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img
+                          src="img/facebook.png" alt="facebook" style="width:4vh;"></a></i></div>
+                  <div class="col-sm p-1 animated zoomIn"><i><a href="https://twitter.com/pochadia"><img src="img/twitter.png"
+                          alt="twitter" style="width:4vh;"></a></i></div>
+                  <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img src="img/instagram.png"
+                          alt="instagram" style="width:4vh;"></a></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="principal.html"> Pochadia.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</body>
+
+</html>

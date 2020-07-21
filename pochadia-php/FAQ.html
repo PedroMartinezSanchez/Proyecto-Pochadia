@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="js\premium.js"></script>
+    <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+    <!--Angular y controlador-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/controlador_FAQ.js"></script>
+    <!--Animate.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <title>Preguntas frecuentes</title>
+    <style>
+        body {
+            background: url(img/background.png);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .campolog {
+            width: 350px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+        h4{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-cloak ng-controller="myCtrl">
+
+    <!--HEADER-->
+    <div ng-include="'cabecera-sinbuscar.html'"></div>
+    <!--END HEADER-->
+
+    <!--CUERPO-->
+    <div class="container mt-4 animated fadeIn">
+        <h3 class="text-center">¿Necesitas ayuda?</h3>
+        <h4 class="text-center">Consulta nuestras FAQ</h4>
+        <div class="row">
+            <div class="col-sm-12 my-1 border-top border-bottom">
+                <h4 data-toggle="collapse" data-target="#ask_1">Problemas al iniciar sesión<i
+                        class="fas fa-sort-down" style="margin-left: 100%;"></i></h4>
+                <div id="ask_1" class="collapse">
+                    <h5>Paso 1</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 2</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 3</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 4</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 my-1 border-bottom">
+                <h4 data-toggle="collapse" data-target="#ask_2">Problemas con métodos de pago<i
+                        class="fas fa-sort-down" style="margin-left: 100%;"></i></h4>
+                <div id="ask_2" class="collapse">
+                    <h5>Paso 1</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 2</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 3</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 4</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 my-1 border-bottom">
+                <h4 data-toggle="collapse" data-target="#ask_3">Problemas al jugar a un juego<i
+                        class="fas fa-sort-down" style="margin-left: 100%;"></i></h4>
+                <div id="ask_3" class="collapse">
+                    <h5>Paso 1</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 2</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 3</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 4</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 my-1 border-bottom">
+                <h4 data-toggle="collapse" data-target="#ask_4">Un juego ha desaparecido de mi biblioteca<i class="fas fa-sort-down" style="margin-left: 100%;"></i></h4>
+                <div id="ask_4" class="collapse">
+                    <h5>Paso 1</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 2</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 3</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 4</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 my-1 border-bottom">
+                <h4 data-toggle="collapse" data-target="#ask_5">Problema con...<i class="fas fa-sort-down"
+                        style="margin-left: 100%;"></i></h4>
+                <div id="ask_5" class="collapse">
+                    <h5>Paso 1</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 2</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 3</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <h5>Paso 4</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="text-center mt-5">¿Tienes otro problema diferente? Contacta con nosotros</h4>
+        <div class="d-flex justify-content-center mb-5">
+            <a href="ayuda.html?id_usuario={{resultados.id_usuario}}" role="button" class="text-dark btn btn-warning justify-content-center text-decoration-none font-weight-bold">Contacta con nosotros</a>
+        </div>
+    </div>
+    <!--END CUERPO-->
+    <!--FOOTER-->
+    <footer class="page-footer wow fadeIn">
+        <div class="container pt-3 col-sm">
+            <div class="container-fluid d-flex justify-content-center ml-3">
+                <div class="mr-3">
+                    <p class="ml-2">Contacto</p>
+                    <div class="container d-flex justify-content-center">
+                        <div>
+                            <div class="row">
+                                <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a></div>
+                            </div>
+                            <div class="row">
+                                <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre nosotros </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mr-3">
+                    <p class="col-sm d-flex justify-content-center">Siguenos</p>
+                    <div class="container col-sm">
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div class="row-sm d-flex justify-content-center">
+                                    <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img src="img/facebook.png" alt="facebook"
+                                                    width="30vh"></a></i></div>
+                                    <div class="col-sm p-1 animated zoomIn"><i><a href="https://twitter.com/pochadia"><img src="img/twitter.png" alt="twitter"
+                                                    width="30vh"></a></i></div>
+                                    <div class="col-sm p-1 animated zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img src="img/instagram.png" alt="instagram"
+                                                    width="30vh"></a></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END FOOTER-->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="principal.html"> Pochadia.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+
+</html>

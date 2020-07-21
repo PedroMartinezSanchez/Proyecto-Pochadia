@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+    <!--Animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!--WOW-->
+    <script src="js/wow.js"></script>
+    <script>
+        wow = new WOW(
+            {
+                animateClass: 'animated',
+                offset: 100,
+                callback: function (box) {
+                    console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                }
+            }
+        );
+        wow.init();
+    </script>
+    <title>Alta</title>
+    <style>
+        form {
+            padding: 20px;
+            margin: auto;
+        }
+
+        body {
+            background: url(img/background.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center"><img src="img/icon.png" class="wow zoomInDown"
+            alt="Pochadia" style="width:250; height:230;"></div>
+    <div class="container d-flex justify-content-center">
+
+        <form action="/action_page.php" class="pt-4 pl-5 pr-5 bg-white was-validated wow zoomIn"
+            style="border-radius: 8px;">
+            <h3 class="text-dark pb-2 text-center">Regístrate</h3>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Introduce tu nombre" id="name" required>
+            </div>
+
+            <div class="form-group">
+
+                <input type="text" class="form-control" placeholder="Introduce tus apellidos" id="lastname" required>
+            </div>
+
+            <div class="form-group">
+
+                <input type="text" class="form-control" placeholder="Introduce tu nombre que verán los demás usuarios"
+                    id="nick" required>
+            </div>
+
+            <div class="form-group">
+
+                <input type="email" class="form-control" placeholder="Introduce tu email" id="mail" required>
+            </div>
+
+            <div class="form-group">
+
+                <input type="date" class="form-control" id="date" required>
+            </div>
+
+            <div class="form-group">
+
+                <input type="password" class="form-control" placeholder="Introduce tu contraseña" id="pass" required>
+            </div>
+
+            <div class="form-group">
+
+                <input type="password" class="form-control" placeholder="Confirma tu contraseña" id="pass2" required>
+            </div>
+
+            <div class="form-check-inline text-dark">
+
+                <input type="checkbox" class="form-check-input" value="" required><a target="_blank"
+                    href="./politicas/politicas.pdf">Acepto términos y condiciones de uso de
+                    Pochadia Site.</a>
+            </div><br>
+            <button type="submit" class="btn btn-warning mt-3 font-weight-bold text-dark mb-1 container">Enviar</button>
+            <a href="form_login.html" class="d-flex text-center justify-content-center mt-1">¿Ya tienes una cuenta?
+                Inicia sesión</a>
+        </form>
+    </div>
+    <footer class="page-footer wow fadeInDown">
+        <div class="container pt-3 col-sm">
+            <div class="container-fluid d-flex justify-content-center ml-2">
+                <div class="mr-3">
+                    <p class="ml-2">Contacto</p>
+                    <div class="container d-flex justify-content-center">
+                        <div>
+                            <div class="row">
+                                <div class="col-sm"><a href="FAQ.html">Ayuda</a></div>
+                            </div>
+                            <div class="row">
+                                <a href="aboutus.html" class="col-sm">Sobre nosotros </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mr-3">
+                    <p class="col-sm d-flex justify-content-center">Siguenos</p>
+                    <div class="container col-sm">
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-center">
+                                <div class="row-sm d-flex justify-content-center">
+                                    <div class="col-sm p-1 wow zoomIn"><i><a
+                                                href="https://www.facebook.com/profile.php?id=100052372509502"><img
+                                                    src="img/facebook.png" alt="facebook" style="width:4vh;"></a></i>
+                                    </div>
+                                    <div class="col-sm p-1 wow zoomIn"><i><a
+                                                href="https://twitter.com/pochadia"><img src="img/twitter.png"
+                                                    alt="twitter" style="width:4vh;"></a></i></div>
+                                    <div class="col-sm p-1 wow zoomIn"><i><a
+                                                href="https://www.instagram.com/pochadia/"><img src="img/instagram.png"
+                                                    alt="instagram" style="width:4vh;"></a></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="footer-copyright text-center mt-4 py-3">© 2020 Copyright:
+            <a href="principal.html"> Pochadia.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+
+</html>

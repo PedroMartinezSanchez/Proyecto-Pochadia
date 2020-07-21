@@ -1,0 +1,82 @@
+{
+    "resultados": [
+        {
+            "id_usuario": 1,
+            "nombre_usuario": "Knekro",
+            "img_perfil": "img/img_perfil/perfil_2.jpg",
+            "tipo_usuario": "NORMAL"
+        },
+        {
+            "juegos": {
+                "titulo": "Total War Warhammer 2",
+                "descripcion_short": "La secuela del galardonado Total War™: WARHAMMER®, Total War™: WARHAMMER II presenta una asombrosa campaña de exploración, expansión y conquista a través del Nuevo Mundo.",
+                "img_carousel": [
+                    "https://steamcdn-a.akamaihd.net/steam/apps/594570/ss_2595ece9a7ab534866613e7716039e66bb3df6fc.600x338.jpg?t=1592492519",
+                    "https://steamcdn-a.akamaihd.net/steam/apps/594570/ss_b923ac3082d777893dfd5594f338b2c7dada5133.600x338.jpg?t=1592492519",
+                    "https://steamcdn-a.akamaihd.net/steam/apps/594570/ss_e12a1320cd1ab645c2e63a0e6ae196c8874b93bd.600x338.jpg?t=1592492519"
+                ],
+                "descripcion_long": "Total War™: WARHAMMER® II es un juego de estrategia de proporciones épicas. Elige de entre cuatro exclusivas facciones y decide cómo librar la guerra: lanzando una campaña de conquista para salvar este enorme y fantástico mundo o destruirlo. Este juego posee dos partes diferenciadas: una de ellas es la campaña de mundo abierto por turnos y la segunda consiste en batallas tácticas a tiempo real, ambientadas en los fantásticos paisajes del Nuevo Mundo. Elige cómo jugar: te sumergirás en una intensa y atractiva campaña con la posibilidad de jugar muchas veces y desafiar al mundo en modo multijugador con un ejército personalizado, compuesto por tus unidades favoritas. Total War: WARHAMMER II te ofrece cientos de horas de juego, donde no habrá dos partidas iguales.",
+                "autor": "CREATIVE ASSEMBLY",
+                "tipo_suscriptor": "NORMAL",
+                "anyo_lanzamiento": 2017,
+                "franquicia": "Total War, Warhammer",
+                "genero": [
+                    "Accion",
+                    "estrategia"
+                ],
+                "idiomas": "Español de España, Inglés, Francés, Italiano, Alemán, Checo",
+                "multijugador": "Multijugador",
+                "num_jugadores": 4,
+                "puntuacion": 5,
+                "pegi": [
+                    "https://pegi.info/sites/default/files/inline-images/age-18-black%202_0.jpg",
+                    "https://pegi.info/sites/default/files/inline-images/violence-black-EN.jpg"
+                ]
+            },
+            "comentarios": [
+                {
+                    "id_comentario": 1,
+                    "nombre_usuario": "Joseba",
+                    "num_like": 23,
+                    "img_comentario": "img/img_perfil/perfil_3.jpg",
+                    "num_dislike": 250,
+                    "cabecera": "Mi opinión sobre este juegazo",
+                    "texto": "Pues resulta que...",
+                    "recomendado": 1,
+                    "hora_fecha": "10/07/2020 16:26",
+                    "respuestas": [
+                        {
+                            "nombre_usuario": "Juanlu",
+                            "num_like": 2,
+                            "img_comentario": "img/img_perfil/perfil_1.jpg",
+                            "num_dislike": 3,
+                            "texto": "Pues resulta que...",
+                            "hora_fecha": "10/07/2020 16:26"
+                        }
+                    ]
+                },
+                {
+                    "id_comentario": 2,
+                    "nombre_usuario": "Joseba",
+                    "num_like": 223,
+                    "img_comentario": "img/img_perfil/perfil_3.jpg",
+                    "num_dislike": 2250,
+                    "cabecera": "Mi opinión sobre este juegazo",
+                    "texto": "Pues resulta que...",
+                    "recomendado": 1,
+                    "hora_fecha": "10/07/2020 16:26",
+                    "respuestas": [
+                        {
+                            "nombre_usuario": "Juanlu",
+                            "num_like": 2,
+                            "img_comentario": "img/img_perfil/perfil_1.jpg",
+                            "num_dislike": 3,
+                            "texto": "Pues resulta que...",
+                            "hora_fecha": "10/07/2020 16:26"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,93 @@
+[
+    {
+        "titulo": "Unravel",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/1225560\/header.jpg?t=1591282642",
+        "fecha_subida": "2020-06-02",
+        "disponible": "1",
+        "id_juego": "1"
+    },
+    {
+        "titulo": "Total war Warhammer 2",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/594570\/header.jpg?t=1590682472",
+        "fecha_subida": "2020-06-17",
+        "disponible": "1",
+        "id_juego": "2"
+    },
+    {
+        "titulo": "Monster hunter: World",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/582010\/header.jpg?t=1587600484",
+        "fecha_subida": "2020-06-15",
+        "disponible": "1",
+        "id_juego": "3"
+    },
+    {
+        "titulo": "Skyrim special edition",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/489830\/header.jpg?t=1590515887",
+        "fecha_subida": "2020-06-15",
+        "disponible": "1",
+        "id_juego": "4"
+    },
+    {
+        "titulo": "The sims 4",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/1222670\/header.jpg?t=1592750152",
+        "fecha_subida": "2020-06-15",
+        "disponible": "1",
+        "id_juego": "5"
+    },
+    {
+        "titulo": "Black desert online remastered",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/582660\/header.jpg?t=1590581615",
+        "fecha_subida": "2020-06-15",
+        "disponible": "1",
+        "id_juego": "6"
+    },
+    {
+        "titulo": "Need for Speed Most Wanted",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/1262560\/header.jpg?t=1592510757",
+        "fecha_subida": "2020-06-15",
+        "disponible": "1",
+        "id_juego": "7"
+    },
+    {
+        "titulo": "Burnout Paradise Remastered",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/1238080\/header.jpg?t=1591812596",
+        "fecha_subida": "2020-06-15",
+        "disponible": "1",
+        "id_juego": "8"
+    },
+    {
+        "titulo": "DRIFT21",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/520950\/header.jpg?t=1592492482",
+        "fecha_subida": "2020-06-15",
+        "disponible": "1",
+        "id_juego": "9"
+    },
+    {
+        "titulo": "Farming Simulator 19",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/787860\/header.jpg?t=1592404816",
+        "fecha_subida": "2020-06-15",
+        "disponible": "1",
+        "id_juego": "10"
+    },
+    {
+        "titulo": "Stardew Valley",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/413150\/header.jpg?t=1592414257",
+        "fecha_subida": "2020-06-15",
+        "disponible": "1",
+        "id_juego": "11"
+    },
+    {
+        "titulo": "Plants vs Zombies La Batalla de Neighborville",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/1262240\/header.jpg?t=1592013845",
+        "fecha_subida": "2020-06-15",
+        "disponible": "1",
+        "id_juego": "12"
+    },
+    {
+        "titulo": "Football Manager 2020",
+        "imagen_index": "https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/1100600\/header.jpg?t=1584981392",
+        "fecha_subida": "2020-06-15",
+        "disponible": "1",
+        "id_juego": "13"
+    }
+]

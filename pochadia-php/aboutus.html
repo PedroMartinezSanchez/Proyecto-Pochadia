@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+    <!--lib de cards-->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/controlador_aboutus.js"></script>
+    <title>Sobre nosotros</title>
+    <style>
+        .campolog {
+            width: 350px;
+        }
+        body {
+            background: url(img/background.png);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        p {
+            font-size: 20px;
+        }
+        .valores{
+            font-size: 30px;
+        }      
+        .card-text{
+            color: black;
+        }
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: #108d6f;
+            border-color: #108d6f;
+            box-shadow: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #007b5e;
+            border-color: #007b5e;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section .section-title {
+            text-align: center;
+            color: #007b5e;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        #team .card {
+            border: none;
+            background-color: #fff;
+        }
+
+        .image-flip:hover .backside,
+        .image-flip.hover .backside {
+            -webkit-transform: rotateY(0deg);
+            -moz-transform: rotateY(0deg);
+            -o-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+            border-radius: .25rem;
+        }
+
+        .image-flip:hover .frontside,
+        .image-flip.hover .frontside {
+            -webkit-transform: rotateY(180deg);
+            -moz-transform: rotateY(180deg);
+            -o-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+
+        .mainflip {
+            -webkit-transition: 1s;
+            -webkit-transform-style: preserve-3d;
+            -ms-transition: 1s;
+            -moz-transition: 1s;
+            -moz-transform: perspective(1000px);
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transition: 1s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .frontside {
+            color:rgb(0, 0, 0);
+            position: relative;
+            -webkit-transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            z-index: 2;
+            margin-bottom: 30px;
+        }
+
+        .backside {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: white;
+            -webkit-transform: rotateY(-180deg);
+            -moz-transform: rotateY(-180deg);
+            -o-transform: rotateY(-180deg);
+            -ms-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+            -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+            -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+            box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        }
+
+        .frontside,
+        .backside {
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transition: 1s;
+            -webkit-transform-style: preserve-3d;
+            -moz-transition: 1s;
+            -moz-transform-style: preserve-3d;
+            -o-transition: 1s;
+            -o-transform-style: preserve-3d;
+            -ms-transition: 1s;
+            -ms-transform-style: preserve-3d;
+            transition: 1s;
+            transform-style: preserve-3d;
+        }
+
+        .frontside .card,
+        .backside .card {
+            min-height: 312px;
+        }
+
+        .backside .card a {
+            font-size: 18px;
+            color: #007b5e !important;
+        }
+
+        .frontside .card .card-title,
+        .backside .card .card-title {
+            color: #007b5e !important;
+        }
+
+        .frontside .card .card-body img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-cloak ng-controller="myCtrl">
+
+    <!--HEADER-->
+    <div ng-include="'cabecera-sinbuscar.html'"></div>
+  <!--END HEADER-->
+
+    <!--CUERPO-->
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="img/world.png" class="rounded-circle mx-auto d-block" alt="world_pocha">
+            </div>
+            <div class="col-sm-9">
+                <h1>Nuestros valores</h1>
+                <p class="valores">Somos un grupo de estudiantes de programación amantes
+                    del código que tenemos como meta realizar un portal en el
+                    que se pueda jugar a videojuegos sin importar el hardware
+                    del que dispongas, es una tarea dura, lo sabemos, pero estamos
+                    preparados. Aquí el equipo de desarrollo que está llevando
+                    a cabo este increíble proyecto que es Pochadia. </p>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <section id="team" class="pb-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Nuestro equipo</h2>
+                <div class="row">
+                    <!-- Team member -->
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="image-flip">
+                            <div class="mainflip flip-0">
+                                <div class="frontside">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p><img class=" img-fluid"
+                                                    src="/img/developers/manu.png"
+                                                    alt="card image"></p>
+                                            <h4 class="card-title">Manuel González</h4>
+                                            <p class="card-text">Te me cuidas, venga un abrazo lobo.</p>
+                                            <a href=""
+                                                class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="backside">
+                                    <div class="card">
+                                        <div class="card-body text-center mt-4">
+                                            <h4 class="card-title">Manu Gonzalez</h4>
+                                            <p class="card-text">Me gustan los videojuegos, hacer deporte 
+                                                y aprender algo nuevo cada día. Soy ordenado y 
+                                                muy detallista con todo.</p>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank"
+                                                        href="">
+                                                        <i class="fab fa-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank"
+                                                        href="">
+                                                        <i class="fab fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank"
+                                                        href="">
+                                                        <i class="fab fa-linkedin-in"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./Team member -->
+                    <!-- Team member -->
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                            <div class="mainflip">
+                                <div class="frontside">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p><img class=" img-fluid"
+                                                    src="/img/developers/pedroA.png"
+                                                    alt="card image"></p>
+                                            <h4 class="card-title">Pedro Antonio</h4>
+                                            <p class="card-text">Si no sabes a quien llamar, llama a Peter.</p>
+                                            <a href="" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="backside">
+                                    <div class="card">
+                                        <div class="card-body text-center mt-4">
+                                            <h4 class="card-title">Pedro Antonio</h4>
+                                            <p class="card-text">Amante de la tecnología. 
+                                                Me hice amigo del código a base de obstáculos, adoro hacer bien mi trabajo 
+                                                y divertirme junto a mis compañeros.</p>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank"
+                                                        href="">
+                                                        <i class="fab fa-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank"
+                                                        href="">
+                                                        <i class="fab fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank"
+                                                        href="">
+                                                        <i class="fab fa-linkedin-in"></i>
+                                                    </a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./Team member -->
+                    
+                    
+                    
+                    <!-- Team member -->
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                            <div class="mainflip">
+                                <div class="frontside">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p><img class=" img-fluid"
+                                                    src="/img/developers/pedroJ.jpeg"
+                                                    alt="card image"></p>
+                                            <h4 class="card-title">Pedro Martínez</h4>
+                                            <p class="card-text">Si, yo soy el "otro" Pedro.</p>
+                                            <a href="https://www.fiverr.com/share/qb8D02"
+                                                class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="backside">
+                                    <div class="card">
+                                        <div class="card-body text-center mt-4">
+                                            <h4 class="card-title">Pedro Martínez</h4>
+                                            <p class="card-text">Fanático del código limpio, la algoritmia, las metodologías ágiles y las nuevas tecnologías.
+                                                Muy capacitado, con una sólida formación técnica. </p>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank"
+                                                        href="">
+                                                        <i class="fab fa-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank"
+                                                        href="">
+                                                        <i class="fab fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="social-icon text-xs-center" target="_blank"
+                                                        href="">
+                                                        <i class="fab fa-linkedin-in"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ./Team member -->
+
+                </div>
+            </div>
+        </section>
+        <!-- Team -->
+
+        <a href="ayuda.html?id_usuario={{resultados.id_usuario}}" class="btn btn-warning container my-5 d-flex justify-content-center text-dark font-weight-bold"
+        style="font-size: large; width: 30vh;">Contacta con nosotros</a>
+        
+        <!--FOOTER-->
+        <footer class="page-footer">
+            <div class="container pt-3 col-sm">
+                <div class="container-fluid d-flex justify-content-center ml-3">
+                    <div class="mr-3">
+                        <p class="ml-2">Contacto</p>
+                        <div class="container d-flex justify-content-center">
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a></div>
+                                </div>
+                                <div class="row">
+                                    <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre nosotros </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mr-3">
+                        <p class="col-sm d-flex justify-content-center">Siguenos</p>
+                        <div class="container col-sm">
+                            <div class="d-flex justify-content-center">
+                                <div class="d-flex justify-content-center">
+                                    <div class="row-sm d-flex justify-content-center">
+                                        <div class="col-sm p-1"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img src="img/facebook.png"
+                                                        alt="facebook" style="width:4vh;"></a></i></div>
+                                        <div class="col-sm p-1"><i><a href="https://twitter.com/pochadia"><img
+                                                        src="img/twitter.png" alt="twitter" style="width:4vh;"></a></i>
+                                        </div>
+                                        <div class="col-sm p-1"><i><a href="https://www.instagram.com/pochadia/"><img src="img/instagram.png"
+                                                        alt="instagram" style="width:4vh;"></a></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--END FOOTER-->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                <a href="principal.html"> Pochadia.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+</body>
+
+</html>

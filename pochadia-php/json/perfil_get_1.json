@@ -1,0 +1,24 @@
+{
+    "resultados":
+        [{
+            "id_usuario": 1,
+            "tipo_usuario": "PREMIUM",
+            "nombre_usuario": "Pepe",
+            "img_perfil": "img/img_perfil/perfil_2.jpg",
+            "fecha_de_nacimiento": "2/2/1990",
+            "email": "pepe@pepe.com",
+            "img_banner": "img/banner.jpg",
+            "favoritos": {
+                "juegos": [
+                    {
+                        "id_juego": 1,
+                        "img_juego": "https://steamcdn-a.akamaihd.net/steam/apps/1225560/header.jpg?t=1591282642"
+                    },
+                    {
+                        "id_juego": 2,
+                        "img_juego": "https://steamcdn-a.akamaihd.net/steam/apps/594570/header.jpg?t=1590682472"
+                    }
+                ]
+            }
+        }]
+}
