@@ -13,6 +13,7 @@
     <script src="js/slick-1.8.1/slick/slick.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
     <script src="js/controlador_index.js"></script>
+    <script src="js/servicios.js"></script>
     <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
     <!--Animate.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
@@ -40,7 +41,7 @@
             </div>
             <div class="row d-flex justify-content-center" data="juegosBusqueda.length">
                 <div class="ml-3 my-3 animated flipInX" ng-repeat="juego in juegosFiltro = (juegosBusqueda | filter : busqueda)">
-                            <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                            <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                                     style="width:100%; height:100%"></a>            
                 </div>
                 <div ng-if="!juegosFiltro.length">
@@ -54,7 +55,7 @@
             </div>
             <div data="juegosNuevos.length" slick-slider="{{slickParams}}">
                 <div class="ml-3 animated flipInX" ng-repeat="juego in juegosNuevos">
-                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                             style="width:100%; height:100%"></a>
                 </div>
             </div>
@@ -66,7 +67,7 @@
             </div>
             <div data="juegosAccion.length" slick-slider="{{slickParams}}">
                 <div class="ml-3 animated flipInX" ng-repeat="juego in juegosAccion">
-                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                             style="width:100%; height:100%"></a>
                 </div>
             </div>
@@ -77,7 +78,7 @@
             </div>
             <div data="juegosAventura.length" slick-slider="{{slickParams}}">
                 <div class="ml-3 animated flipInX" ng-repeat="juego in juegosAventura">
-                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                             style="width:100%; height:100%"></a>
                 </div>
             </div>
@@ -88,7 +89,7 @@
             </div>
             <div data="juegosCarreras.length" slick-slider="{{slickParams}}">
                 <div class="ml-3 animated flipInX" ng-repeat="juego in juegosCarreras">
-                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                             style="width:100%; height:100%"></a>
                 </div>
             </div>
@@ -99,7 +100,7 @@
             </div>
             <div data="juegosRol.length" slick-slider="{{slickParams}}">
                 <div class="ml-3 animated flipInX" ng-repeat="juego in juegosRol">
-                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                             style="width:100%; height:100%"></a>
                 </div>
             </div>
@@ -110,7 +111,7 @@
             </div>
             <div data="juegosCasual.length" slick-slider="{{slickParams}}">
                 <div class="ml-3 animated flipInX" ng-repeat="juego in juegosCasual">
-                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                             style="width:100%; height:100%"></a>
                 </div>
             </div>
@@ -121,7 +122,7 @@
             </div>
             <div data="juegosSimuladores.length" slick-slider="{{slickParams}}">
                 <div class="ml-3 animated flipInX" ng-repeat="juego in juegosSimuladores">
-                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                             style="width:100%; height:100%"></a>
                 </div>
             </div>
@@ -132,7 +133,7 @@
             </div>
             <div data="juegosEstrategia.length" slick-slider="{{slickParams}}">
                 <div class="ml-3 animated flipInX" ng-repeat="juego in juegosEstrategia">
-                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                             style="width:100%; height:100%"></a>
                 </div>
             </div>
@@ -143,7 +144,7 @@
             </div>
             <div data="juegosIndie.length" slick-slider="{{slickParams}}">
                 <div class="ml-3 animated flipInX" ng-repeat="juego in juegosIndie">
-                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                             style="width:100%; height:100%"></a>
                 </div>
             </div>
@@ -154,7 +155,7 @@
             </div>
             <div data="juegosMultijugador.length" slick-slider="{{slickParams}}">
                 <div class="ml-3 animated flipInX" ng-repeat="juego in juegosMultijugador">
-                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                             style="width:100%; height:100%"></a>
                 </div>
             </div>
@@ -165,7 +166,7 @@
             </div>
             <div data="juegosDeportes.length" slick-slider="{{slickParams}}">
                 <div class="ml-3 animated flipInX" ng-repeat="juego in juegosDeportes">
-                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}"><img ng-src="{{juego.imagen_index}}"
+                    <a ng-href="/info_juego.html?id_juego={{juego.id_juego}}&id_usuario={{idUsuario}}"><img ng-src="{{juego.imagen_index}}"
                             style="width:100%; height:100%"></a>
                 </div>
             </div>

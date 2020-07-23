@@ -4,7 +4,8 @@ app.controller('myCtrl', function ($scope, $http) {
     $scope.idJuego = url.searchParams.get("id_juego");
     if (!$scope.idJuego) $scope.idJuego = 1;
     console.log($scope.idJuego);
-
+    $scope.comentarios = [];
+    $scope.respuestas = [];
     $scope.slickParams = {
         centerMode: true,
         centerPadding: '60px',
@@ -35,10 +36,39 @@ app.controller('myCtrl', function ($scope, $http) {
             }
         ]
     };
-    $http.get("json/info_juego_get_" + $scope.idJuego + ".json")
+    var url = new URL(window.location.href);
+    $scope.idUsuario = url.searchParams.get("id_usuario");
+    $http.get("http://localhost/servicios/get_cabecera.php?id_usuario=" + $scope.idUsuario).then(function (response3) {
+        $scope.cabecera = response3.data;
+    });
+    $http.get("http://localhost/servicios/get_pegi.php?id_juego=" + $scope.idJuego).then(function (response4) {
+        $scope.pegi = response4.data;
+
+    });
+    $http.get("http://localhost/servicios/get_imgcarousel.php?id_juego=" + $scope.idJuego).then(function (response5) {
+        $scope.carousel = response5.data;
+        $scope.imagenes = [$scope.carousel[0].img_1, $scope.carousel[0].img_2, $scope.carousel[0].img_3];
+    });
+    $http.get("http://localhost/servicios/get_comentarios.php?id_juego=" + $scope.idJuego).then(function (response6) {
+        
+        response6.data.forEach(comentario => {
+            
+            console.log(comentario);
+            if (comentario.id_respuesta == "1") {
+                $scope.comentarios.push(comentario);
+                console.log($scope.comentarios);
+            } else {
+                $scope.respuestas.push(comentario);
+            }
+        });
+    });
+    $http.get("http://localhost/servicios/get_generos.php?id_juego=" + $scope.idJuego)
+        .then(function (response2) {
+            $scope.generos = response2.data;
+    });
+    $http.get("http://localhost/servicios/get_infojuego.php?id_juego=" + $scope.idJuego)
         .then(function (response) {
-            $scope.resultados = response.data.resultados;
-            $scope.imagen = response.data.resultados[0].img_perfil;
+            $scope.resultados = response.data;
 
         });
 });

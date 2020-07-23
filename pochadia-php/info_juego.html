@@ -66,15 +66,15 @@
   <!-- JUMBOTRON -->
   <div class="container d-flex justify-content-center" style="text-align: center;">
     <div class="jumbotron mt-3 w-75 wow fadeIn">
-      <h1 style="color: orange;">{{resultados[1].juegos.titulo}}</h1>
-      <h4>{{resultados[1].juegos.descripcion_short}}</h4>
+      <h1 style="color: orange;">{{resultados[0].titulo}}</h1>
+      <h4>{{resultados[0].descripcion_short}}</h4>
     </div>
   </div>
   <!-- END JUMBOTRON -->
 
   <!-- CARRUSEL -->
-  <div data="resultados[1].juegos.img_carousel.length" slick-slider="{{slickParams}}">
-    <div class="ml-3 d-flex justify-content-center wow fadeIn" ng-repeat="img in resultados[1].juegos.img_carousel">
+  <div data="imagenes.length" slick-slider="{{slickParams}}">
+    <div class="ml-3 d-flex justify-content-center wow fadeIn" ng-repeat="img in imagenes">
       <img ng-src="{{img}}" style="width:60%; height:60%;" class="pb-3">
     </div>
   </div>
@@ -98,7 +98,7 @@
   <!-- JUMBOTRON2 -->
   <div class="container pt-3">
     <div class="jumbotron wow fadeIn">
-      <p >{{resultados[1].juegos.descripcion_long}}</p>
+      <p >{{resultados[0].descripcion_long}}</p>
     </div>
   </div>
   <!-- END JUMBOTRON2 -->
@@ -108,35 +108,35 @@
     <table class="table table-hover" style="text-align: center;">
       <thead>
         <tr>
-          <th>{{resultados[1].juegos.titulo}}</th>
-          <th>{{resultados[1].juegos.autor}}</th>
+          <th>{{resultados[0].titulo}}</th>
+          <th>{{resultados[0].autor}}</th>
         </tr>
         <tr>
           <td>Año de Lanzamiento</td>
-          <td>{{resultados[1].juegos.anyo_lanzamiento}}</td>
+          <td>{{resultados[0].anyo_lanzamiento}}</td>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Franquicia</td>
-          <td>{{resultados[1].juegos.franquicia}}</td>
+          <td>{{resultados[0].franquicia}}</td>
         </tr>
         <tr>
           <td>Idiomas</td>
-          <td>{{resultados[1].juegos.idiomas}}</td>
+          <td>{{resultados[0].idiomas}}</td>
         </tr>
 
         <tr>
           <td>Genero</td>
-          <td><span ng-repeat="genero in resultados[1].juegos.genero">{{genero}} </span></td>
+          <td><span ng-repeat="genero in generos">{{genero.nombre_genero}} </span></td>
         </tr>
         <tr>
           <td>Modos de Juego</td>
-          <td>{{resultados[1].juegos.multijugador}}</td>
+          <td>{{resultados[0].multijugador}}</td>
         </tr>
         <tr>
           <td>Numero Jugadores</td>
-          <td>{{resultados[1].juegos.num_jugadores}}</td>
+          <td>{{resultados[0].num_jugadores}}</td>
         </tr>
       </tbody>
     </table>
@@ -145,7 +145,7 @@
 
   <!--PEGI-->
   <div class="container pl-3">
-    <img class="wow fadeInDown" ng-repeat="pegi in resultados[1].juegos.pegi" src="{{pegi}}" style="width: 7%; height: 7%;">
+    <img class="wow fadeInDown" ng-repeat="pegi in pegi" src="img/pegi/{{pegi.nombre_pegi}}.jpg" style="width: 7%; height: 7%;">
   </div>
   <!--END PEGI-->
 
@@ -184,21 +184,21 @@
 
   <!--END CABECERA PARA METER COMENTARIOS-->
   <div class="container wow fadeIn">
-    <div class="card m-3" ng-repeat="comentario in resultados[1].comentarios">
+    <div class="card m-3" ng-repeat="comentario in comentarios">
       <div class="card-body">
-        <h4 style="color: orange;" id="cabecera">{{comentario.cabecera}}</h4>
-        <h5 style="color:darkorange;">{{comentario.nombre_usuario}}</h5>
+        <h4 style="color: orange;" id="cabecera">{{comentarios.cabecera}}</h4>
+        <h5 style="color:darkorange;">{{comentario.nombre}}</h5>
         <div class="row">
           <div class="col-md-2">
-            <img ng-src="{{comentario.img_comentario}}" class="img img-rounded img-fluid" />
+            <img ng-src="{{comentario.imagen}}" class="img img-rounded img-fluid" />
             <p class="text-center"> <small> {{comentario.hora_fecha}}</small> </p>
           </div>
           <div class="col-md-10">
             <div class="clearfix"></div>
             <h5>
               <i class="fas fa-thumbs-up text-success" style="float:right;"
-                ng-if="cometario.recomendado == 1">Recomnendado</i>
-              <i class="fas fa-thumbs-up text-danger" style="float:right;" ng-if="cometario.recomendado == 0">No
+                ng-if="comentario.recomendado == 1">Recomnendado</i>
+              <i class="fas fa-thumbs-up text-danger" style="float:right;" ng-if="comentario.recomendado == 0">No
                 recomendado</i>
             </h5><br>
             <p>{{comentario.texto}}</p>
@@ -206,9 +206,9 @@
               <a class="float-right btn btn-warning ml-2 mb-1" ng-click="muestraComentario=!muestraComentario"> <i
                   class="fa fa-reply"></i> Responder</a> <!-- ICONOS LIKE Y DISLIKE -->
               <a class="float-right btn text-white btn btn-danger ml-2 mb-1"> No me Gusta <span
-                  class="badge">{{comentario.num_like}}</span></a>
+                  class="badge">{{comentario.votos_positivos}}</span></a>
               <a class="float-right btn text-white btn btn-success"> Me Gusta <span
-                  class="badge">{{comentario.num_dislike}}</span></a>
+                  class="badge">{{comentario.votos_negativos}}</span></a>
             </p>
           </div>
         </div>
