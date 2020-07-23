@@ -67,14 +67,14 @@ INSERT INTO genero VALUES('00003','Carreras');
 INSERT INTO genero VALUES('00004','Casual');
 INSERT INTO genero VALUES('00005','Deportes');
 INSERT INTO genero VALUES('00006','Estrategia');
-INSERT INTO genero VALUES('00007','Indle');
+INSERT INTO genero VALUES('00007','Indie');
 INSERT INTO genero VALUES('00008','Multijugador masivo');
 INSERT INTO genero VALUES('00009','Rol');
 INSERT INTO genero VALUES('00010','Simuladores');
 
 CREATE TABLE comentario (
   id_comentario INT(5) NOT NULL,
-  id_respuesta INT(5) NOT NULL,
+  id_respuesta INT(5),
   id_usuario INT(5) NOT NULL,
   id_juego INT(5) NOT NULL,
   votos_positivos INT(10) NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE comentario (
   cabecera varchar(50),
   texto varchar(600) NOT NULL,
   recomendado BIT,
-  PRIMARY KEY (id_comentario, id_respuesta),
+  PRIMARY KEY (id_comentario),
   CONSTRAINT comentario_usuario FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
   CONSTRAINT comentario_juego FOREIGN KEY (id_juego) REFERENCES juego (id_juego)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -203,7 +203,7 @@ INSERT INTO pegi VALUES('00008','miedo');
 INSERT INTO pegi VALUES('00009','juegos_azar');
 INSERT INTO pegi VALUES('00010','sexo');
 INSERT INTO pegi VALUES('00011','drogas');
-INSERT INTO pegi VALUES('00012','discriminación');
+INSERT INTO pegi VALUES('00012','discriminacion');
 
 CREATE TABLE juego_pegi (
    id_pegi INT(5) NOT NULL,
