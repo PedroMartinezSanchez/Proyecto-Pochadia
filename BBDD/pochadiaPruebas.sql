@@ -1,7 +1,7 @@
 CREATE TABLE usuario (
   id_usuario INT(5) NOT NULL,
   nombre varchar(20) NOT NULL,
-  contrasenya varchar(20) NOT NULL,
+  contrasenya varchar(200) NOT NULL,
   fecha_nacimiento date NOT NULL,
   correo varchar(50) NOT NULL,
   imagen varchar(40), /*¿NOT NULL?*/
