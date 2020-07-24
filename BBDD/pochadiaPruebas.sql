@@ -1,5 +1,5 @@
 CREATE TABLE usuario (
-  id_usuario INT(5) NOT NULL,
+  id_usuario INT(5) NOT NULL AUTO_INCREMENT,
   nombre varchar(20) NOT NULL,
   contrasenya varchar(200) NOT NULL,
   fecha_nacimiento date NOT NULL,
@@ -12,12 +12,12 @@ CREATE TABLE usuario (
   PRIMARY KEY (id_usuario)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO usuario VALUES('00001','Pedro José','1234','1994/10/11','correo@hotmail.com','perfil_1.jpg','banner_1.jpg','NORMAL','2020/06/10','2020/09/10');
-INSERT INTO usuario VALUES('00002','Manu','1234','1994/10/11','correo@hotmail.com','perfil_2.jpg','banner_1.jpg','PREMIUM','2020/06/10','2020/09/10');
-INSERT INTO usuario VALUES('00003','Pedro','1234','1994/10/11','correo@hotmail.com','perfil_3.jpg','banner_1.jpg','NORMAL','2020/06/10','2020/09/10');
+INSERT INTO usuario VALUES('00001','Pedro José','81dc9bdb52d04dc20036dbd8313ed055','1994/10/11','correo@hotmail.com','perfil_1.jpg','banner_1.jpg','NORMAL','2020/06/10','2020/09/10');
+INSERT INTO usuario VALUES('00002','Manu','81dc9bdb52d04dc20036dbd8313ed055','1994/10/11','correo@hotmail.com','perfil_2.jpg','banner_1.jpg','PREMIUM','2020/06/10','2020/09/10');
+INSERT INTO usuario VALUES('00003','Pedro','81dc9bdb52d04dc20036dbd8313ed055','1994/10/11','correo@hotmail.com','perfil_3.jpg','banner_1.jpg','NORMAL','2020/06/10','2020/09/10');
 
 CREATE TABLE juego (
-  id_juego INT(5) NOT NULL,
+  id_juego INT(5) NOT NULL AUTO_INCREMENT,
   puntuacion_1_S INT(5) NOT NULL,/*1 estrella*/
   puntuacion_2_S INT(5) NOT NULL,/*2 estrellas*/
   puntuacion_3_S INT(5) NOT NULL,/*3 estrellas*/
