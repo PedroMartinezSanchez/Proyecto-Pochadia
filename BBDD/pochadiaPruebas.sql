@@ -12,9 +12,9 @@ CREATE TABLE usuario (
   PRIMARY KEY (id_usuario)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO usuario VALUES('00001','Pedro José','81dc9bdb52d04dc20036dbd8313ed055','1994/10/11','correo@hotmail.com','perfil_1.jpg','banner_1.jpg','NORMAL','2020/06/10','2020/09/10');
-INSERT INTO usuario VALUES('00002','Manu','81dc9bdb52d04dc20036dbd8313ed055','1994/10/11','correo@hotmail.com','perfil_2.jpg','banner_1.jpg','PREMIUM','2020/06/10','2020/09/10');
-INSERT INTO usuario VALUES('00003','Pedro','81dc9bdb52d04dc20036dbd8313ed055','1994/10/11','correo@hotmail.com','perfil_3.jpg','banner_1.jpg','NORMAL','2020/06/10','2020/09/10');
+INSERT INTO usuario VALUES('00001','Pedro José','81dc9bdb52d04dc20036dbd8313ed055','1994/10/11','correo@hotmail.com','img/img_perfil/perfil_1.jpg','banner_1.jpg','NORMAL','2020/06/10','2020/09/10');
+INSERT INTO usuario VALUES('00002','Manu','81dc9bdb52d04dc20036dbd8313ed055','1994/10/11','correo@hotmail.com','img/img_perfil/perfil_2.jpg','banner_1.jpg','PREMIUM','2020/06/10','2020/09/10');
+INSERT INTO usuario VALUES('00003','Pedro','81dc9bdb52d04dc20036dbd8313ed055','1994/10/11','correo@hotmail.com','img/img_perfil/perfil_3.jpg','banner_1.jpg','NORMAL','2020/06/10','2020/09/10');
 
 CREATE TABLE juego (
   id_juego INT(5) NOT NULL AUTO_INCREMENT,
@@ -73,7 +73,7 @@ INSERT INTO genero VALUES('00009','Rol');
 INSERT INTO genero VALUES('00010','Simuladores');
 
 CREATE TABLE comentario (
-  id_comentario INT(5) NOT NULL,
+  id_comentario INT(5) NOT NULL AUTO_INCREMENT,
   id_respuesta INT(5),
   id_usuario INT(5) NOT NULL,
   id_juego INT(5) NOT NULL,
