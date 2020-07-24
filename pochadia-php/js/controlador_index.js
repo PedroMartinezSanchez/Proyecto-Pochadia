@@ -1,5 +1,5 @@
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function ($scope, $http) {
+app.controller('myCtrl', function ($scope, $http, usuario) {
     $scope.juegosNuevos = [];
     $scope.juegosRol = [];
     $scope.juegosAccion = [];
@@ -42,10 +42,10 @@ app.controller('myCtrl', function ($scope, $http) {
     };
     //var cont = -1;
     //var pegi = "";
-    var url = new URL(window.location.href);
-    $scope.idUsuario = url.searchParams.get("id_usuario");
-    $http.get("http://localhost/servicios/get_pegi.php").then(function (response4) {
+    $scope.idUsuario = usuario.id();
+    $http.get("http://localhost/servicios/get_pegi_edad.php").then(function (response4) {
         $scope.pegi = response4.data;
+        
     });
     $http.get("http://localhost/servicios/get_cabecera.php?id_usuario=" + $scope.idUsuario).then(function (response3) {
         $scope.cabecera = response3.data;
@@ -53,7 +53,6 @@ app.controller('myCtrl', function ($scope, $http) {
     $http.get("http://localhost/servicios/get_index.php")
         .then(function (response) {
             $scope.resultados = response.data;
-
             response.data.forEach(juego => {
                 $http.get("http://localhost/servicios/get_generos.php?id_juego=" + juego.id_juego)
                     .then(function (response2) {
@@ -84,6 +83,10 @@ app.controller('myCtrl', function ($scope, $http) {
                     });
             });
         });
+        $scope.logout = function () {
+            usuario.logout();
+            window.location.href = "principal.html";
+        }
 });
 
 app.directive('slickSlider', function ($timeout) {

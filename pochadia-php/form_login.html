@@ -8,11 +8,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
     <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!--Animate.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!--WOW-->
+    <script src="js/controlador_login.js"></script>
+    <script src="js/servicios.js"></script>
     <script src="js/wow.js"></script>
     <script>
         wow = new WOW(
@@ -40,24 +44,25 @@
         }
     </style>
 </head>
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
     <article class="pt-2 container-fluid">
         <div class="container d-flex justify-content-center wow zoomInDown">
             <img src="img/icon.png" alt="icon_pochadia" style="width: 20vh; height: 20vh;">
         </div>
-            <form action="http://localhost/servicios/login.php" method="post" class="campolog bg-white p-3 container was-validated animated zoomIn" style="width: 25%; border-radius: 8px;">
+            <form class="campolog bg-white p-3 container was-validated animated zoomIn" style="width: 25%; border-radius: 8px;">
                 <h3 class="text-center text-dark mb-4">Inicia Sesión</h3>
                 <div class="form-group">
                     <input type="email" class="form-control input-sm mb-4" placeholder="Introduce tu e-mail"
-                        name="correo" required>
+                        name="correo" ng-model="correo" required>
                     <input type="password" class="form-control input-sm mb-2" placeholder="Introduce tu contraseña"
-                        name="contra" required>
+                        name="contra" ng-model="contra" required>
                     <label class="form-check-label col-sm text-dark pl-4">
                         <input class="form-check-input input-sm" type="checkbox" name="remember"> Recordar usuario
                     </label>
-                    <input type="text" class="form-control input-sm" name="error">¡ERROR!</input>
+                    <input type="text" class="form-control input-sm" name="error"></input>
                 </div>
-                <button type="submit" class="btn btn-warning font-weight-bold text-dark container justify-content-center d-flex" style="width: 50%;">Enviar</button>
+                <button type="button" ng-click="login()" class="btn btn-warning font-weight-bold text-dark container justify-content-center d-flex" style="width: 50%;">Enviar</button>
+                <button type="button" ng-click="logout()" class="btn btn-warning font-weight-bold text-dark container justify-content-center d-flex" style="width: 50%;">Cerrar</button>
                 <a href="olvido_contraseña.html" class="d-flex text-center justify-content-center mt-1">¿Has olvidado tu contraseña?</a>
                 <a href="formulario_alta.html" class="d-flex text-center justify-content-center mt-1">¿No tienes una cuenta? Registrate</a>
             </form>       
