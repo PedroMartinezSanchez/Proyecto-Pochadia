@@ -20,6 +20,7 @@
   <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
   <script src="js/controlador_info_juego.js"></script>
   <script src="js/info_juego.js"></script>
+  <script src="js/servicios.js"></script>
   <!--Animate.css-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -158,25 +159,25 @@
       <form>
         <label style="color: orange;" class="d-flex justify-content-center">Introduce una Cabecera</label>
         <div class="form-group d-flex justify-content-center">
-          <input type="text" class="form-control w-50" id="cabeceraComentarios">
+          <input type="text" name="cabecera" ng-model="cabecera_comentario" class="form-control w-50" id="cabeceraComentarios" placeholder="Cabecera">
         </div>
 
         <h6 class="text-center" style="color: orange;">¿Recomiendas este juego?</h6>
 
         <h4 style="color: orange;" id="cabecera" class="mx-auto text-center">
-          <button class="btn btn-primary mb-1"><i class="fas fa-thumbs-up text-success" id="recomended">
+          <button type="button" class="btn btn-primary mb-1" ng-click="recomendado = 1"><i class="fas fa-thumbs-up text-success" id="recomended">
               Recomendado</i></button>
-          <button class="btn btn-primary mb-1"><i class="fas fa-thumbs-down text-danger pl-2" id="recomended"> No
+          <button type="button" class="btn btn-primary mb-1" ng-click="recomendado = 0"><i class="fas fa-thumbs-down text-danger pl-2" id="recomended"> No
               Recomendado</i></button>
         </h4>
 
         <label style="color: orange;" class="d-flex justify-content-center">Opina sobre este Juego:</label>
         <div class="form-group d-flex justify-content-center">
-          <textarea class="form-control w-75 " id="textarea" rows="3"></textarea>
+          <textarea class="form-control w-75 " ng-model="texto" id="textarea" rows="3"></textarea>
         </div>
 
         <div class="form-group d-flex justify-content-center">
-          <a class="btn btn-warning w-50"> <i class="fa fa-reply"></i> Enviar Comentario</a>
+          <button type="button" class="btn btn-warning w-50" ng-click="comentar()"> <i class="fa fa-reply"></i> Enviar Comentario</button>
         </div>
       </form>
     </div>
@@ -186,7 +187,7 @@
   <div class="container wow fadeIn">
     <div class="card m-3" ng-repeat="comentario in comentarios">
       <div class="card-body">
-        <h4 style="color: orange;" id="cabecera">{{comentarios.cabecera}}</h4>
+        <h4 style="color: orange;" id="cabecera">{{comentario.cabecera}}</h4>
         <h5 style="color:darkorange;">{{comentario.nombre}}</h5>
         <div class="row">
           <div class="col-md-2">
@@ -197,7 +198,7 @@
             <div class="clearfix"></div>
             <h5>
               <i class="fas fa-thumbs-up text-success" style="float:right;"
-                ng-if="comentario.recomendado == 1">Recomnendado</i>
+                ng-if="comentario.recomendado == 1">Recomendado</i>
               <i class="fas fa-thumbs-up text-danger" style="float:right;" ng-if="comentario.recomendado == 0">No
                 recomendado</i>
             </h5><br>
@@ -221,17 +222,17 @@
               </div>
 
               <div class="form-group d-flex justify-content-center">
-                <a class="btn btn-warning w-50" ng-click="ocultar = true"> <i class="fa fa-reply"></i>
-                  Responder</a>
+                <button type="button" class="btn btn-warning w-50" ng-click="responder(1,{{comentario.id_comentario}})"><i class="fa fa-reply"></i>
+                  Responder</button>
               </div>
             </form>
           </div>
         </div>
     <!--OCULTO EL RESPONDER-->
 
-        <h5 style="color:darkorange;" ng-repeat="respuesta in comentario.respuestas">{{respuesta.nombre_usuario}}</h5>
+        <h5 style="color:darkorange;" ng-repeat="respuesta in respuestas">{{respuesta.nombre_usuario}}</h5>
 
-        <div class="row" ng-repeat="respuesta in comentario.respuestas">
+        <div class="row" ng-repeat="respuesta in respuestas">
           <div class="col-md-2">
             <img ng-src="{{respuesta.img_comentario}}" class="img img-rounded img-fluid" />
             <p class="text-center"> <small> {{respuesta.hora_fecha}}</small> </p>
@@ -243,9 +244,9 @@
               <a class="float-right btn btn-warning ml-2 mb-1" ng-click="muestraRespuesta=!muestraRespuesta"> <i
                   class="fa fa-reply"></i> Responder</a> <!-- ICONOS LIKE Y DISLIKE -->
               <a class="float-right btn text-white btn btn-danger ml-2 mb-1"> No me Gusta <span
-                  class="badge">{{respuesta.num_like}}</span></a>
+                  class="badge">{{respuesta.votos_positivos}}</span></a>
               <a class="float-right btn text-white btn btn-success"> Me Gusta <span
-                  class="badge">{{respuesta.num_dislike}}</span></a>
+                  class="badge">{{respuesta.votos_negativos}}</span></a>
             </p>
           </div>
           <div class="container" ng-if="muestraRespuesta" ng-hide="ocultar">
@@ -257,8 +258,8 @@
                 </div>
 
                 <div class="form-group d-flex justify-content-center">
-                  <a class="btn btn-warning w-50" ng-click="ocultar = true"> <i class="fa fa-reply"></i>
-                    Responder</a>
+                  <button type="button" class="btn btn-warning w-50" ng-click="responder(1,{{comentario.id_comentario}})"> <i class="fa fa-reply"></i>
+                    Responder</button>
                 </div>
               </form>
             </div>

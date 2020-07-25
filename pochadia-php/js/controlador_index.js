@@ -50,7 +50,7 @@ app.controller('myCtrl', function ($scope, $http, usuario) {
     $http.get("http://localhost/servicios/get_cabecera.php?id_usuario=" + $scope.idUsuario).then(function (response3) {
         $scope.cabecera = response3.data;
     });
-    $http.get("http://localhost/servicios/get_index.php")
+    $http.get("http://localhost/servicios/get_index.php?id_usuario=" + $scope.idUsuario)
         .then(function (response) {
             $scope.resultados = response.data;
             response.data.forEach(juego => {
