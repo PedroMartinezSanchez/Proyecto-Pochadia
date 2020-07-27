@@ -70,12 +70,12 @@ app.service('usuario', function ($http, $timeout) {
                 }, 0);
             });
         });
-    }
-    this.responder = function (texto, id_juego, scope, id_comentario, respuesta) {
-        $http.put("http://localhost/servicios/post_infojuego.php", { id_usuario: usuario.id_usuario, texto: texto, id_juego: id_juego, id_comentario:id_comentario, respuesta:respuesta}).then(function (datos) {
+    };
+    this.responder = function (cabecera, texto, id_juego, scope, id_comentario) {
+        $http.put("http://localhost/servicios/post_infojuego.php", {id_usuario:usuario.id_usuario, cabecera:cabecera, texto:texto, id_juego:id_juego, id_comentario:id_comentario}).then(function (datos) {
             console.log(datos.data);
             scope.comentarios.length = 0;
-            $http.get("http://localhost/servicios/get_comentarios.php?id_juego=" + id_juego).then(function (response6) {
+            /*$http.get("http://localhost/servicios/get_comentarios.php?id_juego=" + id_juego).then(function (response6) {
 
                 $timeout(function () {
                     response6.data.forEach(comentario => {
@@ -83,13 +83,38 @@ app.service('usuario', function ($http, $timeout) {
                         console.log(comentario);
                         if (comentario.id_respuesta == null) {
                             scope.comentarios.push(comentario);
-                            console.log(scope.comentarios);
+                            //console.log(scope.comentarios);
                         } else {
                             scope.respuestas.push(comentario);
                         }
                     });
                 }, 0);
-            });
+            });*/
         });
-    }
+    };
+    this.actualizaBanner = function (img_banner) {
+        $http.put("http://localhost/servicios/post_banner.php", {img_banner:img_banner, id_usuario:usuario.id_usuario}).then(function (datos) {
+            console.log(datos.data);
+        });
+    };
+    this.actualizaCorreo = function (correo) {
+        $http.put("http://localhost/servicios/post_correo.php", {correo:correo, id_usuario:usuario.id_usuario}).then(function (datos) {
+            console.log(datos.data);
+        });
+    };
+    this.actualizaContrasenya = function (contrasenya) {
+        $http.put("http://localhost/servicios/post_contrasenya.php", {contrasenya:contrasenya, id_usuario:usuario.id_usuario}).then(function (datos) {
+            console.log(datos.data);
+        });
+    };
+    this.actualizaNick = function (nombre) {
+        $http.put("http://localhost/servicios/post_nick.php", {nombre:nombre, id_usuario:usuario.id_usuario}).then(function (datos) {
+            console.log(datos.data);
+        });
+    };
+    this.favorito = function (favorito,id_juego) {
+        $http.put("http://localhost/servicios/post_favorito.php", {favorito:favorito, id_juego:id_juego, id_usuario:usuario.id_usuario}).then(function (datos) {
+            console.log(datos.data);
+        });
+    };
 });

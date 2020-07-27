@@ -13,11 +13,11 @@
     
           <ul class="navbar-nav mr-auto col">
             <li class="nav-item active">
-              <a class="nav-link pl-3 mr-4" href="index.html?id_usuario={{cabecera[0].id_usuario}}">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link pl-3 mr-4" href="index.html">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link pl-3" ng-if="cabecera[0].tipo_suscriptor == 'NORMAL'" href="premium.html?id_usuario={{cabecera[0].id_usuario}}">Premium</a>
-              <a class="nav-link pl-3" ng-if="cabecera[0].tipo_suscriptor == 'PREMIUM'" href="info_premium.html?id_usuario={{cabecera[0].id_usuario}}">Premium</a>
+              <a class="nav-link pl-3" ng-if="cabecera[0].suscrito == 'NORMAL'" href="premium.html">Premium</a>
+              <a class="nav-link pl-3" ng-if="cabecera[0].suscrito == 'PREMIUM'" href="info_premium.html">Premium</a>
             </li>
           </ul>
           <form class="form my-2 my-lg-0 pl-3 col">
@@ -32,9 +32,9 @@
                       <img class="card-img-top mt-4 rounded-circle" src="{{cabecera[0].imagen}}" alt="Card image" style="width:40%">
                       <div class="card-body pb-1">
                         <h4 class="card-title text-center" style="font-size: 100%;">{{cabecera[0].nombre}}</h4>
-                        <a ng-href="/perfil.html?id_usuario={{cabecera[0].id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                        <a ng-href="/perfil.html" class="btn btn-warning mt-2 col-sm container justify-content-center"
                           style="width: 100%;">Ajustes</a>
-                        <a href="FAQ.html?id_usuario={{cabecera[0].id_usuario}}" class="btn btn-warning mt-2 col-sm container justify-content-center"
+                        <a href="FAQ.html" class="btn btn-warning mt-2 col-sm container justify-content-center"
                           style="width: 100%;">Ayuda</a>
                         <a href="#" ng-click="$parent.logout()" class="btn btn-warning mt-2 col-sm container" style="width: 100%; height: 500%;">Cerrar
                           sesión</a>

@@ -1,6 +1,6 @@
 <!--HEADER-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
-  <a href="index.html?id_usuario={{cabecera[0].id_usuario}}" class="mr-4 pl-3">
+  <a href="index.html" class="mr-4 pl-3">
       <img src="img/icon.png" class="animated fadeInDownBig" alt="logo" width="100">
   </a>
 
@@ -13,7 +13,7 @@
 
       <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-              <a class="nav-link pl-3 mr-4" href="index.html?id_usuario={{cabecera[0].id_usuario}}">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link pl-3 mr-4" href="index.html">Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
               <a class="nav-link pl-3" ng-if="cabecera[0].suscrito == 'NORMAL'"
@@ -38,10 +38,10 @@
                               <div class="card-body pb-1">
                                   <h4 class="card-title text-center" style="font-size: 100%;">
                                       {{cabecera[0].nombre}}</h4>
-                                  <a ng-href="/perfil.html?id_usuario={{cabecera[0].id_usuario}}"
+                                  <a ng-href="/perfil.html"
                                       class="btn btn-warning mt-2 col-sm container justify-content-center"
                                       style="width: 100%;">Ajustes</a>
-                                  <a ng-href="/perfil.html?id_usuario={{cabecera[0].id_usuario}}"
+                                  <a ng-href="/perfil.html"
                                       class="btn btn-warning mt-2 col-sm container justify-content-center"
                                       style="width: 100%;">Ayuda</a>
                                   <a href="#" ng-click="$parent.logout()" class="btn btn-warning mt-2 col-sm container"
