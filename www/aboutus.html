@@ -29,7 +29,7 @@
             font-size: 20px;
         }
         .valores{
-            font-size: 30px;
+            font-size: 25px;
         }      
         .card-text{
             color: black;
@@ -160,20 +160,16 @@
     </style>
 </head>
 
-<body ng-app="myApp" ng-cloak ng-controller="myCtrl">
-
-    <!--HEADER-->
-    <div ng-include="'cabecera-sinbuscar.html'"></div>
-  <!--END HEADER-->
+<body>
 
     <!--CUERPO-->
     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-sm-3">
-                <img src="img/world.png" class="rounded-circle mx-auto d-block" alt="world_pocha">
+                <img src="img/icon.png" class="rounded-circle mx-auto d-block" alt="world_pocha">
             </div>
             <div class="col-sm-9">
-                <h1>Nuestros valores</h1>
+                <h1>¿Quienes somos?</h1>
                 <p class="valores">Somos un grupo de estudiantes de programación amantes
                     del código que tenemos como meta realizar un portal en el
                     que se pueda jugar a videojuegos sin importar el hardware
@@ -199,7 +195,7 @@
                                                     src="/img/developers/manu.png"
                                                     alt="card image"></p>
                                             <h4 class="card-title">Manuel González</h4>
-                                            <p class="card-text">Te me cuidas, venga un abrazo lobo.</p>
+                                            <p class="card-text">La mayoría de los buenos programadores programan no porque esperan que les pagen o que el público los adore, sino porque programar es divertido.</p>
                                             <a href=""
                                                 class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                         </div>
@@ -250,7 +246,7 @@
                                                     src="/img/developers/pedroA.png"
                                                     alt="card image"></p>
                                             <h4 class="card-title">Pedro Antonio</h4>
-                                            <p class="card-text">Si no sabes a quien llamar, llama a Peter.</p>
+                                            <p class="card-text">A veces, cuando innovas, cometes errores. Lo mejor es admitirlos rápidamente y seguir mejorando tus otras innovaciones.</p>
                                             <a href="" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                         </div>
                                     </div>
@@ -302,7 +298,7 @@
                                                     src="/img/developers/pedroJ.jpeg"
                                                     alt="card image"></p>
                                             <h4 class="card-title">Pedro Martínez</h4>
-                                            <p class="card-text">Si, yo soy el "otro" Pedro.</p>
+                                            <p class="card-text">Medir el progreso en un proyecto de programación por líneas de código es como medir la construcción de un avión por su peso.</p>
                                             <a href="https://www.fiverr.com/share/qb8D02"
                                                 class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                                         </div>
@@ -323,13 +319,13 @@
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <a class="social-icon text-xs-center" target="_blank"
-                                                        href="">
+                                                        href="https://twitter.com/MosbiConnor">
                                                         <i class="fab fa-twitter"></i>
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item">
                                                     <a class="social-icon text-xs-center" target="_blank"
-                                                        href="">
+                                                        href="https://www.linkedin.com/in/pedromart%C3%ADnezs%C3%A1nchez/">
                                                         <i class="fab fa-linkedin-in"></i>
                                                     </a>
                                                 </li>
@@ -347,7 +343,7 @@
         </section>
         <!-- Team -->
 
-        <a href="ayuda.html?id_usuario={{resultados.id_usuario}}" class="btn btn-warning container my-5 d-flex justify-content-center text-dark font-weight-bold"
+        <a href="contacto.html" class="btn btn-warning container my-5 d-flex justify-content-center text-dark font-weight-bold"
         style="font-size: large; width: 30vh;">Contacta con nosotros</a>
         
         <!--FOOTER-->
@@ -359,10 +355,7 @@
                         <div class="container d-flex justify-content-center">
                             <div>
                                 <div class="row">
-                                    <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados.id_usuario}}">Ayuda</a></div>
-                                </div>
-                                <div class="row">
-                                    <a href="aboutus.html?id_usuario={{resultados.id_usuario}}" class="col-sm">Sobre nosotros </a>
+                                    <a href="aboutus.html" class="col-sm">Sobre nosotros </a>
                                 </div>
                             </div>
                         </div>
@@ -390,7 +383,7 @@
             <!--END FOOTER-->
             <!-- Copyright -->
             <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                <a href="principal.html"> Pochadia.com</a>
+                <a href="#"> Pochadia.com</a>
             </div>
             <!-- Copyright -->
         </footer>
