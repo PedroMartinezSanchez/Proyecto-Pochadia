@@ -82,10 +82,15 @@ app.controller('myCtrl', function ($scope, $http, $timeout, usuario) {
                 },
                 preConfirm: () => {
                     var canvas = document.getElementsByClassName("lower-canvas")[0];
-                    console.log(canvas.type);
+                    //console.log(canvas.type);
                     if (canvas.width > 512 && canvas.height > 512) {
                         $timeout(function () {
-                            $scope.imagen = canvas.toDataURL('image/png',0);
+                            var tipos = ['image/jpeg', 'image/bmp', 'image/gif', 'image/png', 'image/tiff'];
+                            for (i = 0; i < tipos.length; i++) {
+                                $scope.imagen = canvas.toDataURL(tipos[i], 0.5);
+                                if ($scope.imagen) break;
+                            }
+                            console.log($scope.imagen);
                             usuario.actualizaPerfil($scope.imagen);
                             Swal.fire({
                                 title: 'Imagen actualizada',
@@ -136,7 +141,12 @@ app.controller('myCtrl', function ($scope, $http, $timeout, usuario) {
                     var canvas = document.getElementsByClassName("lower-canvas")[0];
                     if (canvas.width > 698 && canvas.height > 235) {
                         $timeout(function () {
-                            $scope.img_banner = canvas.toDataURL('image/png',0);
+                            var tipos = ['image/jpeg', 'image/bmp', 'image/gif', 'image/png', 'image/tiff'];
+                            for (i = 0; i < tipos.length; i++) {
+                                $scope.img_banner = canvas.toDataURL(tipos[i], 0.5);
+                                if ($scope.img_banner) break;
+                            }
+                            console.log($scope.img_banner);
                             usuario.actualizaBanner($scope.img_banner);
                             Swal.fire({
                                 title: 'Imagen actualizada',

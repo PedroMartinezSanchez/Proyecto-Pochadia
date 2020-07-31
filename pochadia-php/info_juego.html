@@ -28,23 +28,27 @@
   <!--WOW-->
   <script src="js/wow.js"></script>
   <script>
-      wow = new WOW(
-          {
-              animateClass: 'animated',
-              offset: 100,
-              callback: function (box) {
-                  console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-              }
-          }
-      );
-      wow.init();
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset: 100,
+        callback: function (box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
   </script>
   <title>Juego</title>
   <style>
     th {
       background-color: orange;
     }
-    body{overflow-x: hidden;}
+
+    body {
+      overflow-x: hidden;
+    }
+
     tr:nth-child(even) {
       background-color: rgb(53, 49, 49);
     }
@@ -55,6 +59,70 @@
     #cuatro,
     #cinco {
       color: white;
+    }
+
+    /*
+ * FAB
+ */
+    .btn-group-fab {
+      position: fixed;
+      width: 50px;
+      height: auto;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999998;
+    }
+
+    .btn-group-fab div {
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+
+    .btn-group-fab .btn {
+      position: absolute;
+      bottom: 0;
+      border-radius: 50%;
+      display: block;
+      margin-bottom: 4px;
+      width: 40px;
+      height: 40px;
+      margin: 4px auto;
+    }
+
+    .btn-group-fab .btn-main {
+      width: 50px;
+      height: 50px;
+      right: 50%;
+      margin-right: -25px;
+      z-index: 1000000;
+      padding: 0px 0px 5px 0px;
+    }
+
+    .btn-group-fab .btn-sub {
+      bottom: 0;
+      z-index: 999999;
+      right: 50%;
+      margin-right: -20px;
+      -webkit-transition: all 2s;
+      transition: all 0.5s;
+      padding: 0px 0px 4px 0px;
+    }
+
+    .btn-group-fab.active .btn-sub:nth-child(2) {
+      bottom: 60px;
+    }
+
+    .btn-group-fab.active .btn-sub:nth-child(3) {
+      bottom: 110px;
+    }
+
+    .btn-group-fab.active .btn-sub:nth-child(4) {
+      bottom: 160px;
+    }
+
+    .btn-group-fab .btn-sub:nth-child(5) {
+      bottom: 210px;
     }
   </style>
 </head>
@@ -84,17 +152,23 @@
 
   <!-- jugar-->
   <div class="container" style="text-align: center;">
-    <button type="float btn" class="btn btn-danger w-50 wow jackInTheBox">JUGAR</button>
+    <a type="float btn" target="_blank" href="juego.html" class="btn btn-danger w-50 wow jackInTheBox">JUGAR</a>
     <br><br>
-    <button type="button" ng-click="actualizafavorito()" class="btn btn-warning w-15 wow jackInTheBox">Marcar como favorito</button>
+    <button type="button" ng-click="actualizafavorito()" class="btn btn-warning w-15 wow jackInTheBox">Marcar como
+      favorito</button>
     <br><br>
     <h6 class="wow fadeInwow fadeInDown">Valora este Juego</h6>
     <!-- ESTRELLAS -->
-    <span class="float btn wow fadeInDown" data-wow-delay="0.5s"><i class='far fa-star' ng-click="puntuar(1)" id="uno" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeInDown" data-wow-delay="0.6s"><i class='far fa-star' ng-click="puntuar(2)" id="dos" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeInDown" data-wow-delay="0.7s"><i class='far fa-star' ng-click="puntuar(3)" id="tres" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeInDown" data-wow-delay="0.8s"><i class='far fa-star' ng-click="puntuar(4)" id="cuatro" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeInDown" data-wow-delay="0.9s"><i class='far fa-star' ng-click="puntuar(5)" id="cinco" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.5s"><i class='far fa-star' ng-click="puntuar(1)" id="uno"
+        style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.6s"><i class='far fa-star' ng-click="puntuar(2)" id="dos"
+        style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.7s"><i class='far fa-star' ng-click="puntuar(3)" id="tres"
+        style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.8s"><i class='far fa-star' ng-click="puntuar(4)"
+        id="cuatro" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.9s"><i class='far fa-star' ng-click="puntuar(5)" id="cinco"
+        style='font-size:20px'></i></span>
 
   </div>
   <!-- END jugar-->
@@ -102,7 +176,7 @@
   <!-- JUMBOTRON2 -->
   <div class="container pt-3">
     <div class="jumbotron wow fadeIn">
-      <p >{{resultados[0].descripcion_long}}</p>
+      <p>{{resultados[0].descripcion_long}}</p>
     </div>
   </div>
   <!-- END JUMBOTRON2 -->
@@ -149,7 +223,8 @@
 
   <!--PEGI-->
   <div class="container pl-3">
-    <img class="wow fadeInDown" ng-repeat="pegi in pegi" src="img/pegi/{{pegi.nombre_pegi}}.jpg" style="width: 7%; height: 7%;">
+    <img class="wow fadeInDown" ng-repeat="pegis in pegi" src="img/pegi/{{pegis.nombre_pegi}}.jpg"
+      style="width: 7%; height: 7%;">
   </div>
   <!--END PEGI-->
 
@@ -162,35 +237,44 @@
       <form>
         <label style="color: orange;" class="d-flex justify-content-center">Introduce una Cabecera</label>
         <div class="form-group d-flex justify-content-center">
-          <input type="text" name="cabecera" ng-model="cabecera_comentario" class="form-control w-50" id="cabeceraComentarios" placeholder="Cabecera">
+          <input type="text" name="cabecera" ng-model="cabecera_comentario" class="form-control w-50"
+            placeholder="Cabecera">
         </div>
 
         <h6 class="text-center" style="color: orange;">¿Recomiendas este juego?</h6>
 
-        <h4 style="color: orange;" id="cabecera" class="mx-auto text-center">
-          <button type="button" class="btn btn-primary mb-1" ng-click="recomendado = 1"><i class="fas fa-thumbs-up text-success" id="recomended">
+        <h4 style="color: orange;" class="mx-auto text-center">
+          <button type="button" class="btn btn-primary mb-1" ng-click="recomendado = 1"><i
+              class="fas fa-thumbs-up text-success">
               Recomendado</i></button>
-          <button type="button" class="btn btn-primary mb-1" ng-click="recomendado = 0"><i class="fas fa-thumbs-down text-danger pl-2" id="recomended"> No
+          <button type="button" class="btn btn-primary mb-1" ng-click="recomendado = 0"><i
+              class="fas fa-thumbs-down text-danger pl-2"> No
               Recomendado</i></button>
         </h4>
 
         <label style="color: orange;" class="d-flex justify-content-center">Opina sobre este Juego:</label>
         <div class="form-group d-flex justify-content-center">
-          <textarea class="form-control w-75 " ng-model="texto" id="textarea" rows="3"></textarea>
+          <textarea class="form-control w-75 " ng-model="texto" rows="3"></textarea>
         </div>
 
         <div class="form-group d-flex justify-content-center">
-          <button type="button" class="btn btn-warning w-50" ng-click="comentar()"> <i class="fa fa-reply"></i> Enviar Comentario</button>
+          <button type="button" class="btn btn-warning w-50" ng-click="comentar()"> <i
+              class="fa fa-reply"></i>Comentar</button>
         </div>
       </form>
     </div>
   </div>
-
+  <div class="btn-group-fab" role="group" aria-label="FAB Menu"><div>
+    <button type="button" class="btn btn-main btn-secondary" data-placement="left"><img src="/img/arrow-up-solid.svg" alt="more" /></button>
+    <!--<button type="button" class="btn btn-sub btn-primary" data-placement="left"><img src="/img/arrow-up-solid.svg" alt="expand" /></button>-->
+    <!--<button type="button" class="btn btn-sub btn-info" data-placement="left"><img src="/img/arrow-up-solid.svg" alt="compress" /></button>-->
+    <button type="button" class="btn btn-sub btn-warning" data-placement="left"><img src="/img/arrow-up-solid.svg" alt="scroll top" /></button>
+    </div></div>
   <!--END CABECERA PARA METER COMENTARIOS-->
   <div class="container wow fadeIn">
     <div class="card m-3" ng-repeat="comentario in comentarios">
       <div class="card-body">
-        <h4 style="color: orange;" id="cabecera">{{comentario.cabecera}}</h4>
+        <h4 style="color: orange;">{{comentario.cabecera}}</h4>
         <h5 style="color:darkorange;">{{comentario.nombre}}</h5>
         <div class="row">
           <div class="col-md-2">
@@ -202,17 +286,15 @@
             <h5>
               <i class="fas fa-thumbs-up text-success" style="float:right;"
                 ng-if="comentario.recomendado == 1">Recomendado</i>
-              <i class="fas fa-thumbs-up text-danger" style="float:right;" ng-if="comentario.recomendado == 0">No
+              <i class="fas fa-thumbs-down text-danger" style="float:right;" ng-if="comentario.recomendado == 0">No
                 recomendado</i>
             </h5><br>
             <p>{{comentario.texto}}</p>
             <p>
+              <a class="float-right text-white ml-2"> <i class="fas text-danger mt-1 fa-2x fa-kiss-wink-heart"></i>
+                <span class="badge">{{comentario.votos_positivos}}</span></a>
               <a class="float-right btn btn-warning ml-2 mb-1" ng-click="muestraComentario=!muestraComentario"> <i
                   class="fa fa-reply"></i> Responder</a> <!-- ICONOS LIKE Y DISLIKE -->
-              <a class="float-right btn text-white btn btn-danger ml-2 mb-1"> No me Gusta <span
-                  class="badge">{{comentario.votos_positivos}}</span></a>
-              <a class="float-right btn text-white btn btn-success"> Me Gusta <span
-                  class="badge">{{comentario.votos_negativos}}</span></a>
             </p>
           </div>
         </div>
@@ -221,57 +303,42 @@
             <form>
               <label style="color: orange;" class="d-flex justify-content-center">Responde al Jugador:</label>
               <div class="form-group d-flex justify-content-center">
-                <textarea class="form-control w-75 " id="textarea" rows="3"></textarea>
+                <textarea class="form-control w-75" ng-model="textoRespuesta" rows="3"></textarea>
               </div>
 
               <div class="form-group d-flex justify-content-center">
-                <button type="button" class="btn btn-warning w-50" ng-click="responder(comentario.id_comentario)"><i class="fa fa-reply"></i>
+                <button type="button" class="btn btn-warning w-50"
+                  ng-click="responder(comentario.id_comentario,textoRespuesta)"><i class="fa fa-reply"></i>
                   Responder</button>
               </div>
             </form>
           </div>
         </div>
-    <!--OCULTO EL RESPONDER-->
+        <!--OCULTO EL RESPONDER-->
+        <div class="bg-secondary p-2 rounded" ng-repeat="respuesta in respuestasJuego"
+          ng-if="respuesta.id_comentario == comentario.id_comentario">
+          <h5 style="color:darkorange;" class="mt-2">{{respuesta.nombre}}</h5>
 
-        <h5 style="color:darkorange;" ng-repeat="respuesta in respuestas">{{respuesta.nombre_usuario}}</h5>
-
-        <div class="row" ng-repeat="respuesta in respuestas">
-          <div class="col-md-2">
-            <img ng-src="{{respuesta.img_comentario}}" class="img img-rounded img-fluid" />
-            <p class="text-center"> <small> {{respuesta.hora_fecha}}</small> </p>
-          </div>
-          <div class="col-md-10">
-            <div class="clearfix"></div>
-            <p>{{respuesta.texto}}</p>
-            <p>
-              <a class="float-right btn btn-warning ml-2 mb-1" ng-click="muestraRespuesta=!muestraRespuesta"> <i
-                  class="fa fa-reply"></i> Responder</a> <!-- ICONOS LIKE Y DISLIKE -->
-              <a class="float-right btn text-white btn btn-danger ml-2 mb-1"> No me Gusta <span
-                  class="badge">{{respuesta.votos_positivos}}</span></a>
-              <a class="float-right btn text-white btn btn-success"> Me Gusta <span
-                  class="badge">{{respuesta.votos_negativos}}</span></a>
-            </p>
-          </div>
-          <div class="container" ng-if="muestraRespuesta" ng-hide="ocultar">
-            <div class="card m-3" style="background-color:dimgrey;">
-              <form>
-                <label style="color: orange;" class="d-flex justify-content-center">Responde al Jugador:</label>
-                <div class="form-group d-flex justify-content-center">
-                  <textarea class="form-control w-75 " id="textarea" rows="3"></textarea>
-                </div>
-
-                <div class="form-group d-flex justify-content-center">
-                  <button type="button" class="btn btn-warning w-50" ng-click="responder(comentario.id_comentario)"> <i class="fa fa-reply"></i>
-                    Responder</button>
-                </div>
-              </form>
+          <div class="row">
+            <div class="col-md-2">
+              <img ng-src="{{respuesta.imagen}}" class="img img-rounded img-fluid" />
+              <p class="text-center"> <small> {{respuesta.hora_fecha}}</small> </p>
+            </div>
+            <div class="col-md-10">
+              <div class="clearfix"></div>
+              <p>{{respuesta.texto}}</p>
+              <p>
+                <!-- ICONOS LIKE Y DISLIKE -->
+                <a class="float-right text-white"> <i class="fas text-danger mt-1 fa-2x fa-kiss-wink-heart"></i> <span
+                    class="badge">{{respuesta.votos_positivos}}</span></a>
+              </p>
+              
             </div>
           </div>
         </div>
       </div>
-
     </div>
-
+    
   </div>
   <!--END OCULTO EL RESPONDER-->
   </div>
@@ -300,12 +367,13 @@
             <div class="d-flex justify-content-center">
               <div class="d-flex justify-content-center">
                 <div class="row-sm d-flex justify-content-center">
-                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://www.facebook.com/profile.php?id=100052372509502"><img
-                          src="img/facebook.png" alt="facebook" width="30"></a></i></div>
-                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://twitter.com/pochadia"><img src="img/twitter.png"
-                          alt="twitter" width="30"></a></i></div>
-                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img src="img/instagram.png"
-                          alt="instagram" width="30"></a></i></div>
+                  <div class="col-sm p-1 wow zoomIn"><i><a
+                        href="https://www.facebook.com/profile.php?id=100052372509502"><img src="img/facebook.png"
+                          alt="facebook" width="30"></a></i></div>
+                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://twitter.com/pochadia"><img
+                          src="img/twitter.png" alt="twitter" width="30"></a></i></div>
+                  <div class="col-sm p-1 wow zoomIn"><i><a href="https://www.instagram.com/pochadia/"><img
+                          src="img/instagram.png" alt="instagram" width="30"></a></i></div>
                 </div>
               </div>
             </div>

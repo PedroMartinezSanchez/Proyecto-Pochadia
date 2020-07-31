@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/darkly/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="js/slick-1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="js/slick-1.8.1/slick/slick.css">
+  <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="js/controlador_info_juego.js"></script>
+  <script src="js/info_juego.js"></script>
+  <script src="js/servicios.js"></script>
+  <!--Animate.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!--WOW-->
+  <script src="js/wow.js"></script>
+  <script>
+      wow = new WOW(
+          {
+              animateClass: 'animated',
+              offset: 100,
+              callback: function (box) {
+                  console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+              }
+          }
+      );
+      wow.init();
+  </script>
+  <title>Diablo 1</title>
+  <style>
+    th {
+      background-color: orange;
+    }
+    body{overflow-x: hidden;}
+    tr:nth-child(even) {
+      background-color: rgb(53, 49, 49);
+    }
+
+    #uno,
+    #dos,
+    #tres,
+    #cuatro,
+    #cinco {
+      color: white;
+    }
+  </style>
+</head>
+
+<body ng-app="myApp" ng-cloak ng-controller="myCtrl">
+
+  <!--HEADER-->
+  <div ng-include="'cabecera-sinbuscar.html'"></div>
+  <!--END HEADER-->
+  <div>
+    <iframe src="https://www.cooljuegos.com/embed/diablo-1/" style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;" allowfullscreen></iframe>
+  </div>
+  
+</body>
+
+</html>
