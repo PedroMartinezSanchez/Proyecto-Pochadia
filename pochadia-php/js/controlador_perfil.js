@@ -60,38 +60,6 @@ app.controller('myCtrl', function ($scope, $http, $timeout, usuario) {
         var file = event.target.files[0];
         var reader = new FileReader();
 
-        /*reader.onload = function () {
-
-            Swal.fire({
-                title: '¿Estas seguro?',
-                html: "<img class='rounded-circle' src='" + reader.result + "' style='width:300px;'>",
-                text: "Escoge una imagen que se ajuste bien a tu gusto",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Confirmar'
-            }).then((result) => {
-
-                console.log(result);
-                if (result.isConfirmed) {
-                    $timeout(function () {
-
-                        $scope.imagen = reader.result;
-                    }, 0);
-
-                    Swal.fire(
-                        'Imagen actualizada',
-                        '¡Ha quedado genial!',
-                        'success'
-                    )
-                } else {
-                    console.log("cancelado!");
-                }
-            });
-        };
-        reader.readAsDataURL(file);*/
-
         reader.onload = function () {
 
             Swal.fire({
@@ -114,14 +82,18 @@ app.controller('myCtrl', function ($scope, $http, $timeout, usuario) {
                 },
                 preConfirm: () => {
                     var canvas = document.getElementsByClassName("lower-canvas")[0];
+                    console.log(canvas.type);
                     if (canvas.width > 512 && canvas.height > 512) {
                         $timeout(function () {
-                            $scope.imagen = canvas.toDataURL('image/jpeg', 1.0);
-                            Swal.fire(
-                                'Imagen actualizada',
-                                '¡Ha quedado genial!',
-                                'success'
-                            )
+                            $scope.imagen = canvas.toDataURL('image/png',0);
+                            usuario.actualizaPerfil($scope.imagen);
+                            Swal.fire({
+                                title: 'Imagen actualizada',
+                                confirmButtonColor: '#3085d6',
+                                confirmButtonText: 'Confirmar'
+                            }).then((result) => {
+                                window.location.href = "perfil.html";
+                            });
                         }, 0);
                     }
                     else {
@@ -164,15 +136,13 @@ app.controller('myCtrl', function ($scope, $http, $timeout, usuario) {
                     var canvas = document.getElementsByClassName("lower-canvas")[0];
                     if (canvas.width > 698 && canvas.height > 235) {
                         $timeout(function () {
-                            $scope.img_banner = canvas.toDataURL('image/jpeg', 1.0);
-                            console.log($scope.img_banner);
-                            usuario.actualizaBanner($scope.img_banner, $scope.idUsuario);
+                            $scope.img_banner = canvas.toDataURL('image/png',0);
+                            usuario.actualizaBanner($scope.img_banner);
                             Swal.fire({
                                 title: 'Imagen actualizada',
                                 confirmButtonColor: '#3085d6',
                                 confirmButtonText: 'Confirmar'
                             }).then((result) => {
-                                $scope.img_banner = "";
                                 window.location.href = "perfil.html";
                             });
                         }, 0);

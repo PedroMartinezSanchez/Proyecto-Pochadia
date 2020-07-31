@@ -97,6 +97,16 @@ app.service('usuario', function ($http, $timeout) {
             console.log(datos.data);
         });
     };
+    this.actualizaPerfil = function (imagen) {
+        $http.put("http://localhost/servicios/post_imgperfil.php", {imagen:imagen, id_usuario:usuario.id_usuario}).then(function (datos) {
+            console.log(datos.data);
+        });
+    };
+    this.puntuacion = function (estrella,columnaAnterior, puntuacion, id_juego, puntosAnteriores) {
+        $http.put("http://localhost/servicios/post_puntuacion.php", {estrella:estrella, columnaAnterior:columnaAnterior, puntuacion:puntuacion, id_juego:id_juego, puntosAnteriores:puntosAnteriores, id_usuario:usuario.id_usuario}).then(function (datos) {
+            console.log(datos.data);
+        });
+    };
     this.actualizaCorreo = function (correo) {
         $http.put("http://localhost/servicios/post_correo.php", {correo:correo, id_usuario:usuario.id_usuario}).then(function (datos) {
             console.log(datos.data);
@@ -114,6 +124,16 @@ app.service('usuario', function ($http, $timeout) {
     };
     this.favorito = function (favorito,id_juego) {
         $http.put("http://localhost/servicios/post_favorito.php", {favorito:favorito, id_juego:id_juego, id_usuario:usuario.id_usuario}).then(function (datos) {
+            console.log(datos.data);
+        });
+    };
+    this.contactar = function (correo,nombre,texto) {
+        $http.put("http://localhost/servicios/post_contactar.php", {correo:correo, nombre:nombre, texto:texto, id_usuario:usuario.id_usuario}).then(function (datos) {
+            console.log(datos.data);
+        });
+    };
+    this.contactar2 = function (correo,asunto,texto) {
+        $http.put("http://localhost/servicios/post_contactar2.php", {correo:correo, asunto:asunto, texto:texto}).then(function (datos) {
             console.log(datos.data);
         });
     };

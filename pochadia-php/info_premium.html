@@ -12,8 +12,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="js/slick-1.8.1/slick/slick.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="js/controlador_info_premium.js"></script>
+    <script src="js/servicios.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
     <title>Info_Premium</title>
     <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
@@ -32,16 +34,16 @@
   <div ng-include="'cabecera-sinbuscar.html'"></div>
 <!--END HEADER-->
   <div class="container d-flex justify-content-center">
-    <img class ="rounded-circle mt-3 animated rotateIn" src="{{resultados[0].img_perfil}}" alt="Profile" width="300" height="300" class="mt-5">
+    <img class ="rounded-circle mt-3 animated rotateIn" src="{{cabecera[0].imagen}}" alt="Profile" width="300" height="300" class="mt-5">
   </div>
 
   <div class="container animated fadeIn">
     <div class="jumbotron p-3 mt-3">
-      <h1 style="text-align: center;">Hola de nuevo {{resultados[0].nombre}}</h1>
-      <h2 ng-if="resultados[0].dias == 30" style="text-align: center;">Te queda {{resultados[0].meses}} mes de Suscripción Premium</h2>
-      <h2 ng-if="resultados[0].dias > 30" style="text-align: center;">Te quedan {{resultados[0].meses}} meses de Suscripción Premium</h2>
-      <h2 ng-if="resultados[0].dias < 30 && resultados.dias != 1" style="text-align: center;">Te quedan {{resultados[0].dias}} días de Suscripción Premium</h2>
-      <h2 ng-if="resultados[0].dias < 30 && resultados.dias == 1" style="text-align: center;">Te queda {{resultados[0].dias}} día de Suscripción Premium</h2>
+      <h1 style="text-align: center;">Hola de nuevo {{cabecera[0].nombre}}</h1>
+      <h2 ng-if="cabecera[0].dias == 30" style="text-align: center;">Te queda {{cabecera[0].meses}} mes de Suscripción Premium</h2>
+      <h2 ng-if="cabecera[0].dias > 30" style="text-align: center;">Te quedan {{cabecera[0].meses}} meses de Suscripción Premium</h2>
+      <h2 ng-if="cabecera[0].dias < 30 && cabecera[0].dias != 1" style="text-align: center;">Te quedan {{cabecera[0].dias}} días de Suscripción Premium</h2>
+      <h2 ng-if="cabecera[0].dias < 30 && cabecera[0].dias == 1" style="text-align: center;">Te queda {{cabecera[0].dias}} día de Suscripción Premium</h2>
       <p style="text-align: center;">Ahora mismo estás disfrutando de todas las ventajas de ser premium</p>
     </div>
     <h4 style="text-align: center;">Recuerda que pasado ese tiempo, puedes renovar tu suscripción si lo deseas.</h4>
@@ -61,10 +63,10 @@
           <div class="container d-flex justify-content-center">
             <div>
               <div class="row">
-                <div class="col-sm"><a href="FAQ.html?id_usuario={{resultados[0].id_usuario}}">Ayuda</a></div>
+                <div class="col-sm"><a href="FAQ.html">Ayuda</a></div>
               </div>
               <div class="row">
-                <a href="aboutus.html?id_usuario={{resultados[0].id_usuario}}" class="col-sm">Sobre nosotros </a>
+                <a href="aboutus.html" target="_blank" class="col-sm">Sobre nosotros </a>
               </div>
             </div>
           </div>
@@ -90,7 +92,7 @@
     </div>
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="principal.html"> Pochadia.com</a>
+      <a href="index.html"> Pochadia.com</a>
     </div>
     <!-- Copyright -->
   </footer>

@@ -90,11 +90,11 @@
     <br><br>
     <h6 class="wow fadeInwow fadeInDown">Valora este Juego</h6>
     <!-- ESTRELLAS -->
-    <span class="float btn wow fadeInDown" data-wow-delay="0.5s"><i class='far fa-star' id="uno" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeInDown" data-wow-delay="0.6s"><i class='far fa-star' id="dos" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeInDown" data-wow-delay="0.7s"><i class='far fa-star' id="tres" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeInDown" data-wow-delay="0.8s"><i class='far fa-star' id="cuatro" style='font-size:20px'></i></span>
-    <span class="float btn wow fadeInDown" data-wow-delay="0.9s"><i class='far fa-star' id="cinco" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.5s"><i class='far fa-star' ng-click="puntuar(1)" id="uno" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.6s"><i class='far fa-star' ng-click="puntuar(2)" id="dos" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.7s"><i class='far fa-star' ng-click="puntuar(3)" id="tres" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.8s"><i class='far fa-star' ng-click="puntuar(4)" id="cuatro" style='font-size:20px'></i></span>
+    <span class="float btn wow fadeInDown" data-wow-delay="0.9s"><i class='far fa-star' ng-click="puntuar(5)" id="cinco" style='font-size:20px'></i></span>
 
   </div>
   <!-- END jugar-->
@@ -289,7 +289,7 @@
                 <div class="col-sm"><a href="FAQ.html">Ayuda</a></div>
               </div>
               <div class="row">
-                <a href="aboutus.html" class="col-sm">Sobre nosotros </a>
+                <a href="aboutus.html" target="_blank" class="col-sm">Sobre nosotros </a>
               </div>
             </div>
           </div>
@@ -315,7 +315,7 @@
     </div>
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3 mt-2">© 2020 Copyright:
-      <a href="principal.html"> Pochadia.com</a>
+      <a href="index.html"> Pochadia.com</a>
     </div>
     <!-- Copyright -->
   </footer>
