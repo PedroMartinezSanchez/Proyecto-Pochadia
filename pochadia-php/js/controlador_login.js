@@ -5,6 +5,7 @@ app.controller('myCtrl', function ($scope, $http, usuario) {
     $scope.contra = "" ;
 
     $scope.login = function() {
+
         usuario.login($scope.correo,$scope.contra);
     };
 

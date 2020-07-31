@@ -48,7 +48,7 @@ $(document).ready(function(){
         $("#cuatro").css("color", "yellow");
       });
 
-        $('#uno').mouseout(function()
+        /*$('#uno').mouseout(function()
         {
             $('#uno').css("color", "white");
             $('#dos').css("color", "white");
@@ -91,5 +91,5 @@ $(document).ready(function(){
             $('#tres').css("color", "white");
             $('#cuatro').css("color", "white");
             $('#cinco').css("color", "white");
-        });      
+        });*/
   });

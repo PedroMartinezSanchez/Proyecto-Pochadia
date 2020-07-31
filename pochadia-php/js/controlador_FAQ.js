@@ -1,10 +1,13 @@
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function ($scope, $http) {
+app.controller('myCtrl', function ($scope, $http, usuario) {
 
-    $http.get("json/FAQ_get.json")
-        .then(function (response) {
-            $scope.resultados = response.data.resultados;
-            $scope.imagen = response.data.resultados[0].img_perfil;
-        });
+    $scope.idUsuario = usuario.id();
+    $http.get("http://localhost/servicios/get_cabecera.php?id_usuario=" + $scope.idUsuario).then(function (response3) {
+        $scope.cabecera = response3.data;
+    });
+    $scope.logout = function () {
+        usuario.logout();
+        window.location.href = "principal.html";
+    }
 });
 
