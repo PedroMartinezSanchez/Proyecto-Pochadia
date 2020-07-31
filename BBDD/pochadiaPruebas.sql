@@ -52,6 +52,7 @@ INSERT INTO juego VALUES('00010','0','0','0','0','0','Farming Simulator 19','Gia
 INSERT INTO juego VALUES('00011','0','0','0','0','0','Stardew Valley','ConcernedApe',2016,'NORMAL','ConcernedApe','Español de España, Inglés, francés, italiano, alemán, español, japonés','Acabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves capaz de vivir de la tierra y convertir estos campos descuidados en un hogar próspero?','Acabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves capaz de vivir de la tierra y convertir estos campos descuidados en un hogar próspero?','2020/06/15','https://steamcdn-a.akamaihd.net/steam/apps/413150/header.jpg?t=1592414257',1,'NO',1);
 INSERT INTO juego VALUES('00012','0','0','0','0','0','Plants vs Zombies La Batalla de Neighborville','PopCap',2019,'NORMAL','Electronic Arts','Inglés, francés, italiano, alemán, español, japonés, coreano, neerlandés','Líala planta en Plants vs. Zombies: La Batalla de Neighborville, ¡el shooter más absurdo hasta la fecha!','Te damos la bienvenida a Neighborville, donde todo va bien. ¡Salvo porque parece estar brotando un nuevo y coniferoz conflicto entre descerebrados y elementos botánicos! ¿Qué vas a hacer? ¿Llamar a los plantidisturbios? ¿Quedarte ahí plantado? Prepárate para liarla planta en este duelo entre plantas y zombis, en el que visitarás hasta el último rincón de Neighborville y más allá.','2020/06/15','https://steamcdn-a.akamaihd.net/steam/apps/1262240/header.jpg?t=1592013845',1,'EN LINEA',32);
 INSERT INTO juego VALUES('00013','0','0','0','0','0','Football Manager 2020','Sports Interactive',2020,'NORMAL','SEGA','Español de Espeña, Inglés, francés, italiano, alemán, español, japonés, coreano, neerlandés, polaco, portugués, ruso, chino (simplificado), chino (tradicional)','Cruza el túnel hacia un mundo de fútbol lleno de vida donde estás en el centro, ¡un mundo donde tu opinión importa!','Da buen uso a tus opiniones y haz las cosas a tu manera en tu club esta temporada. En FM20, cada decisión cuenta gracias a nuevas funcionalidades y mecánicas depuradas, que añaden frescura y autenticidad, dando más poder a los mánagers para controlar mejor su destino y el de su equipo.','2020/06/15','https://steamcdn-a.akamaihd.net/steam/apps/1100600/header.jpg?t=1584981392',1,'NO',1);
+INSERT INTO juego VALUES('00014','0','0','0','0','0','Diablo','Blizzard',1996,'NORMAL','Blizzard','Inglés','Embárcate, si te atreves, en una misión para destruir The Prime Evil ...','La oscuridad se agita debajo de Tristram. Un antiguo mal arrasa la tierra, sumiéndola en una guerra civil y aterrorizando a la población. Un rey loco, su hijo desaparecido y un misterioso arzobispo son todas las piezas del rompecabezas que debes resolver. Has viajado a la fuente de este mal. La ciudad de Tristram, ahora habitada solo por un puñado de sobrevivientes, destrozada y retorcida por la locura que les ha sucedido. Allí se encuentra una catedral, construida sobre las ruinas de un antiguo monasterio. Se escuchan luces espeluznantes y sonidos impíos que resuenan en sus pasillos abandonados, y ahí es donde te aventurarás.','2020/06/15','img/diablo_cover.jpg',1,'NO',1);
 
 
 
@@ -74,7 +75,6 @@ INSERT INTO genero VALUES('00010','Simuladores');
 
 CREATE TABLE comentario (
   id_comentario INT(5) NOT NULL AUTO_INCREMENT,
-  id_respuesta INT(5),
   id_usuario INT(5) NOT NULL,
   id_juego INT(5) NOT NULL,
   votos_positivos INT(10) NOT NULL,
@@ -88,7 +88,26 @@ CREATE TABLE comentario (
   CONSTRAINT comentario_juego FOREIGN KEY (id_juego) REFERENCES juego (id_juego)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO comentario VALUES('00001','00001','00001','00001', 32,10,'2020/05/02 12:32','Mi opinión sobre Assassins Creed Odyssey','Es un juego muy entretenido, con mucho contenido y muchas horas de entretenimiento. La verdad es que al principio es un poco aburrido, todo hay que decirlo, pero poco a poco te va metiendo en la historia, en la trama. Tiene muchas cosas para hacer, por ejemplo (Sin hacer spoilers) hay un sistema de mercenarios, asi como una clasificación, es entretenido y te incita a ser el numero 1. Graficamente el juego es muy bonito y detallado.',1);
+INSERT INTO comentario VALUES('00001','00001','00001', 32,10,'2020/05/02 12:32','Mi opinión sobre Assassins Creed Odyssey','Es un juego muy entretenido, con mucho contenido y muchas horas de entretenimiento. La verdad es que al principio es un poco aburrido, todo hay que decirlo, pero poco a poco te va metiendo en la historia, en la trama. Tiene muchas cosas para hacer, por ejemplo (Sin hacer spoilers) hay un sistema de mercenarios, asi como una clasificación, es entretenido y te incita a ser el numero 1. Graficamente el juego es muy bonito y detallado.',1);
+
+
+CREATE TABLE respuesta (
+  id_respuesta INT(5) NOT NULL AUTO_INCREMENT,
+  id_comentario INT(5) NOT NULL,
+  id_usuario INT(5) NOT NULL,
+  id_juego INT(5) NOT NULL,
+  votos_positivos INT(10) NOT NULL,
+  votos_negativos INT(10) NOT NULL,
+  hora_fecha datetime NOT NULL,
+  texto varchar(600) NOT NULL,
+  PRIMARY KEY (id_respuesta),
+  CONSTRAINT respuesta_usuario FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario),
+  CONSTRAINT respuesta_juego FOREIGN KEY (id_juego) REFERENCES juego (id_juego),
+  CONSTRAINT respuesta_comentario FOREIGN KEY (id_comentario) REFERENCES comentario (id_comentario)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO respuesta VALUES('00001','00001','00001','00001', 32,10,'2020/05/02 12:32','Es un juego muy entretenido, con mucho contenido y muchas horas de entretenimiento. La verdad es que al principio es un poco aburrido, todo hay que decirlo, pero poco a poco te va metiendo en la historia, en la trama. Tiene muchas cosas para hacer, por ejemplo (Sin hacer spoilers) hay un sistema de mercenarios, asi como una clasificación, es entretenido y te incita a ser el numero 1. Graficamente el juego es muy bonito y detallado.');
 
 CREATE TABLE juego_carousel (
    id_juego INT(5) NOT NULL,
@@ -112,6 +131,7 @@ INSERT INTO juego_carousel VALUES('00010','https://steamcdn-a.akamaihd.net/steam
 INSERT INTO juego_carousel VALUES('00011','https://steamcdn-a.akamaihd.net/steam/apps/413150/ss_b887651a93b0525739049eb4194f633de2df75be.600x338.jpg?t=1592414257','https://steamcdn-a.akamaihd.net/steam/apps/413150/ss_d836f0a5b0447fb6a2bdb0a6ac5f954949d3c41e.600x338.jpg?t=1592414257','https://steamcdn-a.akamaihd.net/steam/apps/413150/ss_c115a28cab72b7a20416773d3a659cf535610346.600x338.jpg?t=1592414257');
 INSERT INTO juego_carousel VALUES('00012','https://steamcdn-a.akamaihd.net/steam/apps/1262240/ss_5e445990e844de0b941606315672be8f874f2547.600x338.jpg?t=1594083327','https://steamcdn-a.akamaihd.net/steam/apps/1262240/ss_5cc96bd273c28cee9341762d9a420c66cac30782.600x338.jpg?t=1594083327','https://steamcdn-a.akamaihd.net/steam/apps/1262240/ss_db7d8553adf19c6645beeb39b4225ab996b8de7d.600x338.jpg?t=1594083327');
 INSERT INTO juego_carousel VALUES('00013','https://steamcdn-a.akamaihd.net/steam/apps/1100600/ss_4e27222f66e8543f76f152afd5ed958011377bc5.600x338.jpg?t=1584981392','https://steamcdn-a.akamaihd.net/steam/apps/1100600/ss_b9fe6690107580699dcbbe67dc6aa01be6e15d24.600x338.jpg?t=1584981392','https://steamcdn-a.akamaihd.net/steam/apps/1100600/ss_5a8087f77bd1fd23c77babf65bb6427e3e73e252.600x338.jpg?t=1584981392');
+INSERT INTO juego_carousel VALUES('00014','img/diablo_carro_1.jpg','img/diablo_carro_2.jpg','img/diablo_carro_3.jpg');
 
 CREATE TABLE info_usuario_juego (
    id_juego INT(5) NOT NULL,
@@ -186,6 +206,9 @@ INSERT INTO juego_genero VALUES('00004','00012');
 INSERT INTO juego_genero VALUES('00010','00013');
 INSERT INTO juego_genero VALUES('00005','00013');
 
+INSERT INTO juego_genero VALUES('00001','00014');
+INSERT INTO juego_genero VALUES('00009','00014');
+
 CREATE TABLE pegi (
    id_pegi INT(5) NOT NULL,
    nombre_pegi varchar(100) NOT NULL,
@@ -253,6 +276,9 @@ INSERT INTO juego_pegi VALUES('00006','00012');
 INSERT INTO juego_pegi VALUES('00008','00012');
 
 INSERT INTO juego_pegi VALUES('00001','00013');
+
+INSERT INTO juego_pegi VALUES('00004','00014');
+INSERT INTO juego_pegi VALUES('00006','00014');
 
 
 
