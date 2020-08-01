@@ -1,7 +1,7 @@
 <?php
 function ejecutar($q)
 {
-    $bd = new mysqli('localhost', 'root', '', 'pochadia');
+    $bd = new mysqli('localhost', 'root', '', 'pochadia2');
     $resultado = $bd->query($q);
 
     $datos = array();
@@ -10,5 +10,10 @@ function ejecutar($q)
     }
 
     echo json_encode($datos);
+}
+function insertar($q)
+{
+    $bd = new mysqli('localhost', 'root', '', 'pochadia2');
+    $resultado = $bd->query($q);
 }
 ?>

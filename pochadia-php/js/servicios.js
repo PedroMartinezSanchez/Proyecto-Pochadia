@@ -63,8 +63,8 @@ app.service('usuario', function ($http, $timeout) {
         });
     };
     this.responder = function (textoRespuesta, id_juego, id_comentario) {
-        console.log({ id_usuario:usuario.id_usuario, textoRespuesta:textoRespuesta, id_juego:id_juego, id_comentario:id_comentario });
-        $http.put("http://localhost/servicios/post_respuestas.php", { id_usuario: usuario.id_usuario, textoRespuesta:textoRespuesta, id_juego: id_juego, id_comentario: id_comentario }).then(function (datos) {
+        console.log({ id_usuario: usuario.id_usuario, textoRespuesta: textoRespuesta, id_juego: id_juego, id_comentario: id_comentario });
+        $http.put("http://localhost/servicios/post_respuestas.php", { id_usuario: usuario.id_usuario, textoRespuesta: textoRespuesta, id_juego: id_juego, id_comentario: id_comentario }).then(function (datos) {
             console.log(datos.data);
             Swal.fire({
                 title: 'Respuesta enviada',
@@ -118,6 +118,29 @@ app.service('usuario', function ($http, $timeout) {
     this.contactar2 = function (correo, asunto, texto) {
         $http.put("http://localhost/servicios/post_contactar2.php", { correo: correo, asunto: asunto, texto: texto }).then(function (datos) {
             console.log(datos.data);
+        });
+    };
+    this.recuperar = function (correo, nombre, id_usuario) {
+        $http.put("http://localhost/servicios/post_recuperar.php", { correo: correo, nombre: nombre, id_usuario: id_usuario }).then(function (datos) {
+            console.log(datos.data);
+        });
+    };
+    this.reestablecer = function (contrasenya, id_usuario) {
+        $http.put("http://localhost/servicios/post_reestablecer.php", { contrasenya: contrasenya, id_usuario: id_usuario }).then(function (datos) {
+            console.log(datos.data);
+            window.location.href = "principal.html";
+        });
+    };
+    this.megustaComentario = function (id_comentario, id_juego, votosC, scope) {
+        $http.put("http://localhost/servicios/post_megustaC.php", { id_comentario: id_comentario, votosC: votosC }).then(function (datos) {
+            console.log(datos.data);
+            //window.location.href = "info_juego.html?id_juego=" + id_juego;
+        });
+    };
+    this.megustaRespuesta = function (id_respuesta, id_juego, votosR, scope) {
+        $http.put("http://localhost/servicios/post_megustaR.php", { id_respuesta: id_respuesta, votosR: votosR }).then(function (datos) {
+            console.log(datos.data);
+            //window.location.href = "info_juego.html?id_juego=" + id_juego;
         });
     };
 });

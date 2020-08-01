@@ -11,6 +11,8 @@ app.controller('myCtrl', function ($scope, $http, usuario, $timeout) {
     $scope.textoRespuesta = "";
     $scope.favorito = 0;
     $scope.estrella = 0;
+    $scope.votosC = 0;
+    $scope.votosR = 0;
     $scope.prueba = [];
     //console.log($scope.prueba[0]);
     $scope.puntosTotales = 0;
@@ -81,7 +83,6 @@ app.controller('myCtrl', function ($scope, $http, usuario, $timeout) {
         });
 
         $scope.pintarEstrellas();
-
         $('#uno').mouseout(function () {
             $('#uno').css("color", "white");
             $('#dos').css("color", "white");
@@ -181,7 +182,6 @@ app.controller('myCtrl', function ($scope, $http, usuario, $timeout) {
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'Confirmar'
                         }).then((result) => {
-                            window.location.href = "info_juego.html?id_juego=" + $scope.idJuego;
                         });
                     } else {
                         if ($scope.colPuntuada[0].puntuado != 0) {
@@ -253,7 +253,6 @@ app.controller('myCtrl', function ($scope, $http, usuario, $timeout) {
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'Confirmar'
                         }).then((result) => {
-                            window.location.href = "info_juego.html?id_juego=" + $scope.idJuego;
                         });
                     } else {
                         Swal.fire({
@@ -276,6 +275,7 @@ app.controller('myCtrl', function ($scope, $http, usuario, $timeout) {
             });
         });
     }
+    
     $http.get("http://localhost/servicios/get_pegi.php?id_juego=" + $scope.idJuego).then(function (response4) {
         $scope.pegi = response4.data;
 
@@ -286,7 +286,7 @@ app.controller('myCtrl', function ($scope, $http, usuario, $timeout) {
     });
     $http.get("http://localhost/servicios/get_comentarios.php?id_juego=" + $scope.idJuego).then(function (response6) {
         console.log(response6.data);
-        $http.get("http://localhost/servicios/get_respuestas.php?id_juego=" + $scope.idJuego + "&id_usuario=" + $scope.idUsuario).then(function (response15) { 
+        $http.get("http://localhost/servicios/get_respuestas.php?id_juego=" + $scope.idJuego + "&id_usuario=" + $scope.idUsuario).then(function (response15) {
             $scope.respuestas = response15.data;
             $timeout(function () {
                 response6.data.forEach(comentario => {
@@ -294,10 +294,11 @@ app.controller('myCtrl', function ($scope, $http, usuario, $timeout) {
                     $scope.respuestas.forEach(respuesta => {
                         if (respuesta.id_comentario == comentario.id_comentario) {
                             $scope.respuestasJuego.push(respuesta);
-                        } 
+                        }
                     });
                 });
             }, 0);
+
             console.log($scope.comentarios);
             console.log($scope.respuestasJuego);
         });
@@ -326,20 +327,46 @@ app.controller('myCtrl', function ($scope, $http, usuario, $timeout) {
             usuario.comentar($scope.cabecera_comentario, $scope.recomendado, $scope.texto, $scope.idJuego);
         }
     }
-    $scope.megusta = function () {
-        usuario.megusta();  
-      }
-    $scope.responder = function (id_comentario,texto) {
+    $scope.responder = function (id_comentario, texto) {
         //console.log($scope.textoRespuesta);
         if (texto == "") {
             Swal.fire("No pueden haber campos vacios.");
         } else if ($scope.texto.length > 600) {
             Swal.fire("No puedes poner mas de 600 caracteres.");
-        } 
+        }
         else {
-            usuario.responder(texto, $scope.idJuego, id_comentario);            
+            usuario.responder(texto, $scope.idJuego, id_comentario);
         }
     }
+    $scope.megustaComentario = function (id_comentario, votosC) {
+        console.log($scope.votosC);
+        $scope.votosC = parseInt(votosC) + 1;
+        console.log($scope.votosC);
+        var contador = 0;
+        $scope.comentarios.forEach(comentario => {
+            if (id_comentario == comentario.id_comentario) {
+                $scope.comentarios[contador].votos_positivos = parseInt($scope.comentarios[contador].votos_positivos) + 1;
+            }
+            contador++;
+        });
+        usuario.megustaComentario(id_comentario, $scope.idJuego, $scope.votosC, $scope);
+    }
+    $scope.megustaRespuesta = function (id_respuesta, votosR) {
+        console.log($scope.votosR);
+        $scope.votosR = parseInt(votosR) + 1;
+        var contador = 0;
+        $scope.respuestasJuego.forEach(respuesta => {
+            if (id_respuesta == respuesta.id_respuesta) {
+                $scope.respuestasJuego[contador].votos_positivos = parseInt($scope.respuestasJuego[contador].votos_positivos) + 1;
+            }
+            contador++;
+        });
+        usuario.megustaRespuesta(id_respuesta, $scope.idJuego, $scope.votosR, $scope);
+    }
+    $http.get("http://localhost/servicios/get_favorito.php?id_juego=" + $scope.idJuego + "&id_usuario=" + $scope.idUsuario)
+        .then(function (response20) {
+            $scope.fav = response20.data;
+        });
     $scope.actualizafavorito = function () {
         $http.get("http://localhost/servicios/get_favorito.php?id_juego=" + $scope.idJuego + "&id_usuario=" + $scope.idUsuario)
             .then(function (response7) {

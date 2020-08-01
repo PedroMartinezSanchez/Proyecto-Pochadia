@@ -154,8 +154,10 @@
   <div class="container" style="text-align: center;">
     <a type="float btn" target="_blank" href="juego.html" class="btn btn-danger w-50 wow jackInTheBox">JUGAR</a>
     <br><br>
-    <button type="button" ng-click="actualizafavorito()" class="btn btn-warning w-15 wow jackInTheBox">Marcar como
+    <button type="button" ng-if="fav[0].favorito == '0'" ng-click="actualizafavorito()" class="btn btn-warning w-15 wow jackInTheBox">Marcar como
       favorito</button>
+      <button type="button" ng-if="fav[0].favorito == '1'" ng-click="actualizafavorito()" class="btn btn-warning w-15 wow jackInTheBox">Quitar como
+        favorito</button>
     <br><br>
     <h6 class="wow fadeInwow fadeInDown">Valora este Juego</h6>
     <!-- ESTRELLAS -->
@@ -265,7 +267,7 @@
     </div>
   </div>
   <div class="btn-group-fab" role="group" aria-label="FAB Menu"><div>
-    <button type="button" class="btn btn-main btn-secondary" data-placement="left"><img src="/img/arrow-up-solid.svg" alt="more" /></button>
+    <!--<button type="button" class="btn btn-main btn-secondary" data-placement="left"><img src="/img/arrow-up-solid.svg" alt="more" /></button>-->
     <!--<button type="button" class="btn btn-sub btn-primary" data-placement="left"><img src="/img/arrow-up-solid.svg" alt="expand" /></button>-->
     <!--<button type="button" class="btn btn-sub btn-info" data-placement="left"><img src="/img/arrow-up-solid.svg" alt="compress" /></button>-->
     <button type="button" class="btn btn-sub btn-warning" data-placement="left"><img src="/img/arrow-up-solid.svg" alt="scroll top" /></button>
@@ -291,10 +293,10 @@
             </h5><br>
             <p>{{comentario.texto}}</p>
             <p>
-              <a class="float-right text-white ml-2"> <i class="fas text-danger mt-1 fa-2x fa-kiss-wink-heart"></i>
-                <span class="badge">{{comentario.votos_positivos}}</span></a>
+              <a class="float-right text-white ml-2" ng-click="megustaComentario(comentario.id_comentario,comentario.votos_positivos)"> <i class="wow bounceIn fas text-danger mt-1 fa-2x fa-kiss-wink-heart"></i>
+                <span class="badge" id="votoC">{{comentario.votos_positivos}}</span></a>
               <a class="float-right btn btn-warning ml-2 mb-1" ng-click="muestraComentario=!muestraComentario"> <i
-                  class="fa fa-reply"></i> Responder</a> <!-- ICONOS LIKE Y DISLIKE -->
+                  class="fa fa-reply"></i>Responder</a> <!-- ICONOS LIKE Y DISLIKE -->
             </p>
           </div>
         </div>
@@ -307,9 +309,8 @@
               </div>
 
               <div class="form-group d-flex justify-content-center">
-                <button type="button" class="btn btn-warning w-50"
-                  ng-click="responder(comentario.id_comentario,textoRespuesta)"><i class="fa fa-reply"></i>
-                  Responder</button>
+                <button type="button" class="btn btn-warning w-sm-75"
+                  ng-click="responder(comentario.id_comentario,textoRespuesta)"><i class="fa fa-reply"></i>Responder</button>
               </div>
             </form>
           </div>
@@ -329,8 +330,8 @@
               <p>{{respuesta.texto}}</p>
               <p>
                 <!-- ICONOS LIKE Y DISLIKE -->
-                <a class="float-right text-white"> <i class="fas text-danger mt-1 fa-2x fa-kiss-wink-heart"></i> <span
-                    class="badge">{{respuesta.votos_positivos}}</span></a>
+                <a class="float-right text-white" ng-click="megustaRespuesta(respuesta.id_respuesta,respuesta.votos_positivos)"> <i class="wow bounceIn fas text-danger mt-1 fa-2x fa-kiss-wink-heart"></i> <span
+                    class="badge" id="votoR">{{respuesta.votos_positivos}}</span></a>
               </p>
               
             </div>

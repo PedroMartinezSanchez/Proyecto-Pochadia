@@ -9,6 +9,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="icon" type="image/png" href="img/icon-mini.png" style="width: 32px; height: 32px;" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="js/controlador_recuperar.js"></script>
+    <script src="js/servicios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!--Animate.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.compat.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -27,40 +31,22 @@
     </style>
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
 
     <article class="pt-2 container-fluid">
         <div class="container d-flex justify-content-center animated zoomInDown">
             <img src="img/icon.png" alt="icon_pochadia" style="width: 20vh; height: 20vh;">
         </div>
-        <form action="#" class="campolog bg-white p-3 container was-validated animated zoomIn"
+        <form class="campolog bg-white p-3 container was-validated animated zoomIn"
             style="width: 25%; border-radius: 8px;">
             <h3 class="text-center text-dark mb-4">Recuperar contraseña</h3>
             <div class="form-group">
-                <input type="email" class="form-control input-sm mb-4" id="email" placeholder="Introduce tu e-mail"
+                <input type="email" ng-model="correo" class="form-control input-sm mb-4" id="email" placeholder="Introduce tu e-mail"
                     name="email" required>
-
             </div>
-            <button type="submit"
+            <button type="button" ng-click="recuperar()"
                 class="btn btn-warning font-weight-bold text-dark container justify-content-center d-flex"
-                style="width: 50%;" data-toggle="modal" data-target="#Recuperacion">Enviar</button>
-            <div class="modal fade" id="Recuperacion">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title text-center">Correo enviado</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <p>Si la cuenta de correo consta en nuestra base de datos se le enviará un correo
-                                para poder recuperar
-                                su contraseña. Por favor revise su correo.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                style="width: 50%;">Enviar</button>
         </form>
     </article>
 
