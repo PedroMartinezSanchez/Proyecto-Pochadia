@@ -4,8 +4,8 @@ CREATE TABLE usuario (
   contrasenya varchar(200) NOT NULL,
   fecha_nacimiento date NOT NULL,
   correo varchar(50) NOT NULL,
-  imagen varchar(40), /*¿NOT NULL?*/
-  img_banner varchar(40), 
+  imagen varchar(4294967295), /*¿NOT NULL?*/
+  img_banner varchar(4294967295), 
   suscrito ENUM('NORMAL','PREMIUM') NOT NULL,
   fecha_alta_pre date,
   fecha_vencimiento_pre date,
